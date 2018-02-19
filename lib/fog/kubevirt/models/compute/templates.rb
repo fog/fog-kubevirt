@@ -7,6 +7,13 @@ module Fog
       class Templates < Fog::Collection
         model Fog::Compute::Kubevirt::Template
 
+        def all(filters = {})
+          load service.list_templates(filters)
+        end
+
+        def get(name)
+          new service.get_template(name)
+        end
       end
     end
   end

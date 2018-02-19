@@ -9,7 +9,7 @@ New contributors are always welcome, when it doubt please ask questions. We stri
 * Review open [issues](https://github.com/pkliczewski/fog-kubevirt/issues) for things to help on.
 * [Create an issue](https://github.com/pkliczewski/fog-kubevirt/issues/new) to start a discussion on additions or features.
 * Fork the project, add your changes and tests to cover them in a topic branch.
-* Commit your changes and rebase against `fog/fog-ovirt` to ensure everything is up to date.
+* Commit your changes and rebase against `fog/fog-kubevirt` to ensure everything is up to date.
 * [Submit a pull request](https://github.com/pkliczewski/fog-kubevirt/compare/)
 
 ### Non-Coding
