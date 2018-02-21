@@ -3,7 +3,7 @@ module Fog
     class Kubevirt
       class Real
         def get_template(name)
-          to_hash client.get_template(name, 'default')
+          Template.parse object_to_hash( client.get_template(name, 'default') )
         end
       end
 

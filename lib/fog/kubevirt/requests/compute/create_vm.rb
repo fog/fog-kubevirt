@@ -3,12 +3,12 @@ module Fog
     class Kubevirt
       class Real
         def create_vm(attrs)
-	    end
+        end
       end
 
       class Mock
         def create_vm(attrs)
-	    end
+        end
       end
     end
   end

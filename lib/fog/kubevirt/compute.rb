@@ -7,8 +7,8 @@ module Fog
       recognizes :kubevirt_host, :kubevirt_port
 
       model_path 'fog/kubevirt/models/compute'
-      model      :server
-      collection :servers
+      model      :offlinevm
+      collection :offlinevms
       model      :template
       collection :templates
       model      :volume
@@ -18,20 +18,13 @@ module Fog
 
       request :destroy_vm
       request :create_vm
-      request :list_offline_virtual_machines
-      request :get_offline_virtual_machine
+      request :list_offlinevm
+      request :get_offlinevm
       request :list_templates
       request :get_template
 
       module Shared
         # converts kubeclient objects into hash for fog to consume
-        def to_hash(object)
-          opts = {:raw => object}
-          byebug
-          result = object_to_hash(object)
-          opts.merge!(result)
-        end
-
         def object_to_hash(object)
           result = object
           case result
@@ -42,8 +35,6 @@ module Fog
             end
           when Array
             result = result.map { |v| object_to_hash(v) }
-          when Hash
-            result = result.flatten
           end
 
           result

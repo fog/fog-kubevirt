@@ -3,7 +3,7 @@ module Fog
     class Kubevirt
       class Real
         def get_offline_virtual_machine(name)
-          to_hash client.get_offline_virtual_machines(:namespace => 'default', :name => 'name').first
+          Offlinevm.parse object_to_hash( client.get_offline_virtual_machine(name, 'default') )
         end
       end
 

@@ -3,7 +3,7 @@ module Fog
     class Kubevirt
       class Real
         def destroy_vm(options = {})
-	end
+        end
       end
 
       class Mock
