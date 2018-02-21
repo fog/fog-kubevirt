@@ -1,13 +1,12 @@
+require 'fog/compute/models/server'
+
 module Fog
   module Compute
     class Kubevirt
-      class Template < Fog::Model
-        identity :name,             :aliases => 'metadata_name'
+      class Offlinevm < Fog::Model
+        identity :name
 
         attribute :namespace,       :aliases => 'metadata_namespace'
-        attribute :description,     :aliases => 'metadata_description'
-        attribute :tags,            :aliases => 'metadata_tags'
-        attribute :labels,          :aliases => 'metadata_labels'
         attribute :resourceVersion, :aliases => 'metadata_resourceVersion'
         attribute :uid,             :aliases => 'metadata_uid'
         attribute :cpu_cores,       :aliases => 'spec_cpu_cores'
@@ -15,17 +14,20 @@ module Fog
         attribute :disks,           :aliases => 'spec_disks'
         attribute :volumes,         :aliases => 'spec_volumes'
 
+
+        def start(options = {})
+        end
+
+        def stop(options = {})
+        end
+
         def self.parse(object)
           metadata = object[:metadata]
-          annotations = metadata[:annotations]
           spec = object[:spec][:template][:spec]
           domain = spec[:domain]
           {
             :namespace       => metadata[:namespace],
             :name            => metadata[:name],
-            :description     => annotations[:description],
-            :tags            => annotations[:tags],
-            :labels          => metadata[:labels],
             :resourceVersion => metadata[:resourceVersion],
             :uid             => metadata[:uid],
             :cpu_cores       => domain[:cpu][:cores],
