@@ -7,6 +7,8 @@ module Fog
       recognizes :kubevirt_host, :kubevirt_port
 
       model_path 'fog/kubevirt/models/compute'
+      model      :livevm
+      collection :livevms
       model      :offlinevm
       collection :offlinevms
       model      :template
@@ -16,12 +18,17 @@ module Fog
 
       request_path 'fog/kubevirt/requests/compute'
 
-      request :destroy_vm
       request :create_vm
-      request :list_offlinevm
+      request :create_offlinevm
+      request :create_pvc
+      request :destroy_vm
+      request :get_livevm
       request :get_offlinevm
-      request :list_templates
       request :get_template
+      request :list_livevms
+      request :list_offlinevms
+      request :list_templates
+      request :update_offlinevm
 
       module Shared
         # converts kubeclient objects into hash for fog to consume
@@ -77,13 +84,14 @@ module Fog
           }
 
           # Kubeclient needs different client objects for different API groups. We will keep in this hash the
-          # client objects, indexed by API group/version.
+          # client objects, indexed by API path/version.
           @clients = {}
 
           @client = kubevirt_client()
 
-          # TODO expect a specific core token
-          @core_client = core_client()
+          # TODO expect a specific token
+          @oc_client = openshift_client()
+          @kube_client = kube_client()
         end
 
         private
@@ -92,25 +100,26 @@ module Fog
           @client
         end
 
+        def oc_client
+          @oc_client
+        end
+
+        def kube_client
+          @kubeclient
+        end
+
         #
-        # Lazily creates the a client for the given Kubernetes API group and version.
+        # Lazily creates the a client for the given Kubernetes API path and version.
         #
-        # @param group [String] The Kubernetes API group.
+        # @param path [String] The Kubernetes API path.
         # @param version [String] The Kubernetes API version.
-        # @return [Kubeclient::Client] The client for the given group and version.
+        # @return [Kubeclient::Client] The client for the given path and version.
         #
-        def create_client(group, version)
+        def create_client(path, version)
           # Return the client immediately if it has been created before:
-          key = group + '/' + version
+          key = path + '/' + version
           client = @clients[key]
           return client if client
-
-          # Determine the API path:
-          path = if group == CORE_GROUP
-                   '/api'
-                 else
-                   '/apis/' + group
-                 end
 
           # Create the client and save it:
           url = URI::Generic.build(
@@ -130,12 +139,16 @@ module Fog
           client
         end
 
-        def core_client
-          create_client(CORE_GROUP, CORE_VERSION)
+        def openshift_client
+          create_client('/oapi', CORE_VERSION)
+        end
+
+        def kube_client
+          create_client('/api', CORE_VERSION)
         end
 
         def kubevirt_client
-          create_client(KUBEVIRT_GROUP, KUBEVIRT_VERSION)
+          create_client('/apis/' + KUBEVIRT_GROUP, KUBEVIRT_VERSION)
         end
       end
 

@@ -12,7 +12,7 @@ module Fog
         end
 
         def get(name)
-          new service.get_offline_virtual_machine(name)
+          new service.get_offlinevm(name)
         end
       end
     end
