@@ -5,7 +5,7 @@ module Fog
     class Kubevirt
       class Real
         def list_offlinevms(_filters = {})
-          client.get_offline_virtual_machines(namespace: 'default').map { |kubevirt_obj| Offlinevm.parse object_to_hash(kubevirt_obj) }
+          kubevirt_client.get_offline_virtual_machines(namespace: 'default').map { |kubevirt_obj| Offlinevm.parse object_to_hash(kubevirt_obj) }
         end
       end
 
