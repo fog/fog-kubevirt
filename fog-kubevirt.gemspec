@@ -6,6 +6,8 @@ require 'fog/kubevirt/version'
 Gem::Specification.new do |spec|
   # Dynamically create the authors information {name => e-mail}
   authors_hash = Hash[`git log --no-merges --reverse --format='%an,%ae'`.split("\n").uniq.collect {|i| i.split(",")}]
+  # Fog maintainer
+  authors_hash["Wesley Beary"]                 = "geemus@gmail.com"
 
   spec.name          = 'fog-kubevirt'
   spec.version       = Fog::Kubevirt::VERSION
@@ -27,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop"
 
-  #spec.add_dependency("fog-core", "~> 1.45")
+  spec.add_dependency 'fog-core', '~> 2.1'
   spec.add_dependency("kubeclient", "~> 2.5.2")
 end

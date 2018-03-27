@@ -23,36 +23,6 @@ module Fog
             }
           )
           service.update_offline_vm(offline_vm)
-
-          # TODO: We need to create the live virtual machine explicitly because KubeVirt still doesn't have a controller
-          # that starts automatically the virtual machines when the `running` attribute is changed to `true`. This should be
-          # removed when that controller is added.
-          live_vm = {
-            :metadata => {
-              :namespace       => namespace,
-              :name            => name,
-              :ownerReferences => [{
-                :apiVersion => offline_vm[:apiVersion],
-                :kind       => offline_vm[:kind],
-                :name       => offline_vm[:metadata][:name],
-                :uid        => uid
-              }]
-            },
-            :spec     => offline_vm[:spec][:template][:spec]
-          }
-
-          # make sure to copy vm presets
-          unless offline_vm[:metadata][:selector].nil?
-            live_vm = live_vm.deep_merge(
-              :metadata => {
-                :namespace => {
-                  :selector => offline_vm[:metadata][:selector]
-                }
-              }
-            )
-          end
-
-          service.create_vm(live_vm)
         end
 
         def stop(options = {})
