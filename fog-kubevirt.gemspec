@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   # Dynamically create the authors information {name => e-mail}
   authors_hash = Hash[`git log --no-merges --reverse --format='%an,%ae'`.split("\n").uniq.collect {|i| i.split(",")}]
   # Fog maintainer
-  authors_hash["Wesley Beary"]                 = "geemus@gmail.com"
+  authors_hash["Wesley Beary"] = "geemus@gmail.com"
 
   spec.name          = 'fog-kubevirt'
   spec.version       = Fog::Kubevirt::VERSION
