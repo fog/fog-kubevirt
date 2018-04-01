@@ -1,5 +1,5 @@
 require 'fog/core/collection'
-require 'fog/kubevirt/models/compute/volume'
+require 'fog/compute/kubevirt/models/volume'
 
 module Fog
   module Compute
