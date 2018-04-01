@@ -1,12 +1,10 @@
-require 'fog/kubevirt/core'
-
 module Fog
   module Compute
     class Kubevirt < Fog::Service
       requires   :kubevirt_token
       recognizes :kubevirt_host, :kubevirt_port
 
-      model_path 'fog/kubevirt/models/compute'
+      model_path 'fog/compute/kubevirt/models'
       model      :livevm
       collection :livevms
       model      :offlinevm
@@ -16,7 +14,7 @@ module Fog
       model      :volume
       collection :volumes
 
-      request_path 'fog/kubevirt/requests/compute'
+      request_path 'fog/compute/kubevirt/requests'
 
       request :create_vm
       request :create_offlinevm

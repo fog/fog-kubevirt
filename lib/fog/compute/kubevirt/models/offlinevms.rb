@@ -1,5 +1,5 @@
 require 'fog/core/collection'
-require 'fog/kubevirt/models/compute/offlinevm'
+require 'fog/compute/kubevirt/models/offlinevm'
 
 module Fog
   module Compute

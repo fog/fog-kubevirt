@@ -1,5 +1,5 @@
 require 'fog/core/collection'
-require 'fog/kubevirt/models/compute/template'
+require 'fog/compute/kubevirt/models/template'
 
 module Fog
   module Compute

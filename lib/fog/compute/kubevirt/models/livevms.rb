@@ -1,5 +1,5 @@
 require 'fog/core/collection'
-require 'fog/kubevirt/models/compute/livevm'
+require 'fog/compute/kubevirt/models/livevm'
 
 module Fog
   module Compute
