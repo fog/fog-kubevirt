@@ -2,7 +2,7 @@ module Fog
   module Compute
     class Kubevirt < Fog::Service
       requires   :kubevirt_token
-      recognizes :kubevirt_host, :kubevirt_port
+      recognizes :kubevirt_hostname, :kubevirt_port
 
       model_path 'fog/compute/kubevirt/models'
       model      :livevm
@@ -65,7 +65,7 @@ module Fog
           require 'kubeclient'
 
           @kubevirt_token = options[:kubevirt_token]
-          @host  = options[:kubevirt_host]
+          @host  = options[:kubevirt_hostname]
           @port  = options[:kubevirt_port]
 
           @namespace = options[:kubevirt_namespace] || 'default'
