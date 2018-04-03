@@ -20,10 +20,10 @@ class Kubevirt
 	    'fk6MDKZlQHRpM2ZPBOk_lOtO6BhbKiGmEaYLD6Ul6AouqPTssjrn57zU4YNN26fv'\
 	    'z4_7JaATqOjtt5Qk-LaPAenpYW44KDlUed6Dm_KvVsxD5fEBoBRu4RO8P2A5sy66'\
 	    'Y-Qp7YlRX5VNrJ7BLQen-Vz1vQ'
-    @conn = Fog::Compute.new(provider => 'kubevirt',
-                             kubevirt_host => '192.168.121.121',
-                             kubevirt_port => '8443',
-                             kubevirt_token => token)
+    @conn = Fog::Compute.new(:provider => 'kubevirt',
+                             :kubevirt_hostname => '192.168.121.121',
+                             :kubevirt_port     => '8443',
+                             :kubevirt_token    => token)
   end
 
   #
