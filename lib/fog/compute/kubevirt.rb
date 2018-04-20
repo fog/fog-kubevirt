@@ -1,12 +1,16 @@
+require "fog/core"
+
 module Fog
   module Compute
     class Kubevirt < Fog::Service
       requires   :kubevirt_token
-      recognizes :kubevirt_hostname, :kubevirt_port
+      recognizes :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace
 
       model_path 'fog/compute/kubevirt/models'
       model      :livevm
       collection :livevms
+      model      :node
+      collection :nodes
       model      :offlinevm
       collection :offlinevms
       model      :template
@@ -19,16 +23,25 @@ module Fog
       request :create_vm
       request :create_offlinevm
       request :create_pvc
-      request :destroy_vm
+      request :delete_livevm
+      request :delete_offlinevm
       request :get_livevm
+      request :get_node
       request :get_offlinevm
       request :get_template
       request :list_livevms
+      request :list_nodes
       request :list_offlinevms
       request :list_templates
       request :update_offlinevm
 
       module Shared
+        #
+        # Label name which identifies operation system information
+        #
+        OS_LABEL = 'kubevirt.io/os'.freeze
+        OS_LABEL_SYMBOL = :'kubevirt.io/os'
+
         # converts kubeclient objects into hash for fog to consume
         def object_to_hash(object)
           result = object
@@ -44,9 +57,30 @@ module Fog
 
           result
         end
+
+        # Copied from rails:
+        # File activesupport/lib/active_support/core_ext/hash/deep_merge.rb, line 21
+        def deep_merge!(source_hash, other_hash, &block)
+          other_hash.each_pair do |current_key, other_value|
+            this_value = source_hash[current_key]
+
+            source_hash[current_key] = if this_value.is_a?(Hash) && other_value.is_a?(Hash)
+                                         this_value = deep_merge!(this_value, other_value, &block)
+                                       else
+                                         if block_given? && key?(current_key)
+                                           block.call(current_key, this_value, other_value)
+                                         else
+                                           other_value
+                                         end
+                                       end
+          end
+
+          source_hash
+        end
       end
 
       class Real
+        require "ostruct"
         include Shared
 
         #
@@ -84,26 +118,142 @@ module Fog
           # Kubeclient needs different client objects for different API groups. We will keep in this hash the
           # client objects, indexed by API path/version.
           @clients = {}
+        end
 
-          @client = kubevirt_client()
+        def virt_supported?
+          virt_enabled = false
 
-          # TODO expect a specific token
-          @oc_client = openshift_client()
-          @kube_client = kube_client()
+          begin
+            api_versions = kubevirt_client.api["versions"]
+            api_versions.each do |ver|
+              if ver["groupVersion"]&.start_with?(KUBEVIRT_GROUP)
+                virt_enabled = true
+              end
+            end
+          rescue => err
+            # we failed to communicate or to evaluate the version format
+            $log.warn("Failed to detect kubevirt on provider with error: #{err.message}")
+          end
+
+          virt_enabled
+        end
+
+        def valid?
+          kube_client.api_valid?
+        end
+
+        class WatchWrapper
+
+          def initialize(watch, mapper)
+            @watch = watch
+            @mapper = mapper
+          end
+
+          def each
+            @watch.each do |notice|
+              yield @mapper.call(notice)
+            end
+          end
+        end
+
+        #
+        # Returns a watcher for nodes.
+        #
+        # @param opts [Hash] A hash with options for the watcher.
+        # @return [WatchWrapper] The watcher.
+        #
+        def watch_nodes(opts = {})
+          mapper = Proc.new do |notice|
+            node = OpenStruct.new(Node.parse(notice.object))
+            populate_notice_attributes(node, notice)
+            node
+          end
+          watch = kube_client.watch_nodes(opts)
+
+          WatchWrapper.new(watch, mapper)
+        end
+
+        #
+        # Returns a watcher for offline virtual machines.
+        #
+        # @param opts [Hash] A hash with options for the watcher.
+        # @return [WatchWrapper] The watcher.
+        #
+        def watch_offline_vms(opts = {})
+          mapper = Proc.new do |notice|
+            offlinevm = OpenStruct.new(Offlinevm.parse(notice.object))
+            populate_notice_attributes(offlinevm, notice)
+            offlinevm
+          end
+          watch = kubevirt_client.watch_offline_virtual_machines(opts)
+
+          WatchWrapper.new(watch, mapper)
+        end
+
+        #
+        # Returns a watcher for live virtual machines.
+        #
+        # @param opts [Hash] A hash with options for the watcher.
+        # @return [WatchWrapper] The watcher.
+        #
+        def watch_live_vms(opts = {})
+          mapper = Proc.new do |notice|
+            livevm = OpenStruct.new(Livevm.parse(notice.object))
+            populate_notice_attributes(livevm, notice)
+            livevm
+          end
+          watch = kubevirt_client.watch_virtual_machines(opts)
+
+          WatchWrapper.new(watch, mapper)
+        end
+
+        #
+        # Returns a watcher for templates.
+        #
+        # @param opts [Hash] A hash with options for the watcher.
+        # @return [WatchWrapper] The watcher.
+        #
+        def watch_templates(opts = {})
+          mapper = Proc.new do |notice|
+            template = OpenStruct.new(Template.parse(notice.object))
+            populate_notice_attributes(template, notice)
+            template
+          end
+          watch = openshift_client.watch_templates(opts)
+
+          WatchWrapper.new(watch, mapper)
+        end
+
+        #
+        # Calculates the URL of the SPICE proxy server.
+        #
+        # @return [String] The URL of the spice proxy server.
+        #
+        def spice_proxy_url
+          service = kube_client.get_service('spice-proxy', @namespace)
+          host = service.spec.externalIPs.first
+          port = service.spec.ports.first.port
+          url = URI::Generic.build(
+            :scheme => 'http',
+            :host   => host,
+            :port   => port,
+          )
+          url.to_s
         end
 
         private
 
-        def client
-          @client
-        end
 
-        def oc_client
-          @oc_client
-        end
-
-        def kube_client
-          @kubeclient
+        #
+        # Populates required notice attributes
+        #
+        # @param object entity to populate
+        # @param notice the source of the data to populate from
+        def populate_notice_attributes(object, notice)
+          object.metadata = notice.object.metadata
+          object.type = notice.type
+          object.code = notice.object.code
+          object.kind = notice.object.kind
         end
 
         #

@@ -1,4 +1,3 @@
-require 'fog'
 require 'fog/kubevirt'
 
 class Kubevirt

@@ -13,9 +13,12 @@ module Fog
         attribute :memory,           :aliases => 'spec_memory'
         attribute :disks,            :aliases => 'spec_disks'
         attribute :volumes,          :aliases => 'spec_volumes'
+        attribute :ip_address,       :aliases => 'status_interfaces_ip'
+        attribute :node_name,        :aliases => 'status_node_name'
 
         def self.parse(object)
           metadata = object[:metadata]
+          status = object[:status]
           owner = metadata[:ownerReferences][0]
           spec = object[:spec]
           domain = spec[:domain]
@@ -29,7 +32,9 @@ module Fog
             :cpu_cores        => domain[:cpu][:cores],
             :memory           => domain[:resources][:requests][:memory],
             :disks            => domain[:devices][:disks],
-            :volumes          => spec[:volumes]
+            :volumes          => spec[:volumes],
+            :ip_address       => status.dig(:interfaces, 0, :ipAddress),
+            :node_name        => status[:nodeName]
           }
         end
       end
