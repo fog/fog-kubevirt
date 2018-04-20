@@ -5,10 +5,15 @@ module Fog
   module Compute
     class Kubevirt
       class Templates < Fog::Collection
+        attr_reader :kind, :resourceVersion
+
         model Fog::Compute::Kubevirt::Template
 
         def all(filters = {})
-          load service.list_templates(filters)
+          temps = service.list_templates(filters)
+          kind = temps.kind
+          resourceVersion = temps.resourceVersion
+          load temps
         end
 
         def get(name)
