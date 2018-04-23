@@ -72,6 +72,9 @@ module Fog
           offline_vm = param_substitution!(offline_vm, params)
 
           offline_vm = offline_vm.deep_merge(
+            :spec     => {
+              :running  => false
+            },
             :metadata => {
               :namespace => namespace
             }
