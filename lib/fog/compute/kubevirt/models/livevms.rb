@@ -14,6 +14,21 @@ module Fog
         def get(name)
           new service.get_livevm(name)
         end
+
+        def destroy(name)
+          begin
+            live_vm = get(name)
+          rescue KubeException
+            # the live virtual machine doesn't exist
+            live_vm = nil
+          end
+
+          # delete live vm
+          service.destroy_vm(name) unless live_vm.nil?
+
+          # delete offline vm
+          service.delete_offlinevm(name)
+        end
       end
     end
   end

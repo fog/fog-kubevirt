@@ -2,6 +2,7 @@ module Fog
   module Compute
     class Kubevirt
       class Template < Fog::Model
+        include Shared
         identity :name,              aliases: 'metadata_name'
 
         attribute :namespace,        aliases: 'metadata_namespace'
@@ -10,6 +11,7 @@ module Fog
         attribute :labels,           aliases: 'metadata_labels'
         attribute :resource_version, aliases: 'metadata_resource_version'
         attribute :uid,              aliases: 'metadata_uid'
+        attribute :annotations,     :aliases => 'metadata_annotations'
         attribute :objects
         attribute :parameters
 
@@ -27,15 +29,16 @@ module Fog
           metadata = object[:metadata]
           annotations = metadata[:annotations]
           {
-            namespace: metadata[:namespace],
-            name: metadata[:name],
-            description: annotations[:description],
-            tags: annotations[:tags],
-            labels: metadata[:labels],
-            resource_version: metadata[:resourceVersion],
-            uid: metadata[:uid],
-            objects: object[:objects],
-            parameters: object[:parameters],
+            :namespace        => metadata[:namespace],
+            :annotations      => metadata[:annotations],
+            :name             => metadata[:name],
+            :description      => annotations[:description],
+            :tags             => annotations[:tags],
+            :labels           => metadata[:labels],
+            :resource_version => metadata[:resourceVersion],
+            :uid              => metadata[:uid],
+            :objects          => object[:objects],
+            :parameters       => object[:parameters],
           }
         end
 
@@ -70,8 +73,8 @@ module Fog
         #
         def create_offline_vm(offline_vm, params, namespace)
           offline_vm = param_substitution!(offline_vm, params)
-
-          offline_vm = offline_vm.deep_merge(
+          os_labels = labels || {}
+          offline_vm = deep_merge!(offline_vm,
             :spec     => {
               :running  => false
             },
@@ -79,6 +82,14 @@ module Fog
               :namespace => namespace
             }
           )
+
+          offline_vm = deep_merge!(offline_vm,
+            :metadata => {
+              :labels => {
+                OS_LABEL => os_labels[OS_LABEL_SYMBOL]
+              }
+            }
+          ) if os_labels[OS_LABEL_SYMBOL]
 
           # Send the request to create the offline virtual machine:
           offline_vm = service.create_offlinevm(offline_vm)
@@ -95,7 +106,7 @@ module Fog
           pvcs.each do |pvc|
             pvc = param_substitution!(pvc, params)
 
-            pvc = pvc.deep_merge(
+            pvc = deep_merge!(pvc,
               :metadata => {
                 :namespace => namespace
               }
