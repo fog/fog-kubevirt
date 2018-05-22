@@ -4,7 +4,8 @@ module Fog
       class Real
         def create_offlinevm(vm)
           kubevirt_client.create_offline_virtual_machine(vm)
-        rescue KubeException
+        rescue KubeException => err
+          log.warn(err)
           raise ::Fog::Kubevirt::Errors::AlreadyExistsError
         end
       end

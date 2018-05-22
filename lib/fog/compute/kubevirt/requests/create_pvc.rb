@@ -5,6 +5,7 @@ module Fog
         def create_pvc(pvc)
           kube_client.create_persistent_volume_claim(pvc)
         rescue Kubeclient::HttpError
+          log.warn(err)
           raise ::Fog::Kubevirt::Errors::AlreadyExistsError
         end
       end
