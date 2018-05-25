@@ -1,4 +1,7 @@
+### 0.1.2 / 2018-05-25
 
+* Collect vm status from kubevirt
+* Fix resource_version naming
 
 ### 0.1.1 / 2018-05-22
 

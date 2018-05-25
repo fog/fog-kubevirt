@@ -15,6 +15,7 @@ module Fog
         attribute :volumes,          :aliases => 'spec_volumes'
         attribute :ip_address,       :aliases => 'status_interfaces_ip'
         attribute :node_name,        :aliases => 'status_node_name'
+        attribute :status,           :aliases => 'status_phase' 
 
         def self.parse(object)
           metadata = object[:metadata]
@@ -34,7 +35,8 @@ module Fog
             :disks            => domain[:devices][:disks],
             :volumes          => spec[:volumes],
             :ip_address       => status.dig(:interfaces, 0, :ipAddress),
-            :node_name        => status[:nodeName]
+            :node_name        => status[:nodeName],
+            :status           => status[:phase]
           }
         end
       end
