@@ -7,7 +7,7 @@ module Fog
           entities = vms.map do |kubevirt_obj|
             Livevm.parse object_to_hash(kubevirt_obj)
           end
-          EntityCollection.new(vms.kind, vms.resourceVersion, vms.metadata.uid, vms.metadata.type, entities)
+          EntityCollection.new(vms.kind, vms.resourceVersion, entities)
         end
       end
 

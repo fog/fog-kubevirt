@@ -9,7 +9,7 @@ module Fog
           entities = temps.map do |kubevirt_obj|
             Template.parse object_to_hash(kubevirt_obj)
           end
-          EntityCollection.new(temps.kind, temps.resourceVersion, temps.metadata.uid, temps.metadata.type, entities)
+          EntityCollection.new(temps.kind, temps.resourceVersion, entities)
         end
       end
 

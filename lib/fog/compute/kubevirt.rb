@@ -41,13 +41,11 @@ module Fog
       module Shared
 
         class EntityCollection < DelegateClass(Array)
-          attr_reader :kind, :resource_version, :uid, :type
+          attr_reader :kind, :resource_version
 
-          def initialize(kind, resource_version, uid, type, entities)
+          def initialize(kind, resource_version, entities)
             @kind = kind
             @resource_version = resource_version
-            @uid = uid
-            @type = type
             super(entities)
           end
         end

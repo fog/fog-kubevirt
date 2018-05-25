@@ -9,7 +9,7 @@ module Fog
           entities = ovms.map do |kubevirt_obj|
             Offlinevm.parse object_to_hash(kubevirt_obj)
           end
-          EntityCollection.new(ovms.kind, ovms.resourceVersion, ovms.metadata.uid, ovms.metadata.type, entities)
+          EntityCollection.new(ovms.kind, ovms.resourceVersion, entities)
         end
       end
 
