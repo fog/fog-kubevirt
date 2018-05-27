@@ -5,7 +5,7 @@ module Fog
         def list_nodes(_filters = {})
           nodes = kube_client.get_nodes
           entities = nodes.map { |kubevirt_obj| Node.parse object_to_hash(kubevirt_obj) }
-          EntityCollection.new(nodes.kind, nodes.resourceVersion, vms.metadata.uid, vms.metadata.type, entities)
+          EntityCollection.new(nodes.kind, nodes.resourceVersion, entities)
         end
       end
 

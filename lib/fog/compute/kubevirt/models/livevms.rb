@@ -5,14 +5,14 @@ module Fog
   module Compute
     class Kubevirt
       class Livevms < Fog::Collection
-        attr_reader :kind, :resourceVersion
+        attr_reader :kind, :resource_version
 
         model Fog::Compute::Kubevirt::Livevm
 
         def all(filters = {})
           vms = service.list_livevms(filters)
           kind = vms.kind
-          resourceVersion = vms.resourceVersion
+          resource_version = vms.resource_version
           load vms
         end
 

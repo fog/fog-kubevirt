@@ -5,14 +5,14 @@ module Fog
   module Compute
     class Kubevirt
       class Nodes < Fog::Collection
-        attr_reader :kind, :resourceVersion
+        attr_reader :kind, :resource_version
 
         model Fog::Compute::Kubevirt::Node
 
         def all(filters = {})
           nodes = service.list_nodes(filters)
           kind = nodes.kind
-          resourceVersion = nodes.resourceVersion
+          resource_version = nodes.resource_version
           load nodes
         end
 
