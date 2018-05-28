@@ -15,7 +15,7 @@ module Fog
         attribute :volumes,          :aliases => 'spec_volumes'
         attribute :ip_address,       :aliases => 'status_interfaces_ip'
         attribute :node_name,        :aliases => 'status_node_name'
-        attribute :status,           :aliases => 'status_phase' 
+        attribute :status,           :aliases => 'status_phase'
 
         def self.parse(object)
           metadata = object[:metadata]
