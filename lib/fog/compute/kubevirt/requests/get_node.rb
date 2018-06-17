@@ -10,7 +10,7 @@ module Fog
       end
 
       class Mock
-        def get_livevm(name)
+        def get_node(name)
           node = {:apiVersion => "v1",
                   :kind => "Node",
                   :metadata => {

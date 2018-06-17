@@ -1,7 +1,7 @@
 module Fog
   module Compute
     class Kubevirt
-      class Offlinevm < Fog::Model
+      class Vm < Fog::Model
         include Shared
 
         identity :name
@@ -19,25 +19,25 @@ module Fog
 
 
         def start(options = {})
-          # Change the `running` attribute to `true` so that the offline virtual machine controller will take it and
-          # create the live virtual machine.
-          offline_vm = service.get_raw_offlinevm(name)
-          offline_vm = deep_merge!(offline_vm,
+          # Change the `running` attribute to `true` so that the virtual machine controller will take it and
+          # create the virtual machine instance.
+          vm = service.get_raw_vm(name)
+          vm = deep_merge!(vm,
             :spec => {
               :running => true
             }
           )
-          service.update_offline_vm(offline_vm)
+          service.update_vm(vm)
         end
 
         def stop(options = {})
-          offline_vm = service.get_raw_offlinevm(name)
-          offline_vm = deep_merge!(offline_vm,
+          vm = service.get_raw_vm(name)
+          vm = deep_merge!(vm,
             :spec => {
               :running => false
             }
           )
-          service.update_offline_vm(offline_vm)
+          service.update_vm(vm)
         end
 
         def self.parse(object)

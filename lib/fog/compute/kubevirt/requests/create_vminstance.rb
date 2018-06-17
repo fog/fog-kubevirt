@@ -2,16 +2,17 @@ module Fog
   module Compute
     class Kubevirt
       class Real
-        def create_offlinevm(vm)
-          kubevirt_client.create_offline_virtual_machine(vm)
-        rescue KubeException => err
+        def create_vminstance(vm)
+          kubevirt_client.create_virtual_machine_instance(vm)
+        rescue Kubeclient::HttpError => err
           log.warn(err)
           raise ::Fog::Kubevirt::Errors::AlreadyExistsError
         end
       end
 
       class Mock
-        def create_offlinevm(vm); end
+        def create_vminstance(vm)
+        end
       end
     end
   end

@@ -21,8 +21,8 @@ module Fog
           # use persistent volume claims if any from a template and send
           create_persistent_volume_claims(persistent_volume_claims_from_objects(objects), params, namespace)
 
-          # use offline vm definition from a template and send
-          create_offline_vm(offline_vm_from_objects(objects), params, namespace)
+          # use vm definition from a template and send
+          create_vm(vm_from_objects(objects), params, namespace)
         end
 
         def self.parse(object)
@@ -39,7 +39,7 @@ module Fog
             :parameters       => object[:parameters],
             :description      => annotations && annotations[:description],
             :tags             => annotations && annotations[:tags]
-          }.compact
+          }
         end
 
         private
@@ -65,16 +65,16 @@ module Fog
         end
 
         #
-        # Creates an offline virtual machine within provided namespace.
+        # Creates a virtual machine within provided namespace.
         #
-        # @param offline_vm [Hash] Offline virtual machine hash as defined in the template.
+        # @param vm [Hash] Virtual machine hash as defined in the template.
         # @param params [Hash] Containing mapping of name and value.
         # @param namespace [String] Namespace used to store the object.
         #
-        def create_offline_vm(offline_vm, params, namespace)
-          offline_vm = param_substitution!(offline_vm, params)
+        def create_vm(vm, params, namespace)
+          vm = param_substitution!(vm, params)
           os_labels = labels || {}
-          offline_vm = deep_merge!(offline_vm,
+          vm = deep_merge!(vm,
             :spec     => {
               :running  => false
             },
@@ -83,7 +83,7 @@ module Fog
             }
           )
 
-          offline_vm = deep_merge!(offline_vm,
+          vm = deep_merge!(vm,
             :metadata => {
               :labels => {
                 OS_LABEL => os_labels[OS_LABEL_SYMBOL]
@@ -91,8 +91,8 @@ module Fog
             }
           ) if os_labels[OS_LABEL_SYMBOL]
 
-          # Send the request to create the offline virtual machine:
-          offline_vm = service.create_offlinevm(offline_vm)
+          # Send the request to create the virtual machine:
+          vm = service.create_vm(vm)
         end
 
         #
@@ -118,15 +118,15 @@ module Fog
         end
 
         #
-        # Returns object of `OfflineVirtualMachine` kind from provided objects.
+        # Returns object of `VirtualMachine` kind from provided objects.
         #
         # @param objects Array[Object] Objects defined in the template.
-        # @return [Hash] Offline virtual machine hash
+        # @return [Hash] Virtual machine hash
         #
-        def offline_vm_from_objects(objects)
+        def vm_from_objects(objects)
           vm = nil
           objects.each do |object|
-            if object[:kind] == "OfflineVirtualMachine"
+            if object[:kind] == "VirtualMachine"
               vm = object
             end
           end

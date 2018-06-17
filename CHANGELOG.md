@@ -1,3 +1,10 @@
+### 0.1.3 / 2018-06-17
+
+* Work against api v1alpha2
+* Change code to match new entities names:
+  VirtualMachine ==> VirtualMachineInstance
+  OfflineVirtualMachine ==> VirtualMachine
+
 ### 0.1.2 / 2018-05-25
 
 * Collect vm status from kubevirt

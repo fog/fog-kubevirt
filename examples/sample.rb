@@ -42,26 +42,26 @@ class Kubevirt
   end
 
   #
-  # Fetches a collection of available offlinevms in a namespace
+  # Fetches a collection of available vms in a namespace
   #
-  def offlinevms
-    @conn.offlinevms
+  def vms
+    @conn.vms
   end
 
   #
-  # Fetches specific offlinevm identified by name
+  # Fetches specific vm identified by name
   #
-  # @param name Name of a offlinevm to fetch
+  # @param name Name of a vm to fetch
   #
-  def offlinevm(name)
-    offlinevms.get(name)
+  def vm(name)
+    vms.get(name)
   end
 
   #
   # Fetches a collection of available vms in a namespace
   #
-  def livevms
-    @conn.livevms
+  def vminstances
+    @conn.vminstances
   end
 
   #
@@ -69,8 +69,8 @@ class Kubevirt
   #
   # @param Name of a vm to fetch
   #
-  def livevm(name)
-    livevms.get(name)
+  def vminstance(name)
+    vminstances.get(name)
   end
 end
 
@@ -81,6 +81,6 @@ kube.connect
 
 template = kube.template('working')
 template.clone(name: vm_name, memory: 512)
-offlinevm = kube.offlinevm(vm_name)
-offlinevm.start
-kube.livevm(vm_name)
+vm = kube.vm(vm_name)
+vm.start
+kube.vminstance(vm_name)
