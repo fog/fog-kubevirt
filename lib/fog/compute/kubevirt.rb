@@ -10,12 +10,12 @@ module Fog
       recognizes :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, :kubevirt_log
 
       model_path 'fog/compute/kubevirt/models'
-      model      :livevm
-      collection :livevms
+      model      :vminstance
+      collection :vminstances
       model      :node
       collection :nodes
-      model      :offlinevm
-      collection :offlinevms
+      model      :vm
+      collection :vms
       model      :template
       collection :templates
       model      :volume
@@ -24,19 +24,19 @@ module Fog
       request_path 'fog/compute/kubevirt/requests'
 
       request :create_vm
-      request :create_offlinevm
+      request :create_vminstance
       request :create_pvc
-      request :delete_livevm
-      request :delete_offlinevm
-      request :get_livevm
+      request :delete_vminstance
+      request :delete_vm
+      request :get_vminstance
       request :get_node
-      request :get_offlinevm
+      request :get_vm
       request :get_template
-      request :list_livevms
+      request :list_vminstances
       request :list_nodes
-      request :list_offlinevms
+      request :list_vms
       request :list_templates
-      request :update_offlinevm
+      request :update_vm
 
       module Shared
 
@@ -108,7 +108,7 @@ module Fog
         # The API version and group of KubeVirt:
         #
         KUBEVIRT_GROUP = 'kubevirt.io'.freeze
-        KUBEVIRT_VERSION = 'v1alpha1'.freeze
+        KUBEVIRT_VERSION = 'v1alpha2'.freeze
 
         def initialize(options={})
           require 'kubeclient'
@@ -118,7 +118,7 @@ module Fog
           @port = options[:kubevirt_port]
 
           @log = options[:kubevirt_log]
-          @log ||= Logger.new(STDOUT)
+          @log ||= Logger::Logger.new(STDOUT)
 
           @namespace = options[:kubevirt_namespace] || 'default'
 
@@ -193,37 +193,37 @@ module Fog
         end
 
         #
-        # Returns a watcher for offline virtual machines.
+        # Returns a watcher for virtual machines.
         #
         # @param opts [Hash] A hash with options for the watcher.
         # @return [WatchWrapper] The watcher.
         #
-        def watch_offline_vms(opts = {})
+        def watch_vms(opts = {})
           mapper = Proc.new do |notice|
-            offlinevm = OpenStruct.new(Offlinevm.parse(notice.object)) if notice.object.kind == 'OfflineVirtualMachine'
-            offlinevm ||= OpenStruct.new
+            vm = OpenStruct.new(Vm.parse(notice.object)) if notice.object.kind == 'VirtualMachine'
+            vm ||= OpenStruct.new
 
-            populate_notice_attributes(offlinevm, notice)
-            offlinevm
+            populate_notice_attributes(vm, notice)
+            vm
           end
-          watch = kubevirt_client.watch_offline_virtual_machines(opts)
+          watch = kubevirt_client.watch_virtual_machines(opts)
 
           WatchWrapper.new(watch, mapper)
         end
 
         #
-        # Returns a watcher for live virtual machines.
+        # Returns a watcher for virtual machine instances.
         #
         # @param opts [Hash] A hash with options for the watcher.
         # @return [WatchWrapper] The watcher.
         #
-        def watch_live_vms(opts = {})
+        def watch_vminstances(opts = {})
           mapper = Proc.new do |notice|
-            livevm = OpenStruct.new(Livevm.parse(notice.object)) if notice.object.kind == 'VirtualMachine'
-            livevm ||= OpenStruct.new
+            vminstance = OpenStruct.new(Vminstance.parse(notice.object)) if notice.object.kind == 'VirtualMachine'
+            vminstance ||= OpenStruct.new
 
-            populate_notice_attributes(livevm, notice)
-            livevm
+            populate_notice_attributes(vminstance, notice)
+            vminstance
           end
           watch = kubevirt_client.watch_virtual_machines(opts)
 

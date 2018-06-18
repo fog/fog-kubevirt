@@ -26,8 +26,8 @@ module Fog
                                                annotations: { description: 'OCP kubevirt linux, template',
                                                               tags: 'kubevirt,ocp,template,linux' }
                                    },
-                                                              objects: [{ apiVersion: 'kubevirt.io/v1alpha1',
-                                                                          kind: 'OfflineVirtualMachine',
+                                                              objects: [{ apiVersion: 'kubevirt.io/v1alpha2',
+                                                                          kind: 'VirtualMachine',
                                                                           metadata: { name: '${NAME}' },
                                                                           spec: { template: { spec: { domain:
                                                                                                       { cpu: { cores: '${CPU_CORES}' },

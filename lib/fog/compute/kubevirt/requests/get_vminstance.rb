@@ -4,28 +4,28 @@ module Fog
   module Compute
     class Kubevirt
       class Real
-        def get_livevm(name)
+        def get_vminstance(name)
           # namespace is defined on the Real object
-          Livevm.parse object_to_hash( kubevirt_client.get_virtual_machine(name, @namespace) )
+          Vminstance.parse object_to_hash( kubevirt_client.get_virtual_machine_instance(name, @namespace) )
         end
       end
 
       class Mock
-        def get_livevm(name)
-          vm = { :apiVersion => "kubevirt.io/v1alpha1",
-                 :kind       => "VirtualMachine",
+        def get_vminstance(name)
+          vm = { :apiVersion => "kubevirt.io/v1alpha2",
+                 :kind       => "VirtualMachineInstance",
                  :metadata   => { :clusterName       => "",
                                   :creationTimestamp => "2018-02-23T10:12:47Z",
                                   :name              => "demo",
                                   :namespace         => "default",
-                                  :ownerReferences   => [{ :apiVersion      => "kubevirt.io/v1alpha1",
-                                                           :kind            => "OfflineVirtualMachine",
+                                  :ownerReferences   => [{ :apiVersion      => "kubevirt.io/v1alpha2",
+                                                           :kind            => "VirtualMachine",
                                                            :name            => "demo",
                                                            :uid             => "57e279c1-17ee-11e8-a9f9-525400a7f647"
                                                          }
                                                         ],
                                   :resourceVersion   => "84873",
-                                  :selfLink          => "/apis/kubevirt.io/v1alpha1/namespaces/default/virtualmachines/demo",
+                                  :selfLink          => "/apis/kubevirt.io/v1alpha2/namespaces/default/virtualmachineinstances/demo",
                                   :uid               => "1906421f-1882-11e8-b539-525400a7f647"
                                 },
                  :spec       => { :domain => { :cpu     => { :cores => "4" },
@@ -52,7 +52,7 @@ module Fog
                                   }
                }
           object = RecursiveOpenStruct.new(vm, recurse_over_arrays: true)
-          Livevm.parse object_to_hash(object)
+          Vminstance.parse object_to_hash(object)
         end
       end
     end

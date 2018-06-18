@@ -1,7 +1,7 @@
 module Fog
   module Compute
     class Kubevirt
-      class Livevm < Fog::Model
+      class Vminstance < Fog::Model
         identity :name
 
         attribute :namespace,        :aliases => 'metadata_namespace'
