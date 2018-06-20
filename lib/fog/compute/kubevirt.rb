@@ -219,7 +219,7 @@ module Fog
         #
         def watch_vminstances(opts = {})
           mapper = Proc.new do |notice|
-            vminstance = OpenStruct.new(Vminstance.parse(notice.object)) if notice.object.kind == 'VirtualMachine'
+            vminstance = OpenStruct.new(Vminstance.parse(notice.object)) if notice.object.kind == 'VirtualMachineInstance'
             vminstance ||= OpenStruct.new
 
             populate_notice_attributes(vminstance, notice)
