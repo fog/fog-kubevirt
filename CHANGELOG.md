@@ -1,3 +1,7 @@
+### 0.1.4 / 2018-06-25
+
+* Save resource_version and kind for entitiy collections
+
 ### 0.1.3 / 2018-06-17
 
 * Work against api v1alpha2

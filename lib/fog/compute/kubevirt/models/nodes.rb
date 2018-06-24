@@ -11,8 +11,8 @@ module Fog
 
         def all(filters = {})
           nodes = service.list_nodes(filters)
-          kind = nodes.kind
-          resource_version = nodes.resource_version
+          @kind = nodes.kind
+          @resource_version = nodes.resource_version
           load nodes
         end
 
