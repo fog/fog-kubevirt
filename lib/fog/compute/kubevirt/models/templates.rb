@@ -11,8 +11,8 @@ module Fog
 
         def all(filters = {})
           temps = service.list_templates(filters)
-          kind = temps.kind
-          resource_version = temps.resource_version
+          @kind = temps.kind
+          @resource_version = temps.resource_version
           load temps
         end
 

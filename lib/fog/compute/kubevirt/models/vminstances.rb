@@ -11,8 +11,8 @@ module Fog
 
         def all(filters = {})
           vms = service.list_vminstances(filters)
-          kind = vms.kind
-          resource_version = vms.resource_version
+          @kind = vms.kind
+          @resource_version = vms.resource_version
           load vms
         end
 
