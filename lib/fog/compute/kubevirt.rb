@@ -1,5 +1,4 @@
 require 'delegate'
-require 'logger'
 
 require "fog/core"
 
@@ -47,6 +46,30 @@ module Fog
             @kind = kind
             @resource_version = resource_version
             super(entities)
+          end
+        end
+
+        class ExceptionWrapper
+          def initialize(client)
+            @client = client
+          end
+
+          def method_missing(symbol, *args)
+            super unless @client.respond_to?(symbol)
+
+            if block_given?
+              @client.__send__(symbol, *args) do |*block_args|
+                yield(*block_args)
+              end
+            else
+              @client.__send__(symbol, *args)
+            end
+          rescue KubeException => e
+            raise ::Fog::Kubevirt::Errors::ClientError, e
+          end
+
+          def respond_to_missing?(method_name, include_private = false)
+            @client.respond_to?(symbol, include_all) || super
           end
         end
 
@@ -118,7 +141,7 @@ module Fog
           @port = options[:kubevirt_port]
 
           @log = options[:kubevirt_log]
-          @log ||= Logger::Logger.new(STDOUT)
+          @log ||= ::Logger.new(STDOUT)
 
           @namespace = options[:kubevirt_namespace] || 'default'
 
@@ -306,10 +329,11 @@ module Fog
             version,
             @opts
           )
-          @clients[key] = client
+          wrapped_client = ExceptionWrapper.new(client)
+          @clients[key] = wrapped_client
 
           # Return the client:
-          client
+          wrapped_client
         end
 
         def openshift_client

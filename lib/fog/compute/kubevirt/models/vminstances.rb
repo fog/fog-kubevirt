@@ -23,7 +23,7 @@ module Fog
         def destroy(name, namespace)
           begin
             vm_instance = get(name)
-          rescue Kubeclient::HttpError
+          rescue ::Fog::Kubevirt::Errors::ClientError
             # the virtual machine instance doesn't exist
             vm_instance = nil
           end
