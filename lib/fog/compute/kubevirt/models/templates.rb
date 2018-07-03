@@ -10,7 +10,12 @@ module Fog
         model Fog::Compute::Kubevirt::Template
 
         def all(filters = {})
-          temps = service.list_templates(filters)
+          begin
+            temps = service.list_templates(filters)
+          rescue ::Fog::Kubevirt::Errors::ClientError
+            # we assume that we get 404
+            temps = []
+          end
           @kind = temps.kind
           @resource_version = temps.resource_version
           load temps
