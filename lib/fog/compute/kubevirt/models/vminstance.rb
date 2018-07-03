@@ -20,7 +20,6 @@ module Fog
         def self.parse(object)
           metadata = object[:metadata]
           status = object[:status]
-          owner = metadata[:ownerReferences][0]
           spec = object[:spec]
           domain = spec[:domain]
           {
@@ -28,9 +27,9 @@ module Fog
             :name             => metadata[:name],
             :resource_version => metadata[:resourceVersion],
             :uid              => metadata[:uid],
-            :owner_name       => owner[:name],
-            :owner_uid        => owner[:uid],
-            :cpu_cores        => domain[:cpu][:cores],
+            :owner_name       => metadata.dig(:ownerReferences, 0, :name),
+            :owner_uid        => metadata.dig(:ownerReferences, 0, :uid),
+            :cpu_cores        => domain.dig(:cpu, :cores),
             :memory           => domain[:resources][:requests][:memory],
             :disks            => domain[:devices][:disks],
             :volumes          => spec[:volumes],
