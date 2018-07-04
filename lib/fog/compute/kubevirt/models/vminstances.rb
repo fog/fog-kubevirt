@@ -10,7 +10,12 @@ module Fog
         model Fog::Compute::Kubevirt::Vminstance
 
         def all(filters = {})
-          vms = service.list_vminstances(filters)
+          begin
+            vms = service.list_vminstances(filters)
+          rescue ::Fog::Kubevirt::Errors::ClientError
+            # we assume that we get 404
+            vms = []
+          end
           @kind = vms.kind
           @resource_version = vms.resource_version
           load vms
@@ -23,7 +28,7 @@ module Fog
         def destroy(name, namespace)
           begin
             vm_instance = get(name)
-          rescue Kubeclient::HttpError
+          rescue ::Fog::Kubevirt::Errors::ClientError
             # the virtual machine instance doesn't exist
             vm_instance = nil
           end
