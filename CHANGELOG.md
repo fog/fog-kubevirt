@@ -1,3 +1,7 @@
+### 0.1.6 / 2018-07-16
+
+* Support openshift parameters processing ${{PARAM_NAME}} in templates.
+
 ### 0.1.4 / 2018-06-25
 
 * Save resource_version and kind for entitiy collections

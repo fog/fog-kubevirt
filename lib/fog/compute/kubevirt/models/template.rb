@@ -184,9 +184,14 @@ module Fog
           result = object
           params.each_key do |name|
             token = "${#{name.upcase}}"
-            next unless object.include?(token)
+            os_token = "${{#{name.upcase}}}"
+            next unless (object.include?(token) || object.include?(os_token))
             result = if params[name].kind_of?(String)
-                       object.sub!(token, params[name])
+                       if object.include?(os_token)
+                         object.sub!(os_token, params[name])
+                       else
+                         object.sub!(token, params[name])
+                       end
                      else
                        params[name]
                      end
