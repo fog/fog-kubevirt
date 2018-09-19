@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop"
 
-  spec.add_dependency("fog-core", "~> 1.45")
+  spec.add_dependency("fog-core", "~> 2.1.2")
   spec.add_dependency("kubeclient", "~> 2.5.2")
 end
