@@ -16,6 +16,7 @@ module Fog
         attribute :memory,           :aliases => 'spec_memory'
         attribute :disks,            :aliases => 'spec_disks'
         attribute :volumes,          :aliases => 'spec_volumes'
+        attribute :status,           :aliases => 'spec_running'
 
 
         def start(options = {})
@@ -44,19 +45,25 @@ module Fog
           metadata = object[:metadata]
           spec = object[:spec][:template][:spec]
           domain = spec[:domain]
-          {
+          owner = metadata[:ownerReferences]
+          annotations = metadata[:annotations]
+          cpu = domain[:cpu]
+          vm = {
             :namespace        => metadata[:namespace],
             :name             => metadata[:name],
             :resource_version => metadata[:resourceVersion],
             :uid              => metadata[:uid],
             :labels           => metadata[:labels],
-            :annotations      => metadata[:annotations],
-            :owner_reference  => metadata[:ownerReferences],
-            :cpu_cores        => domain[:cpu][:cores],
             :memory           => domain[:resources][:requests][:memory],
             :disks            => domain[:devices][:disks],
-            :volumes          => spec[:volumes]
+            :volumes          => spec[:volumes],
+            :status           => object[:spec][:running].to_s == "true" ? "runnning" : "stopped"
           }
+          vm[:owner_reference] = owner unless owner.nil?
+          vm[:annotations] = annotations unless annotations.nil?
+          vm[:cpu_cores] = cpu[:cores] unless cpu.nil?
+
+          vm
         end
       end
     end
