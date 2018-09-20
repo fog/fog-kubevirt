@@ -1,8 +1,8 @@
 require 'recursive_open_struct'
 
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def get_node(name)
           Node.parse object_to_hash( kube_client.get_node(name) )

@@ -22,14 +22,13 @@ Or install it yourself as:
 
 Require the gem:
 ```ruby
-require 'fog/kubevirt' 
+require 'fog/kubevirt'
 ```
 
 Connect to kubevirt instance:
 ```ruby
 
-compute = Fog::Compute.new(
-          :provider        => "kubevirt",
+compute = Fog::Kubevirt::Compute.new
           :kubevirt_token  => token,
           :kubevirt_server => server,
           :kubevirt_port   => port

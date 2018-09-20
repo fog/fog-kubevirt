@@ -1,13 +1,13 @@
 require 'fog/core/collection'
-require 'fog/compute/kubevirt/models/vm'
+require 'fog/kubevirt/compute/models/vm'
 
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Vms < Fog::Collection
         attr_reader :kind, :resource_version
 
-        model Fog::Compute::Kubevirt::Vm
+        model Fog::Kubevirt::Compute::Vm
 
         def all(filters = {})
           begin

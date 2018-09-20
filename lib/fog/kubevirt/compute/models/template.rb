@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Template < Fog::Model
         include Shared
         identity :name,              :aliases => 'metadata_name'

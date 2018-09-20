@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def list_vminstances(_filters = {})
           vminstances = kubevirt_client.get_virtual_machine_instances(namespace: @namespace)

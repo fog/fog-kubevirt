@@ -1,8 +1,8 @@
 require 'recursive_open_struct'
 
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def list_vms(_filters = {})
           vms = kubevirt_client.get_virtual_machines(namespace: @namespace)

@@ -1,8 +1,8 @@
 require 'recursive_open_struct'
 
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def get_vminstance(name)
           # namespace is defined on the Real object

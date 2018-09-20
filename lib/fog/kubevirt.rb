@@ -1,11 +1,8 @@
 require 'fog/core'
 
 module Fog
-  module Compute
-    autoload :Kubevirt, File.expand_path('../compute/kubevirt', __FILE__)
-  end
-
   module Kubevirt
+    autoload :Compute, 'fog/kubevirt/compute/kubevirt'
     extend Fog::Provider
 
     module Errors

@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def create_vm(vm)
           kubevirt_client.create_virtual_machine(vm)

@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def update_vm(update)
           kubevirt_client.update_virtual_machine(update)
