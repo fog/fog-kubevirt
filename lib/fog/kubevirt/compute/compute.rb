@@ -132,6 +132,7 @@ module Fog
         #
         KUBEVIRT_GROUP = 'kubevirt.io'.freeze
         KUBEVIRT_VERSION = 'v1alpha2'.freeze
+        KUBEVIRT_VERSION_LABEL = KUBEVIRT_GROUP + '/' + KUBEVIRT_VERSION
 
         def initialize(options={})
           require 'kubeclient'
@@ -287,6 +288,10 @@ module Fog
             :port   => port,
           )
           url.to_s
+        end
+
+        def namespace
+          @namespace
         end
 
         private
