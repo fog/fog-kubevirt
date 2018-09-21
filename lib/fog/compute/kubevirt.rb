@@ -126,6 +126,7 @@ module Fog
         #
         CORE_GROUP = ''.freeze
         CORE_VERSION = 'v1'.freeze
+        KUBEVIRT_VERSION_LABEL = KUBEVIRT_GROUP + '/' + KUBEVIRT_VERSION
 
         #
         # The API version and group of KubeVirt:
@@ -287,6 +288,10 @@ module Fog
             :port   => port,
           )
           url.to_s
+        end
+
+        def namespace
+          @namespace
         end
 
         private
