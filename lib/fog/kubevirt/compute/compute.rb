@@ -3,12 +3,12 @@ require 'delegate'
 require "fog/core"
 
 module Fog
-  module Compute
-    class Kubevirt < Fog::Service
+  module Kubevirt
+    class Compute < Fog::Service
       requires   :kubevirt_token
       recognizes :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, :kubevirt_log
 
-      model_path 'fog/compute/kubevirt/models'
+      model_path 'fog/kubevirt/compute/models'
       model      :vminstance
       collection :vminstances
       model      :node
@@ -20,7 +20,7 @@ module Fog
       model      :volume
       collection :volumes
 
-      request_path 'fog/compute/kubevirt/requests'
+      request_path 'fog/kubevirt/compute/requests'
 
       request :create_vm
       request :create_vminstance
@@ -368,5 +368,5 @@ module Fog
         # TODO provide mocking
       end
     end
-  end  
+  end
 end

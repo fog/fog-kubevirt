@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def list_nodes(_filters = {})
           nodes = kube_client.get_nodes

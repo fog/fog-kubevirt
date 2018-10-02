@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def create_pvc(pvc)
           kube_client.create_persistent_volume_claim(pvc)

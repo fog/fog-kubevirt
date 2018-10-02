@@ -1,13 +1,13 @@
 require 'fog/core/collection'
-require 'fog/compute/kubevirt/models/template'
+require 'fog/kubevirt/compute/models/template'
 
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Templates < Fog::Collection
         attr_reader :kind, :resource_version
 
-        model Fog::Compute::Kubevirt::Template
+        model Fog::Kubevirt::Compute::Template
 
         def all(filters = {})
           begin

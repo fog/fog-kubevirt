@@ -1,13 +1,13 @@
 require 'fog/core/collection'
-require 'fog/compute/kubevirt/models/node'
+require 'fog/kubevirt/compute/models/node'
 
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Nodes < Fog::Collection
         attr_reader :kind, :resource_version
 
-        model Fog::Compute::Kubevirt::Node
+        model Fog::Kubevirt::Compute::Node
 
         def all(filters = {})
           nodes = service.list_nodes(filters)

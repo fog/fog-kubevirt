@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Real
         def delete_vminstance(name, namespace)
           kubevirt_client.delete_virtual_machine_instance(name, namespace)

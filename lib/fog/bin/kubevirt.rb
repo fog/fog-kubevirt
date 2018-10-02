@@ -3,7 +3,7 @@ class Kubevirt < Fog::Bin
     def class_for(key)
       case key
       when :compute
-        Fog::Compute::Kubevirt
+        Fog::Kubevirt::Compute
       else
         raise ArgumentError, "Unrecognized service: #{key}"
       end
@@ -13,7 +13,7 @@ class Kubevirt < Fog::Bin
       @@connections ||= Hash.new do |hash, key|
         hash[key] = case key
                     when :compute
-                      Fog::Compute.new(:provider => 'Kubevirt')
+                      Fog::Kubevirt::Compute.new
                     else
                       raise ArgumentError, "Unrecognized service: #{key.inspect}"
                     end

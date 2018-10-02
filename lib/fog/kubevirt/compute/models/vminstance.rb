@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Kubevirt
+  module Kubevirt
+    class Compute
       class Vminstance < Fog::Model
         identity :name
 
