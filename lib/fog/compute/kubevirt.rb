@@ -15,6 +15,8 @@ module Fog
       collection :nodes
       model      :vm
       collection :vms
+      model      :server
+      collection :servers
       model      :template
       collection :templates
       model      :volume
@@ -30,10 +32,12 @@ module Fog
       request :get_vminstance
       request :get_node
       request :get_vm
+      request :get_server
       request :get_template
       request :list_vminstances
       request :list_nodes
       request :list_vms
+      request :list_servers
       request :list_templates
       request :update_vm
 
@@ -114,6 +118,18 @@ module Fog
           end
 
           source_hash
+        end
+
+        # Updates a given VM raw entity with vm instance info if exists
+        #
+        # @param vm [Hash] A hash with vm raw data.
+        def populate_server_with_runtime_info(vm)
+          vmi = get_vminstance(vm[:metadata][:name])
+          vm[:ip_address] = vmi[:ip_address]
+          vm[:node_name] = vmi[:node_name]
+          vm[:phase] = vmi[:status]
+        rescue
+          # do nothing if vmi doesn't exist
         end
       end
 
@@ -373,5 +389,5 @@ module Fog
         # TODO provide mocking
       end
     end
-  end  
+  end
 end
