@@ -122,17 +122,17 @@ module Fog
         include Shared
 
         #
-        # The API version and group of the Kubernetes core:
-        #
-        CORE_GROUP = ''.freeze
-        CORE_VERSION = 'v1'.freeze
-        KUBEVIRT_VERSION_LABEL = KUBEVIRT_GROUP + '/' + KUBEVIRT_VERSION
-
-        #
         # The API version and group of KubeVirt:
         #
         KUBEVIRT_GROUP = 'kubevirt.io'.freeze
         KUBEVIRT_VERSION = 'v1alpha2'.freeze
+        KUBEVIRT_VERSION_LABEL = KUBEVIRT_GROUP + '/' + KUBEVIRT_VERSION
+
+        #
+        # The API version and group of the Kubernetes core:
+        #
+        CORE_GROUP = ''.freeze
+        CORE_VERSION = 'v1'.freeze
 
         def initialize(options={})
           require 'kubeclient'
