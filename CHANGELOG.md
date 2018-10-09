@@ -1,3 +1,10 @@
+### 1.0.1 / 2018-10-09
+
+* fog-core bumped to 2.1.1
+* Namespace change to Fog::Kubevirt per fog-core 2
+* Added VM status property
+* Allow to create VM without a template
+
 ### 0.1.6 / 2018-07-16
 
 * Support openshift parameters processing ${{PARAM_NAME}} in templates.
