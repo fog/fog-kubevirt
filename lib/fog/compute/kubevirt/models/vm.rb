@@ -48,13 +48,13 @@ module Fog
           owner = metadata[:ownerReferences]
           annotations = metadata[:annotations]
           cpu = domain[:cpu]
+          mem = domain.dig(:resources, :requests, :memory)
           vm = {
             :namespace        => metadata[:namespace],
             :name             => metadata[:name],
             :resource_version => metadata[:resourceVersion],
             :uid              => metadata[:uid],
             :labels           => metadata[:labels],
-            :memory           => domain[:resources][:requests][:memory],
             :disks            => domain[:devices][:disks],
             :volumes          => spec[:volumes],
             :status           => object[:spec][:running].to_s == "true" ? "running" : "stopped"
@@ -62,6 +62,7 @@ module Fog
           vm[:owner_reference] = owner unless owner.nil?
           vm[:annotations] = annotations unless annotations.nil?
           vm[:cpu_cores] = cpu[:cores] unless cpu.nil?
+          vm[:memory] = mem unless mem.nil?
 
           vm
         end
