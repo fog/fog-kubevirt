@@ -15,6 +15,8 @@ module Fog
       collection :nodes
       model      :vm
       collection :vms
+      model      :service
+      collection :services
       model      :template
       collection :templates
       model      :volume
@@ -25,15 +27,19 @@ module Fog
       request :create_vm
       request :create_vminstance
       request :create_pvc
+      request :create_service
+      request :delete_service
       request :delete_vminstance
       request :delete_vm
       request :get_vminstance
       request :get_node
       request :get_vm
+      request :get_service
       request :get_template
       request :list_vminstances
       request :list_nodes
       request :list_vms
+      request :list_services
       request :list_templates
       request :update_vm
 
