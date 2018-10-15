@@ -119,18 +119,6 @@ module Fog
 
           source_hash
         end
-
-        # Updates a given VM raw entity with vm instance info if exists
-        #
-        # @param vm [Hash] A hash with vm raw data.
-        def populate_server_with_runtime_info(vm)
-          vmi = get_vminstance(vm[:metadata][:name])
-          vm[:ip_address] = vmi[:ip_address]
-          vm[:node_name] = vmi[:node_name]
-          vm[:phase] = vmi[:status]
-        rescue
-          # do nothing if vmi doesn't exist
-        end
       end
 
       class Real

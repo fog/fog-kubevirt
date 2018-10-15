@@ -1,49 +1,18 @@
 require 'fog/compute/models/server'
+require 'fog/compute/kubevirt/models/vm_base'
 
 module Fog
   module Compute
     class Kubevirt
       class Server < Fog::Compute::Server
         include Shared
+        include VmAction
+        extend VmBase
+        define_properties
 
-        identity :name
-
-        attribute :namespace,        :aliases => 'metadata_namespace'
-        attribute :resource_version, :aliases => 'metadata_resource_version'
-        attribute :uid,              :aliases => 'metadata_uid'
-        attribute :labels,           :aliases => 'metadata_labels'
-        attribute :owner_reference,  :aliases => 'metadata_owner_reference'
-        attribute :annotations,      :aliases => 'metadata_annotations'
-        attribute :cpu_cores,        :aliases => 'spec_cpu_cores'
-        attribute :memory,           :aliases => 'spec_memory'
-        attribute :disks,            :aliases => 'spec_disks'
-        attribute :volumes,          :aliases => 'spec_volumes'
-        attribute :status,           :aliases => 'spec_running'
-        attribute :state,            :aliases => 'phase'
+        attribute :state, :aliases => 'phase'
         attribute :ip_address
         attribute :node_name
-
-        def start(options = {})
-          # Change the `running` attribute to `true` so that the virtual machine controller will take it and
-          # create the virtual machine instance.
-          vm = service.get_raw_vm(name)
-          vm = deep_merge!(vm,
-            :spec => {
-              :running => true
-            }
-          )
-          service.update_vm(vm)
-        end
-
-        def stop(options = {})
-          vm = service.get_raw_vm(name)
-          vm = deep_merge!(vm,
-            :spec => {
-              :running => false
-            }
-          )
-          service.update_vm(vm)
-        end
 
         def destroy(options = {})
           stop(options)
@@ -51,36 +20,21 @@ module Fog
         end
 
         def ready?
-          status == 'running' && state == 'Running' && !ip_address.blank?
+          running?(status) && running?(state) && !ip_address.empty?
         end
 
         def self.parse(object)
-          metadata = object[:metadata]
-          spec = object[:spec][:template][:spec]
-          domain = spec[:domain]
-          owner = metadata[:ownerReferences]
-          annotations = metadata[:annotations]
-          cpu = domain[:cpu]
-          mem = domain.dig(:resources, :requests, :memory)
-          server = {
-            :namespace        => metadata[:namespace],
-            :name             => metadata[:name],
-            :resource_version => metadata[:resourceVersion],
-            :uid              => metadata[:uid],
-            :labels           => metadata[:labels],
-            :disks            => domain[:devices][:disks],
-            :volumes          => spec[:volumes],
-            :state            => object[:spec][:running].to_s == "true" ? "running" : "stopped",
-            :status           => object[:phase],
-            :node_name        => object[:node_name],
-            :ip_address       => object[:ip_address]
-          }
-          server[:owner_reference] = owner unless owner.nil?
-          server[:annotations] = annotations unless annotations.nil?
-          server[:cpu_cores] = cpu[:cores] unless cpu.nil?
-          server[:memory] = mem unless mem.nil?
-
+          server = parse_object(object)
+          server[:status] = object[:phase]
+          server[:node_name] = object[:node_name]
+          server[:ip_address] = object[:ip_address]
           server
+        end
+
+        private
+
+        def running?(status)
+          !status.nil? && 'running'.casecmp(status).zero?
         end
       end
     end
