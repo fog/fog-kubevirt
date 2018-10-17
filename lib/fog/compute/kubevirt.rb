@@ -15,6 +15,8 @@ module Fog
       collection :nodes
       model      :vm
       collection :vms
+      model      :server
+      collection :servers
       model      :template
       collection :templates
       model      :volume
@@ -30,10 +32,12 @@ module Fog
       request :get_vminstance
       request :get_node
       request :get_vm
+      request :get_server
       request :get_template
       request :list_vminstances
       request :list_nodes
       request :list_vms
+      request :list_servers
       request :list_templates
       request :update_vm
 
@@ -373,5 +377,5 @@ module Fog
         # TODO provide mocking
       end
     end
-  end  
+  end
 end
