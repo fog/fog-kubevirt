@@ -24,3 +24,5 @@ tmp
 mkmf.log
 gemfiles/*.lock
 spec/debug
+Gemfile.dev.rb
+
