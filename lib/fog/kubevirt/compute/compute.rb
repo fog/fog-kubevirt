@@ -15,6 +15,8 @@ module Fog
       collection :nodes
       model      :vm
       collection :vms
+      model      :server
+      collection :servers
       model      :service
       collection :services
       model      :template
@@ -34,11 +36,13 @@ module Fog
       request :get_vminstance
       request :get_node
       request :get_vm
+      request :get_server
       request :get_service
       request :get_template
       request :list_vminstances
       request :list_nodes
       request :list_vms
+      request :list_servers
       request :list_services
       request :list_templates
       request :update_vm
