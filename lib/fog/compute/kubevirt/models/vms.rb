@@ -33,6 +33,7 @@ module Fog
         # :memory_size [String] - amount of memory
         # :image [String] - name of a registry disk
         # :pvc [String] - name of a persistent volume claim
+        # :cloudinit [Hash] - number of items needed to configure cloud-init
         #
         # One of :image or :pvc needs to be provided.
         #
@@ -44,27 +45,22 @@ module Fog
           memory_size = args.fetch(:memory_size)
           image = args.fetch(:image, nil)
           pvc = args.fetch(:pvc, nil)
+          init = args.fetch(:cloudinit, {})
 
           if image.nil? && pvc.nil?
             raise ::Fog::Kubevirt::Errors::ValidationError
           end
           
-          volume = {}
+          volumes = []
 
           if !image.nil?
-            volume = {
-              :name => vm_name,
-              :registryDisk => {
-                :image => image
-              }
-            }
+            volumes.push(:name => vm_name, :registryDisk => {:image => image})
           else
-            volume = {
-              :name => vm_name,
-              :persistentVolumeClaim => {
-                :claimName => pvc
-              }
-            }
+            volumes.push(:name => vm_name, :persistentVolumeClaim => {:claimName => pvc})
+          end
+
+          unless init.empty?
+            volumes.push(:cloudInitNoCloud => init, :name => "cloudinitvolume")
           end
 
           vm = {
@@ -108,7 +104,7 @@ module Fog
                     }
                   },
                   :terminationGracePeriodSeconds => 0,
-                  :volumes => [volume]
+                  :volumes => volumes
                 }
               }
             }
@@ -127,6 +123,14 @@ module Fog
               }
             }
           ) unless cpus.nil?
+
+          vm[:spec][:template][:spec][:domain][:devices][:disks].push(
+            :disk => {
+              :bus => "virtio"
+            },
+            :name => "cloudinitdisk",
+            :volumeName => "cloudinitvolume"
+          ) unless init.empty?
 
           service.create_vm(vm)
         end
