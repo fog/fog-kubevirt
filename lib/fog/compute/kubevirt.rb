@@ -6,7 +6,8 @@ module Fog
   module Compute
     class Kubevirt < Fog::Service
       requires   :kubevirt_token
-      recognizes :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, :kubevirt_log
+      recognizes :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, \
+                 :kubevirt_log, :kubevirt_verify_ssl, :kubevirt_cert_store
 
       model_path 'fog/compute/kubevirt/models'
       model      :vminstance
@@ -155,13 +156,8 @@ module Fog
           @log ||= ::Logger.new(STDOUT)
 
           @namespace = options[:kubevirt_namespace] || 'default'
-
-          # Prepare the TLS and authentication options that will be used for the standard Kubernetes API
-          # and also for the KubeVirt extension:
           @opts = {
-            :ssl_options  => {
-              :verify_ssl => OpenSSL::SSL::VERIFY_NONE,
-            },
+            :ssl_options  => obtain_ssl_options(options),
             :auth_options => {
               :bearer_token => @kubevirt_token
             }
@@ -365,6 +361,36 @@ module Fog
 
         def log
           @log
+        end
+
+        #
+        # Prepare the TLS and authentication options that will be used for the
+        # standard Kubernetes API and also for the KubeVirt extension
+        #
+        # @param options [Hash] a hash with connection options
+        #
+        def obtain_ssl_options(options)
+          if options[:kubevirt_verify_ssl] == true
+            ca = options[:kubevirt_cert_store] || ""
+            ca = IO.read(ca) if File.file?(ca)
+            certs = ca.split(/(?=-----BEGIN)/).reject(&:empty?).collect do |pem|
+              OpenSSL::X509::Certificate.new(pem)
+            end
+
+            cert_store = OpenSSL::X509::Store.new
+            certs.each do |cert|
+              cert_store.add_cert(cert)
+            end
+
+            ssl_options = {
+              :verify_ssl => OpenSSL::SSL::VERIFY_PEER,
+              :cert_store => cert_store
+            }
+          else
+            ssl_options = {
+              :verify_ssl => OpenSSL::SSL::VERIFY_NONE
+            }
+          end
         end
       end
 
