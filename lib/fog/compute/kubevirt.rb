@@ -7,7 +7,7 @@ module Fog
     class Kubevirt < Fog::Service
       requires   :kubevirt_token
       recognizes :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, \
-                 :kubevirt_log, :kubevirt_verify_ssl, :kubevirt_cert_store
+                 :kubevirt_log, :kubevirt_verify_ssl, :kubevirt_ca_cert
 
       model_path 'fog/compute/kubevirt/models'
       model      :vminstance
@@ -370,8 +370,9 @@ module Fog
         # @param options [Hash] a hash with connection options
         #
         def obtain_ssl_options(options)
-          if options[:kubevirt_verify_ssl] == true
-            ca = options[:kubevirt_cert_store] || ""
+          verify_ssl = options[:kubevirt_verify_ssl]
+          if verify_ssl == true
+            ca = options[:kubevirt_ca_cert] || ""
             ca = IO.read(ca) if File.file?(ca)
             certs = ca.split(/(?=-----BEGIN)/).reject(&:empty?).collect do |pem|
               OpenSSL::X509::Certificate.new(pem)
@@ -386,9 +387,13 @@ module Fog
               :verify_ssl => OpenSSL::SSL::VERIFY_PEER,
               :cert_store => cert_store
             }
-          else
+          elsif verify_ssl == false || verify_ssl.to_s.empty?
             ssl_options = {
               :verify_ssl => OpenSSL::SSL::VERIFY_NONE
+            }
+          else
+            ssl_options = {
+              :verify_ssl => verify_ssl
             }
           end
         end
