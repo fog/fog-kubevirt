@@ -1,7 +1,11 @@
+require 'fog/kubevirt/compute/models/vm_data'
+
 module Fog
   module Kubevirt
     class Compute
       class Vminstance < Fog::Model
+        extend VmData
+
         identity :name
 
         attribute :namespace,        :aliases => 'metadata_namespace'
@@ -14,6 +18,8 @@ module Fog
         attribute :disks,            :aliases => 'spec_disks'
         attribute :volumes,          :aliases => 'spec_volumes'
         attribute :ip_address,       :aliases => 'status_interfaces_ip'
+        attribute :interfaces,       :aliases => 'spec_interfaces'
+        attribute :networks,         :aliases => 'spec_networks'
         attribute :node_name,        :aliases => 'status_node_name'
         attribute :status,           :aliases => 'status_phase'
 
