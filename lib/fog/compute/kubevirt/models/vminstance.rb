@@ -1,7 +1,11 @@
+require 'fog/compute/kubevirt/models/vm_data'
+
 module Fog
   module Compute
     class Kubevirt
       class Vminstance < Fog::Model
+        extend VmData
+
         identity :name
 
         attribute :namespace,        :aliases => 'metadata_namespace'
@@ -14,6 +18,8 @@ module Fog
         attribute :disks,            :aliases => 'spec_disks'
         attribute :volumes,          :aliases => 'spec_volumes'
         attribute :ip_address,       :aliases => 'status_interfaces_ip'
+        attribute :interfaces,       :aliases => 'spec_interfaces'
+        attribute :networks,         :aliases => 'spec_networks'
         attribute :node_name,        :aliases => 'status_node_name'
         attribute :status,           :aliases => 'status_phase'
 
@@ -31,8 +37,10 @@ module Fog
             :owner_uid        => metadata.dig(:ownerReferences, 0, :uid),
             :cpu_cores        => domain.dig(:cpu, :cores),
             :memory           => domain[:resources][:requests][:memory],
-            :disks            => domain[:devices][:disks],
-            :volumes          => spec[:volumes],
+            :disks            => parse_disks(domain[:devices][:disks]),
+            :volumes          => parse_volumes(spec[:volumes]),
+            :interfaces       => parse_interfaces(domain[:devices][:interfaces]),
+            :networks         => parse_networks(spec[:networks]),
             :ip_address       => status.dig(:interfaces, 0, :ipAddress),
             :node_name        => status[:nodeName],
             :status           => status[:phase]
