@@ -46,6 +46,8 @@ module Fog
       end
 
       module VmAction
+        include Shared
+
         def start(options = {})
           # Change the `running` attribute to `true` so that the virtual machine controller will take it and
           # create the virtual machine instance.
