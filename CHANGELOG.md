@@ -1,3 +1,12 @@
+### 0.1.7 / 2018-11-27
+
+* Use kubeclient 4.0
+* Introduce Server and Servers
+* Extend VMs and Server reported data to include networks, interfaces,
+  disks and volumes
+* Support SSL
+* Support Services kubernetes resource
+
 ### 0.1.6 / 2018-07-16
 
 * Support openshift parameters processing ${{PARAM_NAME}} in templates.
