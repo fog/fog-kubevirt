@@ -1,3 +1,7 @@
+### 0.1.8 / 2018-12-3
+
+* Bump kubeclient version to 4.1
+
 ### 0.1.7 / 2018-11-27
 
 * Use kubeclient 4.0
@@ -6,6 +10,7 @@
   disks and volumes
 * Support SSL
 * Support Services kubernetes resource
+* Support cloud-init
 
 ### 0.1.6 / 2018-07-16
 
