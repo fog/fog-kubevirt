@@ -35,6 +35,19 @@ module Fog
         # :image [String] - name of a registry disk
         # :pvc [String] - name of a persistent volume claim
         # :cloudinit [Hash] - number of items needed to configure cloud-init
+        # :networks[Array] - networks to which the vm should be connected, i.e:
+        #    [ { :name => 'default', :pod => {} } ,
+        #      { :name => 'ovs-red', :multus => { :networkName => 'red'} }
+        #    ]
+        #
+        # :interfaces[Array] - network interfaces for the vm, correlated to
+        #                      :networks section by network's name, i.e.:
+        #   [ { :name => 'default', :bridge => {} },
+        #     { :name       => 'red',  # correlated to networks[networkName]
+        #       :bridge     => {},
+        #       :bootOrder  => 1,      # 1 to boot from network interface
+        #       :macAddress => '12:34:56:AB:CD:EF' }
+        #   ]
         #
         # One of :image or :pvc needs to be provided.
         #
@@ -47,6 +60,8 @@ module Fog
           image = args.fetch(:image, nil)
           pvc = args.fetch(:pvc, nil)
           init = args.fetch(:cloudinit, {})
+          networks = args.fetch(:networks)
+          interfaces = args.fetch(:interfaces)
 
           if image.nil? && pvc.nil?
             raise ::Fog::Kubevirt::Errors::ValidationError
@@ -132,6 +147,30 @@ module Fog
             :name => "cloudinitdisk",
             :volumeName => "cloudinitvolume"
           ) unless init.empty?
+
+          vm = deep_merge!(vm,
+            :spec => {
+              :template => {
+                :spec => {
+                  :networks => networks
+                }
+              }
+            }
+          ) unless networks.nil?
+
+          vm = deep_merge!(vm,
+            :spec => {
+              :template => {
+                :spec => {
+                  :domain => {
+                    :devices => {
+                      :interfaces => interfaces
+                    }
+                  }
+                }
+              }
+            }
+          ) unless interfaces.nil?
 
           service.create_vm(vm)
         end

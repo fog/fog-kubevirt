@@ -11,6 +11,8 @@ module Fog
       model_path 'fog/kubevirt/compute/models'
       model      :vminstance
       collection :vminstances
+      model      :networkattachmentdef
+      collection :networkattachmentdefs
       model      :node
       collection :nodes
       model      :vm
@@ -26,14 +28,17 @@ module Fog
 
       request_path 'fog/kubevirt/compute/requests'
 
+      request :create_networkattachmentdef
       request :create_vm
       request :create_vminstance
       request :create_pvc
       request :create_service
+      request :delete_networkattachmentdef
       request :delete_service
       request :delete_vminstance
       request :delete_vm
       request :get_vminstance
+      request :get_networkattachmentdef
       request :get_node
       request :get_vm
       request :get_server
@@ -41,6 +46,7 @@ module Fog
       request :get_template
       request :list_vminstances
       request :list_nodes
+      request :list_networkattachmentdefs
       request :list_vms
       request :list_servers
       request :list_services
@@ -143,6 +149,12 @@ module Fog
         KUBEVIRT_GROUP = 'kubevirt.io'.freeze
         KUBEVIRT_VERSION = 'v1alpha2'.freeze
         KUBEVIRT_VERSION_LABEL = KUBEVIRT_GROUP + '/' + KUBEVIRT_VERSION
+
+        #
+        # The API version and group of the Kubernetes network extention:
+        #
+        NETWORK_GROUP = 'k8s.cni.cncf.io'.freeze
+        NETWORK_VERSION = 'v1'.freeze
 
         def initialize(options={})
           require 'kubeclient'
@@ -306,7 +318,6 @@ module Fog
 
         private
 
-
         #
         # Populates required notice attributes
         #
@@ -361,6 +372,10 @@ module Fog
 
         def kubevirt_client
           create_client('/apis/' + KUBEVIRT_GROUP, KUBEVIRT_VERSION)
+        end
+
+        def kube_net_client
+          create_client('/apis/' + NETWORK_GROUP, NETWORK_VERSION)
         end
 
         def log
