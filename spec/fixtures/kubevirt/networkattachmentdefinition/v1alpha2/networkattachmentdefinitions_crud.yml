@@ -1,0 +1,178 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://192.168.122.51:8443/apis/k8s.cni.cncf.io/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1mbm54MiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJmMTFkNWNjOS1mYTc3LTExZTgtOTg3MC01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.knkilTelq7owjBySXvxnWWckcoGEFiLcqBsVOhs_ETSOkqAptC4SSzLChu0punmg5MMMNV9CURWuRmL5v4OyO3wY8AGqS5ooMFo5Lb-_Md9v8w0z9dOpz8Ni2V_3z0s-H888Al45rWtCsnF2bul3zwIhzpS1ViC7T9XUbD1QA_E7W88yERopS9etEQ2fYZOXcaQl76YEUHYCra2dwscljYU5K_s3w807Vru3MfWHP4cdCDx4CY5HwaBS0_CcqSXdePDjAjEaozT2S8ivAZu5WsON-6zImFLckIdQXnnO_mmFYr2AFwI8UCqrNe5XFdnWNoVlofSBY2dxpHJRCnQdaA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 12 Dec 2018 21:02:25 GMT
+      Content-Length:
+      - '356'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIResourceList","apiVersion":"v1","groupVersion":"k8s.cni.cncf.io/v1","resources":[{"name":"network-attachment-definitions","singularName":"network-attachment-definition","namespaced":true,"kind":"NetworkAttachmentDefinition","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["net-attach-def"]}]}
+
+'
+    http_version:
+  recorded_at: Wed, 12 Dec 2018 21:02:25 GMT
+- request:
+    method: post
+    uri: https://192.168.122.51:8443/apis/k8s.cni.cncf.io/v1/namespaces/default/network-attachment-definitions
+    body:
+      encoding: UTF-8
+      string: '{"metadata":{"name":"ovs-red","namespace":"default"},"spec":{"config":"{
+        cni_version: \"0.3.1\", type: \"ovs\", bridge: \"red\" }"},"kind":"NetworkAttachmentDefinition","apiVersion":"k8s.cni.cncf.io/v1"}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1mbm54MiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJmMTFkNWNjOS1mYTc3LTExZTgtOTg3MC01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.knkilTelq7owjBySXvxnWWckcoGEFiLcqBsVOhs_ETSOkqAptC4SSzLChu0punmg5MMMNV9CURWuRmL5v4OyO3wY8AGqS5ooMFo5Lb-_Md9v8w0z9dOpz8Ni2V_3z0s-H888Al45rWtCsnF2bul3zwIhzpS1ViC7T9XUbD1QA_E7W88yERopS9etEQ2fYZOXcaQl76YEUHYCra2dwscljYU5K_s3w807Vru3MfWHP4cdCDx4CY5HwaBS0_CcqSXdePDjAjEaozT2S8ivAZu5WsON-6zImFLckIdQXnnO_mmFYr2AFwI8UCqrNe5XFdnWNoVlofSBY2dxpHJRCnQdaA
+      Content-Length:
+      - '203'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 12 Dec 2018 21:02:25 GMT
+      Content-Length:
+      - '430'
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"k8s.cni.cncf.io/v1","kind":"NetworkAttachmentDefinition","metadata":{"creationTimestamp":"2018-12-12T21:02:25Z","generation":1,"name":"ovs-red","namespace":"default","resourceVersion":"678024","selfLink":"/apis/k8s.cni.cncf.io/v1/namespaces/default/network-attachment-definitions/ovs-red","uid":"39fe9cca-fe51-11e8-9870-5254007d353d"},"spec":{"config":"{
+        cni_version: \"0.3.1\", type: \"ovs\", bridge: \"red\" }"}}
+
+'
+    http_version:
+  recorded_at: Wed, 12 Dec 2018 21:02:25 GMT
+- request:
+    method: get
+    uri: https://192.168.122.51:8443/apis/k8s.cni.cncf.io/v1/namespaces/default/network-attachment-definitions/ovs-red
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1mbm54MiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJmMTFkNWNjOS1mYTc3LTExZTgtOTg3MC01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.knkilTelq7owjBySXvxnWWckcoGEFiLcqBsVOhs_ETSOkqAptC4SSzLChu0punmg5MMMNV9CURWuRmL5v4OyO3wY8AGqS5ooMFo5Lb-_Md9v8w0z9dOpz8Ni2V_3z0s-H888Al45rWtCsnF2bul3zwIhzpS1ViC7T9XUbD1QA_E7W88yERopS9etEQ2fYZOXcaQl76YEUHYCra2dwscljYU5K_s3w807Vru3MfWHP4cdCDx4CY5HwaBS0_CcqSXdePDjAjEaozT2S8ivAZu5WsON-6zImFLckIdQXnnO_mmFYr2AFwI8UCqrNe5XFdnWNoVlofSBY2dxpHJRCnQdaA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 12 Dec 2018 21:02:25 GMT
+      Content-Length:
+      - '430'
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"k8s.cni.cncf.io/v1","kind":"NetworkAttachmentDefinition","metadata":{"creationTimestamp":"2018-12-12T21:02:25Z","generation":1,"name":"ovs-red","namespace":"default","resourceVersion":"678024","selfLink":"/apis/k8s.cni.cncf.io/v1/namespaces/default/network-attachment-definitions/ovs-red","uid":"39fe9cca-fe51-11e8-9870-5254007d353d"},"spec":{"config":"{
+        cni_version: \"0.3.1\", type: \"ovs\", bridge: \"red\" }"}}
+
+'
+    http_version:
+  recorded_at: Wed, 12 Dec 2018 21:02:25 GMT
+- request:
+    method: get
+    uri: https://192.168.122.51:8443/apis/k8s.cni.cncf.io/v1/namespaces/default/network-attachment-definitions/ovs-red
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1mbm54MiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJmMTFkNWNjOS1mYTc3LTExZTgtOTg3MC01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.knkilTelq7owjBySXvxnWWckcoGEFiLcqBsVOhs_ETSOkqAptC4SSzLChu0punmg5MMMNV9CURWuRmL5v4OyO3wY8AGqS5ooMFo5Lb-_Md9v8w0z9dOpz8Ni2V_3z0s-H888Al45rWtCsnF2bul3zwIhzpS1ViC7T9XUbD1QA_E7W88yERopS9etEQ2fYZOXcaQl76YEUHYCra2dwscljYU5K_s3w807Vru3MfWHP4cdCDx4CY5HwaBS0_CcqSXdePDjAjEaozT2S8ivAZu5WsON-6zImFLckIdQXnnO_mmFYr2AFwI8UCqrNe5XFdnWNoVlofSBY2dxpHJRCnQdaA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 12 Dec 2018 21:02:25 GMT
+      Content-Length:
+      - '430'
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"k8s.cni.cncf.io/v1","kind":"NetworkAttachmentDefinition","metadata":{"creationTimestamp":"2018-12-12T21:02:25Z","generation":1,"name":"ovs-red","namespace":"default","resourceVersion":"678024","selfLink":"/apis/k8s.cni.cncf.io/v1/namespaces/default/network-attachment-definitions/ovs-red","uid":"39fe9cca-fe51-11e8-9870-5254007d353d"},"spec":{"config":"{
+        cni_version: \"0.3.1\", type: \"ovs\", bridge: \"red\" }"}}
+
+'
+    http_version:
+  recorded_at: Wed, 12 Dec 2018 21:02:25 GMT
+- request:
+    method: delete
+    uri: https://192.168.122.51:8443/apis/k8s.cni.cncf.io/v1/namespaces/default/network-attachment-definitions/ovs-red
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1mbm54MiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJmMTFkNWNjOS1mYTc3LTExZTgtOTg3MC01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.knkilTelq7owjBySXvxnWWckcoGEFiLcqBsVOhs_ETSOkqAptC4SSzLChu0punmg5MMMNV9CURWuRmL5v4OyO3wY8AGqS5ooMFo5Lb-_Md9v8w0z9dOpz8Ni2V_3z0s-H888Al45rWtCsnF2bul3zwIhzpS1ViC7T9XUbD1QA_E7W88yERopS9etEQ2fYZOXcaQl76YEUHYCra2dwscljYU5K_s3w807Vru3MfWHP4cdCDx4CY5HwaBS0_CcqSXdePDjAjEaozT2S8ivAZu5WsON-6zImFLckIdQXnnO_mmFYr2AFwI8UCqrNe5XFdnWNoVlofSBY2dxpHJRCnQdaA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 12 Dec 2018 21:02:25 GMT
+      Content-Length:
+      - '209'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Success","details":{"name":"ovs-red","group":"k8s.cni.cncf.io","kind":"network-attachment-definitions","uid":"39fe9cca-fe51-11e8-9870-5254007d353d"}}
+
+'
+    http_version:
+  recorded_at: Wed, 12 Dec 2018 21:02:25 GMT
+recorded_with: VCR 4.0.0
