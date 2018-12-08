@@ -133,6 +133,7 @@ module Fog
                         :model,
                         :ports,
                         :boot_order
+          alias :mac :mac_address
         end
 
         class VmNetwork
