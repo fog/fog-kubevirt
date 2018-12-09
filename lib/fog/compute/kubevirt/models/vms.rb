@@ -67,11 +67,11 @@ module Fog
           end
 
           volumes = []
-
+          volume_name = vm_name.gsub(/[._]+/,'-') + "-disk-01"
           if !image.nil?
-            volumes.push(:name => vm_name, :registryDisk => {:image => image})
+            volumes.push(:name => volume_name, :registryDisk => {:image => image})
           else
-            volumes.push(:name => vm_name, :persistentVolumeClaim => {:claimName => pvc})
+            volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => pvc})
           end
 
           unless init.empty?
@@ -105,7 +105,7 @@ module Fog
                            :bus => "virtio"
                          },
                          :name => vm_name,
-                         :volumeName => vm_name
+                         :volumeName => volume_name
                         }
                       ]
                     },
