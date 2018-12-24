@@ -17,6 +17,8 @@ module Fog
       collection :nodes
       model      :vm
       collection :vms
+      model      :pvc
+      collection :pvcs
       model      :server
       collection :servers
       model      :service
@@ -27,7 +29,6 @@ module Fog
       collection :volumes
 
       request_path 'fog/kubevirt/compute/requests'
-
       request :create_networkattachmentdef
       request :create_vm
       request :create_vminstance
@@ -35,6 +36,7 @@ module Fog
       request :create_service
       request :create_volume
       request :delete_networkattachmentdef
+      request :delete_pvc
       request :delete_service
       request :delete_vminstance
       request :delete_vm
@@ -42,6 +44,7 @@ module Fog
       request :get_vminstance
       request :get_networkattachmentdef
       request :get_node
+      request :get_pvc
       request :get_vm
       request :get_volume
       request :get_server
@@ -51,6 +54,7 @@ module Fog
       request :list_nodes
       request :list_networkattachmentdefs
       request :list_vms
+      request :list_pvcs
       request :list_volumes
       request :list_servers
       request :list_services
