@@ -150,13 +150,19 @@ module Fog
                         :readonly
         end
 
-        class VmVolume
-          attr_accessor :name,
-                        # values: containerDisk, persistentVolumeClaim, emptyDisk,
-                        #         ephemeral, cloudInitNoCloud, hostDisk, secret,
-                        #         dataVolume, serviceAccount, configMap
-                        :type,
-                        :info # specific piece of information per volume type
+        class VmVolume < Fog::Model
+          identity :name
+          attribute :id
+          # values: containerDisk, persistentVolumeClaim, emptyDisk,
+          #         ephemeral, cloudInitNoCloud, hostDisk, secret,
+          #         dataVolume, serviceAccount, configMap
+          attribute :type
+
+          attribute :info # specific piece of information per volume type
+
+          def persisted?
+            !name.nil?
+          end
         end
       end
     end
