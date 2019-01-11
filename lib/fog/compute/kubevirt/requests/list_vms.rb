@@ -30,16 +30,16 @@ module Fog
                      template: {
                        spec: { domain: { cpu: { cores: 4 },
                                          devices: { disks: [{ disk: { dev: 'vda' },
-                                                              name: 'registrydisk',
-                                                              volumeName: 'registryvolume' },
+                                                              name: 'containerDisk',
+                                                              volumeName: 'containervolume' },
                                                               { disk: { dev: 'vdb' },
                                                                 name: 'cloudinitdisk',
                                                                 volumeName: 'cloudinitvolume' }] },
                                                                 machine: { type: 'q35' },
                                                                 resources: { requests: { memory: '512Mi' } } },
                          volumes: [
-                           { name: 'registryvolume',
-                             registryDisk: { image: 'kubevirt/fedora-cloud-registry-disk-demo:latest' }
+                           { name: 'containervolume',
+                             containerDisk: { image: 'kubevirt/fedora-cloud-registry-disk-demo:latest' }
                            },
                            { cloudInitNoCloud: { userDataBase64: 'I2Nsb3VkLWNvbmZpZwpwYXNzd29yZDogYXRvbWljCnNzaF9wd2F1dGg6IFRydWUKY2hwYXNzd2Q6IHsgZXhwaXJlOiBGYWxzZSB9Cg==' },
                              name: 'cloudinitvolume' }]
