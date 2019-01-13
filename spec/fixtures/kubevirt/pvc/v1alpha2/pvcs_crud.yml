@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://192.168.122.51:8443/api/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi16c2o2OSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJiYTQ0Yzc1MC1mN2NjLTExZTgtYTZhYS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.EW7XMnJuDpszgm_WkAia9aNA6zdGvIRX0X1XCK9PNwkVL_uTPb95bsNARDbh9wJu2VuXk2qPuc02ik4aEhyPo075upAiQWnQujlOxgmzPRnpSBIUkhU6KrZP5Ou0-1BgbaMG01zPxM_FllIvl9CWoJIjMPBPt-dn4N9WLEmgTY1_NZhGd_QxHcGPI6ABh4PlQ2i2QZBr2S716lLOO_F5QKDQu2AclCs8LDsUv1N3i2sKce93JNqpxHqRQ13oQcDqamStwmNQqClyEfRMzo4cdpekZffr4YvbjJIkkpUV1sqGiR8xw15s4S5JIe6IwpHDqFk01la2qk-9UW-4F1zOdA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Dec 2018 15:25:15 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIResourceList","groupVersion":"v1","resources":[{"name":"bindings","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"componentstatuses","singularName":"","namespaced":false,"kind":"ComponentStatus","verbs":["get","list"],"shortNames":["cs"]},{"name":"configmaps","singularName":"","namespaced":true,"kind":"ConfigMap","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cm"]},{"name":"endpoints","singularName":"","namespaced":true,"kind":"Endpoints","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ep"]},{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"]},{"name":"limitranges","singularName":"","namespaced":true,"kind":"LimitRange","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["limits"]},{"name":"namespaces","singularName":"","namespaced":false,"kind":"Namespace","verbs":["create","delete","get","list","patch","update","watch"],"shortNames":["ns"]},{"name":"namespaces/finalize","singularName":"","namespaced":false,"kind":"Namespace","verbs":["update"]},{"name":"namespaces/status","singularName":"","namespaced":false,"kind":"Namespace","verbs":["get","patch","update"]},{"name":"nodes","singularName":"","namespaced":false,"kind":"Node","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["no"]},{"name":"nodes/proxy","singularName":"","namespaced":false,"kind":"NodeProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"nodes/status","singularName":"","namespaced":false,"kind":"Node","verbs":["get","patch","update"]},{"name":"persistentvolumeclaims","singularName":"","namespaced":true,"kind":"PersistentVolumeClaim","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pvc"]},{"name":"persistentvolumeclaims/status","singularName":"","namespaced":true,"kind":"PersistentVolumeClaim","verbs":["get","patch","update"]},{"name":"persistentvolumes","singularName":"","namespaced":false,"kind":"PersistentVolume","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pv"]},{"name":"persistentvolumes/status","singularName":"","namespaced":false,"kind":"PersistentVolume","verbs":["get","patch","update"]},{"name":"pods","singularName":"","namespaced":true,"kind":"Pod","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["po"],"categories":["all"]},{"name":"pods/attach","singularName":"","namespaced":true,"kind":"PodAttachOptions","verbs":["create","get"]},{"name":"pods/binding","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"pods/eviction","singularName":"","namespaced":true,"group":"policy","version":"v1beta1","kind":"Eviction","verbs":["create"]},{"name":"pods/exec","singularName":"","namespaced":true,"kind":"PodExecOptions","verbs":["create","get"]},{"name":"pods/log","singularName":"","namespaced":true,"kind":"Pod","verbs":["get"]},{"name":"pods/portforward","singularName":"","namespaced":true,"kind":"PodPortForwardOptions","verbs":["create","get"]},{"name":"pods/proxy","singularName":"","namespaced":true,"kind":"PodProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"pods/status","singularName":"","namespaced":true,"kind":"Pod","verbs":["get","patch","update"]},{"name":"podtemplates","singularName":"","namespaced":true,"kind":"PodTemplate","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"replicationcontrollers","singularName":"","namespaced":true,"kind":"ReplicationController","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["rc"],"categories":["all"]},{"name":"replicationcontrollers/scale","singularName":"","namespaced":true,"group":"autoscaling","version":"v1","kind":"Scale","verbs":["get","patch","update"]},{"name":"replicationcontrollers/status","singularName":"","namespaced":true,"kind":"ReplicationController","verbs":["get","patch","update"]},{"name":"resourcequotas","singularName":"","namespaced":true,"kind":"ResourceQuota","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["quota"]},{"name":"resourcequotas/status","singularName":"","namespaced":true,"kind":"ResourceQuota","verbs":["get","patch","update"]},{"name":"secrets","singularName":"","namespaced":true,"kind":"Secret","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"serviceaccounts","singularName":"","namespaced":true,"kind":"ServiceAccount","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sa"]},{"name":"services","singularName":"","namespaced":true,"kind":"Service","verbs":["create","delete","get","list","patch","update","watch"],"shortNames":["svc"],"categories":["all"]},{"name":"services/proxy","singularName":"","namespaced":true,"kind":"ServiceProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"services/status","singularName":"","namespaced":true,"kind":"Service","verbs":["get","patch","update"]}]}
+
+'
+    http_version: 
+  recorded_at: Wed, 26 Dec 2018 15:25:15 GMT
+- request:
+    method: post
+    uri: https://192.168.122.51:8443/api/v1/namespaces/default/persistentvolumeclaims
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"name":"my-local-storage-pvc","namespace":"default"},"spec":{"storageClassName":"manual","resources":{"requests":{"storage":"2Gi"},"limits":{"storage":"3Gi"}},"selector":{"matchLabels":{},"matchExpressions":[]},"accessModes":["ReadWriteOnce"],"volumeMode":"Filesystem","volumeName":"my-local-storage"}}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi16c2o2OSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJiYTQ0Yzc1MC1mN2NjLTExZTgtYTZhYS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.EW7XMnJuDpszgm_WkAia9aNA6zdGvIRX0X1XCK9PNwkVL_uTPb95bsNARDbh9wJu2VuXk2qPuc02ik4aEhyPo075upAiQWnQujlOxgmzPRnpSBIUkhU6KrZP5Ou0-1BgbaMG01zPxM_FllIvl9CWoJIjMPBPt-dn4N9WLEmgTY1_NZhGd_QxHcGPI6ABh4PlQ2i2QZBr2S716lLOO_F5QKDQu2AclCs8LDsUv1N3i2sKce93JNqpxHqRQ13oQcDqamStwmNQqClyEfRMzo4cdpekZffr4YvbjJIkkpUV1sqGiR8xw15s4S5JIe6IwpHDqFk01la2qk-9UW-4F1zOdA
+      Content-Length:
+      - '364'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Dec 2018 15:25:15 GMT
+      Content-Length:
+      - '548'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"71b73721-0922-11e9-ba5d-5254007d353d","resourceVersion":"1079329","creationTimestamp":"2018-12-26T15:25:15Z"},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version: 
+  recorded_at: Wed, 26 Dec 2018 15:25:15 GMT
+- request:
+    method: get
+    uri: https://192.168.122.51:8443/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi16c2o2OSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJiYTQ0Yzc1MC1mN2NjLTExZTgtYTZhYS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.EW7XMnJuDpszgm_WkAia9aNA6zdGvIRX0X1XCK9PNwkVL_uTPb95bsNARDbh9wJu2VuXk2qPuc02ik4aEhyPo075upAiQWnQujlOxgmzPRnpSBIUkhU6KrZP5Ou0-1BgbaMG01zPxM_FllIvl9CWoJIjMPBPt-dn4N9WLEmgTY1_NZhGd_QxHcGPI6ABh4PlQ2i2QZBr2S716lLOO_F5QKDQu2AclCs8LDsUv1N3i2sKce93JNqpxHqRQ13oQcDqamStwmNQqClyEfRMzo4cdpekZffr4YvbjJIkkpUV1sqGiR8xw15s4S5JIe6IwpHDqFk01la2qk-9UW-4F1zOdA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Dec 2018 15:25:15 GMT
+      Content-Length:
+      - '594'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"71b73721-0922-11e9-ba5d-5254007d353d","resourceVersion":"1079330","creationTimestamp":"2018-12-26T15:25:15Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version: 
+  recorded_at: Wed, 26 Dec 2018 15:25:15 GMT
+- request:
+    method: get
+    uri: https://192.168.122.51:8443/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi16c2o2OSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJiYTQ0Yzc1MC1mN2NjLTExZTgtYTZhYS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.EW7XMnJuDpszgm_WkAia9aNA6zdGvIRX0X1XCK9PNwkVL_uTPb95bsNARDbh9wJu2VuXk2qPuc02ik4aEhyPo075upAiQWnQujlOxgmzPRnpSBIUkhU6KrZP5Ou0-1BgbaMG01zPxM_FllIvl9CWoJIjMPBPt-dn4N9WLEmgTY1_NZhGd_QxHcGPI6ABh4PlQ2i2QZBr2S716lLOO_F5QKDQu2AclCs8LDsUv1N3i2sKce93JNqpxHqRQ13oQcDqamStwmNQqClyEfRMzo4cdpekZffr4YvbjJIkkpUV1sqGiR8xw15s4S5JIe6IwpHDqFk01la2qk-9UW-4F1zOdA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Dec 2018 15:25:15 GMT
+      Content-Length:
+      - '594'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"71b73721-0922-11e9-ba5d-5254007d353d","resourceVersion":"1079330","creationTimestamp":"2018-12-26T15:25:15Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version: 
+  recorded_at: Wed, 26 Dec 2018 15:25:15 GMT
+- request:
+    method: delete
+    uri: https://192.168.122.51:8443/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi16c2o2OSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJiYTQ0Yzc1MC1mN2NjLTExZTgtYTZhYS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.EW7XMnJuDpszgm_WkAia9aNA6zdGvIRX0X1XCK9PNwkVL_uTPb95bsNARDbh9wJu2VuXk2qPuc02ik4aEhyPo075upAiQWnQujlOxgmzPRnpSBIUkhU6KrZP5Ou0-1BgbaMG01zPxM_FllIvl9CWoJIjMPBPt-dn4N9WLEmgTY1_NZhGd_QxHcGPI6ABh4PlQ2i2QZBr2S716lLOO_F5QKDQu2AclCs8LDsUv1N3i2sKce93JNqpxHqRQ13oQcDqamStwmNQqClyEfRMzo4cdpekZffr4YvbjJIkkpUV1sqGiR8xw15s4S5JIe6IwpHDqFk01la2qk-9UW-4F1zOdA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Dec 2018 15:25:15 GMT
+      Content-Length:
+      - '668'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"71b73721-0922-11e9-ba5d-5254007d353d","resourceVersion":"1079331","creationTimestamp":"2018-12-26T15:25:15Z","deletionTimestamp":"2018-12-26T15:25:15Z","deletionGracePeriodSeconds":0,"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version: 
+  recorded_at: Wed, 26 Dec 2018 15:25:15 GMT
+recorded_with: VCR 4.0.0

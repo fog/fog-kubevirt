@@ -24,7 +24,6 @@ Gem::Specification.new do |spec|
   # spec.test_files   += %w[.rspec]
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency 'minitest'
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.0"
@@ -33,5 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'webmock'
 
   spec.add_dependency("fog-core", "~> 2.1")
-  spec.add_dependency("kubeclient", "~> 4.1.0")
+  spec.add_dependency("kubeclient", "~> 4.1.2")
 end
