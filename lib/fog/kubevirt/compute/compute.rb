@@ -5,8 +5,7 @@ require "fog/core"
 module Fog
   module Kubevirt
     class Compute < Fog::Service
-      requires   :kubevirt_token
-      recognizes :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, :kubevirt_log
+      recognizes :kubevirt_token, :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, :kubevirt_log
 
       model_path 'fog/kubevirt/compute/models'
       model      :vminstance
@@ -175,17 +174,6 @@ module Fog
           @log ||= ::Logger.new(STDOUT)
 
           @namespace = options[:kubevirt_namespace] || 'default'
-
-          # Prepare the TLS and authentication options that will be used for the standard Kubernetes API
-          # and also for the KubeVirt extension:
-          @opts = {
-            :ssl_options  => {
-              :verify_ssl => OpenSSL::SSL::VERIFY_NONE,
-            },
-            :auth_options => {
-              :bearer_token => @kubevirt_token
-            }
-          }
 
           # Kubeclient needs different client objects for different API groups. We will keep in this hash the
           # client objects, indexed by API path/version.
@@ -358,16 +346,49 @@ module Fog
             :port   => @port,
             :path   => path
           )
-          client = Kubeclient::Client.new(
-            url.to_s,
-            version,
-            @opts
-          )
+
+          client = if @kubevirt_token.to_s.empty?
+            create_client_from_config(url, version)
+          else
+            create_client_from_token(url, version)
+          end
+
           wrapped_client = ExceptionWrapper.new(client)
           @clients[key] = wrapped_client
 
           # Return the client:
           wrapped_client
+        end
+
+        def create_client_from_token(url, version)
+          # Prepare the TLS and authentication options that will be used for the standard Kubernetes API
+          # and also for the KubeVirt extension:
+          @opts = {
+            :ssl_options  => {
+              :verify_ssl => OpenSSL::SSL::VERIFY_NONE,
+            },
+            :auth_options => {
+              :bearer_token => @kubevirt_token
+            }
+          }
+
+          Kubeclient::Client.new(
+            url.to_s,
+            version,
+            @opts
+          )
+        end
+
+        def create_client_from_config(url, version)
+          config = Kubeclient::Config.read(ENV['KUBECONFIG'] || ENV['HOME']+'/.kube/config')
+          context = config.context
+
+          Kubeclient::Client.new(
+            url.to_s,
+            version,
+            ssl_options: context.ssl_options,
+            auth_options: context.auth_options
+          )
         end
 
         def openshift_client
