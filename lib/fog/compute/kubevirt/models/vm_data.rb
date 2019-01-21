@@ -89,9 +89,9 @@ module Fog
           object.each do |v|
             volume = VmVolume.new
             volume.name = v[:name]
-            if v.keys.include?(:registryDisk)
-              volume.type = 'registryDisk'
-              volume.info = v.dig(:registryDisk, :image)
+            if v.keys.include?(:containerDisk)
+              volume.type = 'containerDisk'
+              volume.info = v.dig(:containerDisk, :image)
             elsif v.keys.include?(:persistentVolumeClaim)
               volume.type = 'persistentVolumeClaim'
               volume.info = v.dig(:persistentVolumeClaim, :claimName)
@@ -152,7 +152,7 @@ module Fog
 
         class VmVolume
           attr_accessor :name,
-                        # values: registryDisk, persistentVolumeClaim, emptyDisk,
+                        # values: containerDisk, persistentVolumeClaim, emptyDisk,
                         #         ephemeral, cloudInitNoCloud, hostDisk, secret,
                         #         dataVolume, serviceAccount, configMap
                         :type,

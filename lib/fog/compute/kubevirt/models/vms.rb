@@ -31,7 +31,7 @@ module Fog
         # :vm_name [String] - name of a vm
         # :cpus [String] - number of cpus
         # :memory_size [String] - amount of memory
-        # :image [String] - name of a registry disk
+        # :image [String] - name of a container disk
         # :pvc [String] - name of a persistent volume claim
         # :cloudinit [Hash] - number of items needed to configure cloud-init
         # :networks[Array] - networks to which the vm should be connected, i.e:
@@ -69,7 +69,7 @@ module Fog
           volumes = []
           volume_name = vm_name.gsub(/[._]+/,'-') + "-disk-01"
           if !image.nil?
-            volumes.push(:name => volume_name, :registryDisk => {:image => image})
+            volumes.push(:name => volume_name, :containerDisk => {:image => image})
           else
             volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => pvc})
           end
