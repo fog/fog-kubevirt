@@ -1,4 +1,6 @@
 require 'delegate'
+require 'json'
+require 'rest-client'
 
 require "fog/core"
 
@@ -75,8 +77,9 @@ module Fog
         end
 
         class ExceptionWrapper
-          def initialize(client)
+          def initialize(client, version)
             @client = client
+            @version = version
           end
 
           def method_missing(symbol, *args)
@@ -95,6 +98,10 @@ module Fog
 
           def respond_to_missing?(method_name, include_private = false)
             @client.respond_to?(symbol, include_all) || super
+          end
+
+          def version
+            @version
           end
         end
 
@@ -147,23 +154,19 @@ module Fog
         include Shared
 
         #
-        # The API version and group of KubeVirt:
+        # The API group of KubeVirt:
         #
         KUBEVIRT_GROUP = 'kubevirt.io'.freeze
-        KUBEVIRT_VERSION = 'v1alpha2'.freeze
-        KUBEVIRT_VERSION_LABEL = KUBEVIRT_GROUP + '/' + KUBEVIRT_VERSION
 
         #
-        # The API version and group of the Kubernetes core:
+        # The API group of the Kubernetes core:
         #
         CORE_GROUP = ''.freeze
-        CORE_VERSION = 'v1'.freeze
 
         #
-        # The API version and group of the Kubernetes network extention:
+        # The API group of the Kubernetes network extention:
         #
         NETWORK_GROUP = 'k8s.cni.cncf.io'.freeze
-        NETWORK_VERSION = 'v1'.freeze
 
         def initialize(options={})
           require 'kubeclient'
@@ -335,18 +338,12 @@ module Fog
         end
 
         #
-        # Lazily creates the a client for the given Kubernetes API path and version.
+        # Lazily creates the a client for the given Kubernetes API path.
         #
         # @param path [String] The Kubernetes API path.
-        # @param version [String] The Kubernetes API version.
         # @return [Kubeclient::Client] The client for the given path and version.
         #
-        def create_client(path, version)
-          # Return the client immediately if it has been created before:
-          key = path + '/' + version
-          client = @clients[key]
-          return client if client
-
+        def create_client(path)
           # Create the client and save it:
           url = URI::Generic.build(
             :scheme => 'https',
@@ -354,32 +351,56 @@ module Fog
             :port   => @port,
             :path   => path
           )
+
+          version = detect_version(url.to_s, @opts[:ssl_options])
+          key = path + '/' + version
+          client = @clients[key]
+          return client if client
+
           client = Kubeclient::Client.new(
             url.to_s,
             version,
             @opts
           )
-          wrapped_client = ExceptionWrapper.new(client)
+          wrapped_client = ExceptionWrapper.new(client, version)
           @clients[key] = wrapped_client
 
           # Return the client:
           wrapped_client
         end
 
+        def detect_version(url, ssl_options)
+          options = {
+            ssl_ca_file: ssl_options[:ca_file],
+            ssl_cert_store: ssl_options[:cert_store],
+            verify_ssl: ssl_options[:verify_ssl],
+            ssl_client_cert: ssl_options[:client_cert],
+            ssl_client_key: ssl_options[:client_key],
+          }
+
+          response = ::JSON.parse(RestClient::Resource.new(url, options).get)
+
+          # version detected based on
+          # https://github.com/kubernetes-incubator/apiserver-builder/blob/master/docs/concepts/aggregation.md#viewing-discovery-information
+          preferredVersion = response["preferredVersion"]
+          return preferredVersion["version"] if preferredVersion 
+          response["versions"][0]
+        end
+
         def openshift_client
-          create_client('/oapi', CORE_VERSION)
+          create_client('/oapi')
         end
 
         def kube_client
-          create_client('/api', CORE_VERSION)
+          create_client('/api')
         end
 
         def kubevirt_client
-          create_client('/apis/' + KUBEVIRT_GROUP, KUBEVIRT_VERSION)
+          create_client('/apis/' + KUBEVIRT_GROUP)
         end
 
         def kube_net_client
-          create_client('/apis/' + NETWORK_GROUP, NETWORK_VERSION)
+          create_client('/apis/' + NETWORK_GROUP)
         end
 
         def log

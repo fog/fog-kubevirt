@@ -79,7 +79,6 @@ module Fog
           end
 
           vm = {
-            :apiVersion => service.class::KUBEVIRT_VERSION_LABEL,
             :kind => "VirtualMachine",
             :metadata => {
               :labels => {
@@ -105,7 +104,6 @@ module Fog
                            :bus => "virtio"
                          },
                          :name => vm_name,
-                         :volumeName => volume_name
                         }
                       ]
                     },
