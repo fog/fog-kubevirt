@@ -6,7 +6,7 @@ require 'fog/kubevirt'
 describe Fog::Compute do
   before :all do
     vcr = KubevirtVCR.new(
-      :vcr_directory => 'spec/fixtures/kubevirt/service/v1alpha2',
+      :vcr_directory => 'spec/fixtures/kubevirt/service',
       :service_class => Fog::Compute
     )
     @service = vcr.service

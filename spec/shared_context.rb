@@ -13,7 +13,7 @@ class KubevirtVCR
     use_recorded = !ENV.key?('KUBE_HOST') || ENV['USE_VCR'] == 'true'
     if use_recorded
       Fog.interval = 0
-      @host = "192.168.122.51"
+      @host = "10.8.254.82"
       @port = "8443"
     else
       @host = ENV['KUBE_HOST']
@@ -35,7 +35,7 @@ class KubevirtVCR
     end
 
     VCR.use_cassette('common_setup') do
-      @token = "eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrdWJldmlydC1wcml2aWxlZ2VkLXRva2VuLW1xN252Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6Imt1YmV2aXJ0LXByaXZpbGVnZWQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJjNGQyODA4MS1jZDNlLTExZTgtOGYzYy1hYzAxYzZkMzhmZWIiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06a3ViZXZpcnQtcHJpdmlsZWdlZCJ9.BUBWJi9a_A_rOrsiil7wEqxxdDOtpYt9M42HHdQr0JQ5Y2ES5xI2yecpdXPypfX4wa-8blj7xJyU3EZCSTUUX2Z-KXoYieYr6sKB-umYiK4MR4eSiBFL8J0QP_2zxZleUOAuAT8JZCHh7JbccUM0ebOtNPBCVDPb_j-zSsuSISBtayGzTzo7RgkyyO_2NfyYBv1b3gxlznGsWuqw6Kw01OE5Xs7EIDAbGn6Z51NUU3fE_UGZg5588z_WurEV_tJhfDGBIuIsWaJHHTmwnQ6kll4nWaqV5r3NlrSmk_z5m14rlmDRf2G-oTMkFlHgDjTbkZeUF8G0TT4FShQzrWSFhA"
+      @token = "eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6Im15LWFjY291bnQtdG9rZW4ta3FsZDYiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoibXktYWNjb3VudCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjJlYjVjZjU1LTFlNDUtMTFlOS1iYmZmLWZhMTYzZTM4OTEyYSIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0Om15LWFjY291bnQifQ.aAigSXFZapxJdFy3FwgSNc77jZYFiSTlG7D_AnHzBT1ZP69xLmrqI_oXt73NDLpecNWezjIvsCU6sLf45tfPY2RQX_aEAOXKWjFs2SxWI7GeQ-sWRt0yd1sOB9R48ipTdpNpNs5pypnTRg6dYLvtePmBWyOSN2412F9XKeM79tuO9a_ynPDjkCwsWJXGj-gX9DwpHdGK-cup0YosJ-9OpvXoWOiUNeBi1KrvJxgQwgLytJk3PHFnJHv4mCNALvvo1cu89_ENwUQrvok267ACeq53YsivYn7B0QWuZoX3ca4Bx14kEdXbd-9BvIEBZzVovH2ZvPTYMmyXgnpO7c1eOw"
 
       unless use_recorded
         @token = ENV['KUBE_TOKEN'] || options[:token] || @token
