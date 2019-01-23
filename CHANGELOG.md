@@ -1,3 +1,12 @@
+### 0.2.0 / 2019-01-23
+
+* Detect kubevirt api version
+* Change registry to container disk
+* Support Persistent Volume Claims
+* Bump kubeclient to 4.1.2
+* Support Persistent Volumes
+* Volume name should respect restrictions
+
 ### 0.1.8 / 2018-12-3
 
 * Bump kubeclient version to 4.1
