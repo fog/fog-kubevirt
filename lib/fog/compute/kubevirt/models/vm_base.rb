@@ -43,7 +43,7 @@ module Fog
             :volumes          => parse_volumes(spec[:volumes]),
             :interfaces       => parse_interfaces(domain[:devices][:interfaces]),
             :networks         => parse_networks(spec[:networks]),
-            :state            => object[:spec][:running].to_s == "true" ? "running" : "stopped",
+            :status           => object[:spec][:running].to_s == "true" ? "running" : "stopped",
             :machine_type     => domain.dig(:machine, :type)
           }
           vm[:owner_reference] = owner unless owner.nil?
