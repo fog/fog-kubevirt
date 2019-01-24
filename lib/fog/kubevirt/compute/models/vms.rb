@@ -60,8 +60,8 @@ module Fog
           image = args.fetch(:image, nil)
           pvc = args.fetch(:pvc, nil)
           init = args.fetch(:cloudinit, {})
-          networks = args.fetch(:networks)
-          interfaces = args.fetch(:interfaces)
+          networks = args.fetch(:networks, nil)
+          interfaces = args.fetch(:interfaces, nil)
 
           if image.nil? && pvc.nil?
             raise ::Fog::Kubevirt::Errors::ValidationError

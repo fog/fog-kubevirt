@@ -34,7 +34,7 @@ module Fog
             :labels           => metadata[:labels],
             :disks            => domain[:devices][:disks],
             :volumes          => spec[:volumes],
-            :state            => object[:spec][:running].to_s == "true" ? "running" : "stopped",
+            :status           => object[:spec][:running].to_s == "true" ? "running" : "stopped",
           }
           vm[:owner_reference] = owner unless owner.nil?
           vm[:annotations] = annotations unless annotations.nil?
