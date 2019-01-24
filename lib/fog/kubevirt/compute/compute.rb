@@ -386,7 +386,7 @@ module Fog
           client = check_client(key)
           return client if client
 
-          client = :Kubeclient::Client.new(
+          client = Kubeclient::Client.new(
             url + path,
             version,
             ssl_options: context.ssl_options,
