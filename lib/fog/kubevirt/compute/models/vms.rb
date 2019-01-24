@@ -142,8 +142,7 @@ module Fog
             :disk => {
               :bus => "virtio"
             },
-            :name => "cloudinitdisk",
-            :volumeName => "cloudinitvolume"
+            :name => "cloudinitvolume",
           ) unless init.empty?
 
           vm = deep_merge!(vm,
