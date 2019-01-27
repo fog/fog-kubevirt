@@ -278,7 +278,7 @@ module Fog
             populate_notice_attributes(vminstance, notice)
             vminstance
           end
-          watch = kubevirt_client.watch_virtual_machines(opts)
+          watch = kubevirt_client.watch_virtual_machine_instances(opts)
 
           WatchWrapper.new(watch, mapper)
         end
