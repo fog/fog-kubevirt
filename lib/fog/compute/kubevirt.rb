@@ -7,8 +7,7 @@ require "fog/core"
 module Fog
   module Compute
     class Kubevirt < Fog::Service
-      requires   :kubevirt_token
-      recognizes :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, \
+      recognizes :kubevirt_token, :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, \
                  :kubevirt_log, :kubevirt_verify_ssl, :kubevirt_ca_cert
 
       model_path 'fog/compute/kubevirt/models'
@@ -352,9 +351,28 @@ module Fog
             :path   => path
           )
 
+          if @kubevirt_token.to_s.empty?
+            create_client_from_config(path)
+          else
+            create_client_from_token(url)
+          end          
+        end
+
+        def create_client_from_token(url)
+          # Prepare the TLS and authentication options that will be used for the standard Kubernetes API
+          # and also for the KubeVirt extension:
+          @opts = {
+            :ssl_options  => {
+              :verify_ssl => OpenSSL::SSL::VERIFY_NONE,
+            },
+            :auth_options => {
+              :bearer_token => @kubevirt_token
+            }
+          }
           version = detect_version(url.to_s, @opts[:ssl_options])
-          key = path + '/' + version
-          client = @clients[key]
+          key = url.path + '/' + version
+
+          client = check_client(key)
           return client if client
 
           client = Kubeclient::Client.new(
@@ -362,10 +380,38 @@ module Fog
             version,
             @opts
           )
+
+          wrap_client(client, version, key)
+        end
+
+        def create_client_from_config(path)
+          config = Kubeclient::Config.read(ENV['KUBECONFIG'] || ENV['HOME']+'/.kube/config')
+          context = config.context
+          url = context.api_endpoint
+          version = detect_version(url + path, context.ssl_options)
+          key = path + '/' + version
+
+          client = check_client(key)
+          return client if client
+
+          client = Kubeclient::Client.new(
+            url + path,
+            version,
+            ssl_options: context.ssl_options,
+            auth_options: context.auth_options
+          )
+
+          wrap_client(client, version, key)
+        end
+
+        def check_client(key)
+          @clients[key]
+        end
+
+        def wrap_client(client, version, key)
           wrapped_client = ExceptionWrapper.new(client, version)
           @clients[key] = wrapped_client
 
-          # Return the client:
           wrapped_client
         end
 
