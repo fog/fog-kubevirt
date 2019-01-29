@@ -103,7 +103,7 @@ module Fog
                         {:disk => {
                            :bus => "virtio"
                          },
-                         :name => vm_name,
+                         :name => volume_name,
                         }
                       ]
                     },
