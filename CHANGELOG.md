@@ -1,3 +1,10 @@
+### 0.2.1 / 2019-02-5
+
+* Fix broken create VM due to API changes
+* Fix VM status, nics and cloud-init to support vagrant
+* Add VMI watches
+* Introduce config file based client
+
 ### 0.2.0 / 2019-01-23
 
 * Detect kubevirt api version
