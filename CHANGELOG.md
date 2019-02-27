@@ -1,3 +1,22 @@
+### 1.0.2 / 2019-02-27
+
+* Asdd Watch VMIs
+* Differentiate status and state
+* Change kubevirt api version
+* Change registry to container disk
+* Remove bundler dependency
+* Bump kubeclient to 4.1.2
+* Support Persistent Volume Claims
+* Support Persistent Volumes
+* Support networks and interfaces
+* Volume name should respect restrictions
+* Introduce config file based client
+* Add vm cloud-init support
+* server and servers
+* Allow local Gemfile.dev.rb
+* Support services
+* Make VM memory optional
+
 ### 1.0.1 / 2018-10-09
 
 * fog-core bumped to 2.1.1
