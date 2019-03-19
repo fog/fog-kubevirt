@@ -24,6 +24,8 @@ module Fog
       collection :servers
       model      :service
       collection :services
+      model      :storageclass
+      collection :storageclasses
       model      :template
       collection :templates
       model      :volume
@@ -35,10 +37,12 @@ module Fog
       request :create_vminstance
       request :create_pvc
       request :create_service
+      request :create_storageclass
       request :create_volume
       request :delete_networkattachmentdef
       request :delete_pvc
       request :delete_service
+      request :delete_storageclass
       request :delete_vminstance
       request :delete_vm
       request :delete_volume
@@ -50,6 +54,7 @@ module Fog
       request :get_volume
       request :get_server
       request :get_service
+      request :get_storageclass
       request :get_template
       request :list_vminstances
       request :list_nodes
@@ -59,6 +64,7 @@ module Fog
       request :list_volumes
       request :list_servers
       request :list_services
+      request :list_storageclasses
       request :list_templates
       request :update_vm
 
@@ -165,6 +171,11 @@ module Fog
         # The API group of the Kubernetes network extention:
         #
         NETWORK_GROUP = 'k8s.cni.cncf.io'.freeze
+
+        #
+        # The API group of the Kubernetes network extention:
+        #
+        STORAGE_GROUP = 'storage.k8s.io'.freeze
 
         def initialize(options={})
           require 'kubeclient'
@@ -439,6 +450,10 @@ module Fog
 
         def kube_net_client
           create_client('/apis/' + NETWORK_GROUP)
+        end
+
+        def kube_storage_client
+          create_client('/apis/' + STORAGE_GROUP)
         end
 
         def log
