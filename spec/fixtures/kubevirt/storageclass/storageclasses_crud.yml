@@ -1,0 +1,400 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 13:55:34 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 13:55:34 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 13:55:34 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIResourceList","groupVersion":"v1","resources":[{"name":"bindings","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"componentstatuses","singularName":"","namespaced":false,"kind":"ComponentStatus","verbs":["get","list"],"shortNames":["cs"]},{"name":"configmaps","singularName":"","namespaced":true,"kind":"ConfigMap","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cm"]},{"name":"endpoints","singularName":"","namespaced":true,"kind":"Endpoints","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ep"]},{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"]},{"name":"limitranges","singularName":"","namespaced":true,"kind":"LimitRange","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["limits"]},{"name":"namespaces","singularName":"","namespaced":false,"kind":"Namespace","verbs":["create","delete","get","list","patch","update","watch"],"shortNames":["ns"]},{"name":"namespaces/finalize","singularName":"","namespaced":false,"kind":"Namespace","verbs":["update"]},{"name":"namespaces/status","singularName":"","namespaced":false,"kind":"Namespace","verbs":["get","patch","update"]},{"name":"nodes","singularName":"","namespaced":false,"kind":"Node","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["no"]},{"name":"nodes/proxy","singularName":"","namespaced":false,"kind":"NodeProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"nodes/status","singularName":"","namespaced":false,"kind":"Node","verbs":["get","patch","update"]},{"name":"persistentvolumeclaims","singularName":"","namespaced":true,"kind":"PersistentVolumeClaim","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pvc"]},{"name":"persistentvolumeclaims/status","singularName":"","namespaced":true,"kind":"PersistentVolumeClaim","verbs":["get","patch","update"]},{"name":"persistentvolumes","singularName":"","namespaced":false,"kind":"PersistentVolume","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pv"]},{"name":"persistentvolumes/status","singularName":"","namespaced":false,"kind":"PersistentVolume","verbs":["get","patch","update"]},{"name":"pods","singularName":"","namespaced":true,"kind":"Pod","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["po"],"categories":["all"]},{"name":"pods/attach","singularName":"","namespaced":true,"kind":"PodAttachOptions","verbs":["create","get"]},{"name":"pods/binding","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"pods/eviction","singularName":"","namespaced":true,"group":"policy","version":"v1beta1","kind":"Eviction","verbs":["create"]},{"name":"pods/exec","singularName":"","namespaced":true,"kind":"PodExecOptions","verbs":["create","get"]},{"name":"pods/log","singularName":"","namespaced":true,"kind":"Pod","verbs":["get"]},{"name":"pods/portforward","singularName":"","namespaced":true,"kind":"PodPortForwardOptions","verbs":["create","get"]},{"name":"pods/proxy","singularName":"","namespaced":true,"kind":"PodProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"pods/status","singularName":"","namespaced":true,"kind":"Pod","verbs":["get","patch","update"]},{"name":"podtemplates","singularName":"","namespaced":true,"kind":"PodTemplate","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"replicationcontrollers","singularName":"","namespaced":true,"kind":"ReplicationController","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["rc"],"categories":["all"]},{"name":"replicationcontrollers/scale","singularName":"","namespaced":true,"group":"autoscaling","version":"v1","kind":"Scale","verbs":["get","patch","update"]},{"name":"replicationcontrollers/status","singularName":"","namespaced":true,"kind":"ReplicationController","verbs":["get","patch","update"]},{"name":"resourcequotas","singularName":"","namespaced":true,"kind":"ResourceQuota","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["quota"]},{"name":"resourcequotas/status","singularName":"","namespaced":true,"kind":"ResourceQuota","verbs":["get","patch","update"]},{"name":"secrets","singularName":"","namespaced":true,"kind":"Secret","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"serviceaccounts","singularName":"","namespaced":true,"kind":"ServiceAccount","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sa"]},{"name":"services","singularName":"","namespaced":true,"kind":"Service","verbs":["create","delete","get","list","patch","update","watch"],"shortNames":["svc"],"categories":["all"]},{"name":"services/proxy","singularName":"","namespaced":true,"kind":"ServiceProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"services/status","singularName":"","namespaced":true,"kind":"Service","verbs":["get","patch","update"]}]}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 13:55:34 GMT
+- request:
+    method: post
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/namespaces/default/storageclasses
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"name":"my-storage-class","namespace":"default"},"parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"mount_options":null,"provisioner":"kubernetes.io/glusterfs","volume_binding_mode":"Immediate","reclaim_policy":"Delete"}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+      Content-Length:
+      - '398'
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:12:04 GMT
+      Content-Length:
+      - '174'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"the
+        server could not find the requested resource","reason":"NotFound","details":{},"code":404}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:12:04 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '260'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"storage.k8s.io","versions":[{"groupVersion":"storage.k8s.io/v1","version":"v1"},{"groupVersion":"storage.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"storage.k8s.io/v1","version":"v1"}}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '593'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIResourceList","apiVersion":"v1","groupVersion":"storage.k8s.io/v1","resources":[{"name":"storageclasses","singularName":"","namespaced":false,"kind":"StorageClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sc"]},{"name":"volumeattachments","singularName":"","namespaced":false,"kind":"VolumeAttachment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"volumeattachments/status","singularName":"","namespaced":false,"kind":"VolumeAttachment","verbs":["get","patch","update"]}]}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: post
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/storageclasses
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"name":"my-storage-class"},"parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"mount_options":null,"provisioner":"kubernetes.io/glusterfs","volume_binding_mode":"Immediate","reclaim_policy":"Delete"}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+      Content-Length:
+      - '376'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '538'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"StorageClass","apiVersion":"storage.k8s.io/v1","metadata":{"name":"my-storage-class","selfLink":"/apis/storage.k8s.io/v1/storageclasses/my-storage-class","uid":"12cf7bd9-4a56-11e9-8999-5254007d353d","resourceVersion":"2615177","creationTimestamp":"2019-03-19T14:48:35Z"},"provisioner":"kubernetes.io/glusterfs","parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '260'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"storage.k8s.io","versions":[{"groupVersion":"storage.k8s.io/v1","version":"v1"},{"groupVersion":"storage.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"storage.k8s.io/v1","version":"v1"}}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/storageclasses/my-storage-class
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '538'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"StorageClass","apiVersion":"storage.k8s.io/v1","metadata":{"name":"my-storage-class","selfLink":"/apis/storage.k8s.io/v1/storageclasses/my-storage-class","uid":"12cf7bd9-4a56-11e9-8999-5254007d353d","resourceVersion":"2615177","creationTimestamp":"2019-03-19T14:48:35Z"},"provisioner":"kubernetes.io/glusterfs","parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '260'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"storage.k8s.io","versions":[{"groupVersion":"storage.k8s.io/v1","version":"v1"},{"groupVersion":"storage.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"storage.k8s.io/v1","version":"v1"}}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/storageclasses/my-storage-class
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '538'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"StorageClass","apiVersion":"storage.k8s.io/v1","metadata":{"name":"my-storage-class","selfLink":"/apis/storage.k8s.io/v1/storageclasses/my-storage-class","uid":"12cf7bd9-4a56-11e9-8999-5254007d353d","resourceVersion":"2615177","creationTimestamp":"2019-03-19T14:48:35Z"},"provisioner":"kubernetes.io/glusterfs","parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '260'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"storage.k8s.io","versions":[{"groupVersion":"storage.k8s.io/v1","version":"v1"},{"groupVersion":"storage.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"storage.k8s.io/v1","version":"v1"}}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: delete
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/storageclasses/my-storage-class
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '538'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"StorageClass","apiVersion":"storage.k8s.io/v1","metadata":{"name":"my-storage-class","selfLink":"/apis/storage.k8s.io/v1/storageclasses/my-storage-class","uid":"12cf7bd9-4a56-11e9-8999-5254007d353d","resourceVersion":"2615177","creationTimestamp":"2019-03-19T14:48:35Z"},"provisioner":"kubernetes.io/glusterfs","parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+recorded_with: VCR 4.0.0
