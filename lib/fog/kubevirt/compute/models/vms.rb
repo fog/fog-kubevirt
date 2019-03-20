@@ -49,7 +49,9 @@ module Fog
         #       :macAddress => '12:34:56:AB:CD:EF' }
         #   ]
         #
-        # One of :image or :pvc needs to be provided.
+        # @param [String] :image name of container disk.
+        #
+        # @param [Array]/@param[String] :pvc or one or more pvcs.
         #
         # @param [Hash] attributes containing details about vm about to be
         #   created.
@@ -58,21 +60,28 @@ module Fog
           cpus = args.fetch(:cpus, nil)
           memory_size = args.fetch(:memory_size)
           image = args.fetch(:image, nil)
-          pvc = args.fetch(:pvc, nil)
+          pvcs = Array(args.fetch(:pvc, []))
           init = args.fetch(:cloudinit, {})
           networks = args.fetch(:networks, nil)
           interfaces = args.fetch(:interfaces, nil)
 
-          if image.nil? && pvc.nil?
+          if image.nil? && pvcs.empty?
             raise ::Fog::Kubevirt::Errors::ValidationError
           end
 
           volumes = []
-          volume_name = vm_name.gsub(/[._]+/,'-') + "-disk-01"
+          disks = []
+          normalized_vm_name = vm_name.gsub(/[._]+/,'-')
           if !image.nil?
+            volume_name = normalized_vm_name + "-disk-01"
             volumes.push(:name => volume_name, :containerDisk => {:image => image})
+            disks.push(:disk => {:bus => "virtio"}, :name => volume_name)
           else
-            volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => pvc})
+            pvcs.each_with_index { |pvc, inx|
+              volume_name = normalized_vm_name + "-disk-0" + inx.to_s
+              volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => pvc})
+              disks.push(:disk => {:bus => "virtio"}, :name => volume_name)
+            }
           end
 
           unless init.empty?
@@ -100,13 +109,7 @@ module Fog
                 :spec => {
                   :domain => {
                     :devices => {
-                      :disks => [
-                        {:disk => {
-                           :bus => "virtio"
-                         },
-                         :name => volume_name,
-                        }
-                      ]
+                      :disks => disks
                     },
                     :machine => {
                       :type => ""
