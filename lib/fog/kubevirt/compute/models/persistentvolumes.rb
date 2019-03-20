@@ -1,23 +1,23 @@
 require 'fog/core/collection'
-require 'fog/kubevirt/compute/models/volume'
+require 'fog/kubevirt/compute/models/persistentvolume'
 
 module Fog
   module Kubevirt
     class Compute
-      class Volumes < Fog::Collection
+      class Persistentvolumes < Fog::Collection
         attr_reader :kind, :resource_version
 
-        model Fog::Kubevirt::Compute::Volume
+        model Fog::Kubevirt::Compute::Persistentvolume
 
         def all(filters = {})
-          volumes = service.list_volumes(filters)
+          volumes = service.list_persistentvolumes(filters)
           @kind = volumes.kind
           @resource_version = volumes.resource_version
           load volumes
         end
 
         def get(name)
-          new service.get_volume(name)
+          new service.get_persistentvolume(name)
         end
 
         # Creates a volume using provided paramters:
@@ -54,7 +54,7 @@ module Fog
           volume[:spec][:accessModes] = args[:access_modes] if args[:access_modes]
           volume[:spec][args[:type].to_sym] = args[:config] if args[:type]
 
-          service.create_volume(volume)
+          service.create_persistentvolume(volume)
         end
 
         def delete(name)
@@ -65,7 +65,7 @@ module Fog
             volume = nil
           end
 
-          service.delete_volume(name) unless volume.nil?
+          service.delete_persistentvolume(name) unless volume.nil?
         end
       end
     end

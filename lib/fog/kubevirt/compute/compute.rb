@@ -18,6 +18,8 @@ module Fog
       collection :nodes
       model      :vm
       collection :vms
+      model      :persistentvolume
+      collection :persistentvolumes
       model      :pvc
       collection :pvcs
       model      :server
@@ -28,30 +30,28 @@ module Fog
       collection :storageclasses
       model      :template
       collection :templates
-      model      :volume
-      collection :volumes
 
       request_path 'fog/kubevirt/compute/requests'
       request :create_networkattachmentdef
       request :create_vm
       request :create_vminstance
+      request :create_persistentvolume
       request :create_pvc
       request :create_service
       request :create_storageclass
-      request :create_volume
       request :delete_networkattachmentdef
+      request :delete_persistentvolume
       request :delete_pvc
       request :delete_service
       request :delete_storageclass
       request :delete_vminstance
       request :delete_vm
-      request :delete_volume
       request :get_vminstance
       request :get_networkattachmentdef
       request :get_node
+      request :get_persistentvolume
       request :get_pvc
       request :get_vm
-      request :get_volume
       request :get_server
       request :get_service
       request :get_storageclass
@@ -60,8 +60,8 @@ module Fog
       request :list_nodes
       request :list_networkattachmentdefs
       request :list_vms
+      request :list_persistentvolumes
       request :list_pvcs
-      request :list_volumes
       request :list_servers
       request :list_services
       request :list_storageclasses
@@ -432,7 +432,7 @@ module Fog
           # version detected based on
           # https://github.com/kubernetes-incubator/apiserver-builder/blob/master/docs/concepts/aggregation.md#viewing-discovery-information
           preferredVersion = response["preferredVersion"]
-          return preferredVersion["version"] if preferredVersion 
+          return preferredVersion["version"] if preferredVersion
           response["versions"][0]
         end
 

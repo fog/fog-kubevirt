@@ -1,7 +1,7 @@
 module Fog
   module Kubevirt
     class Compute
-      class Volume < Fog::Model
+      class Persistentvolume < Fog::Model
         identity :name
 
         attribute :resource_version, :aliases => 'metadata_resource_version'

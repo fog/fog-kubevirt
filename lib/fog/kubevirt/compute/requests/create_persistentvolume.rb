@@ -2,7 +2,7 @@ module Fog
   module Kubevirt
     class Compute
       class Real
-        def create_volume(volume)
+        def create_persistentvolume(volume)
           kube_client.create_persistent_volume(volume)
         rescue ::Fog::Kubevirt::Errors::ClientError => err
           log.warn(err)
@@ -11,7 +11,7 @@ module Fog
       end
 
       class Mock
-        def create_volume(volume)
+        def create_persistentvolume(volume)
         end
       end
     end
