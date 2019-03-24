@@ -33,14 +33,15 @@ module Fog
           annotations = metadata[:annotations]
           cpu = domain[:cpu]
           mem = domain.dig(:resources, :requests, :memory)
+          disks = parse_disks(domain[:devices][:disks])
           vm = {
             :namespace        => metadata[:namespace],
             :name             => metadata[:name],
             :resource_version => metadata[:resourceVersion],
             :uid              => metadata[:uid],
             :labels           => metadata[:labels],
-            :disks            => parse_disks(domain[:devices][:disks]),
-            :volumes          => parse_volumes(spec[:volumes]),
+            :disks            => disks,
+            :volumes          => parse_volumes(spec[:volumes], disks),
             :interfaces       => parse_interfaces(domain[:devices][:interfaces]),
             :networks         => parse_networks(spec[:networks]),
             :status           => object[:spec][:running].to_s == "true" ? "running" : "stopped",
