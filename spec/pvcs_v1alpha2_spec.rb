@@ -44,6 +44,13 @@ require 'spec_helper'
           assert_equal(pvc.volume_name, 'my-local-storage')
           assert_equal(pvc.requests[:storage], '2Gi')
           assert_equal(pvc.limits[:storage], '3Gi')
+
+          # test all volumes based on PVCs
+          volumes = @service.volumes.all
+          volume = volumes.select { |v| v.name == name }.first
+          refute_nil(volume)
+          assert_equal(volume.name, 'my-local-storage-pvc')
+          assert_equal(volume.type, 'persistentVolumeClaim')
        ensure
          @service.pvcs.delete(name) if pvc
        end

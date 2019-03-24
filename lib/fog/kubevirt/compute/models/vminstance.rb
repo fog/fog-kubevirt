@@ -28,6 +28,7 @@ module Fog
           status = object[:status]
           spec = object[:spec]
           domain = spec[:domain]
+          disks = parse_disks(domain[:devices][:disks])
           {
             :namespace        => metadata[:namespace],
             :name             => metadata[:name],
@@ -37,8 +38,10 @@ module Fog
             :owner_uid        => metadata.dig(:ownerReferences, 0, :uid),
             :cpu_cores        => domain.dig(:cpu, :cores),
             :memory           => domain[:resources][:requests][:memory],
-            :disks            => domain[:devices][:disks],
-            :volumes          => spec[:volumes],
+            :disks            => disks,
+            :volumes          => parse_volumes(spec[:volumes], disks),
+            :interfaces       => parse_interfaces(domain[:devices][:interfaces]),
+            :networks         => parse_networks(spec[:networks]),
             :ip_address       => status.dig(:interfaces, 0, :ipAddress),
             :node_name        => status[:nodeName],
             :status           => status[:phase]
