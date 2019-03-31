@@ -27,14 +27,18 @@ module Fog
           attribute :pvc
 
           # Hash that holds volume type specific configurations, used for adding volume for a vm
+          # The set of config properties may change from type to type, see documentation for the supported
+          # keys of each volume type:
+          # https://kubevirt.io/user-guide/docs/latest/creating-virtual-machines/disks-and-volumes.html#volumes
           attribute :config
 
-          # Disk attachment properties:
+          # Disk attachment properties, relevant when volumes are fetched via the vm:
 
           # the order (integer) of the device during boot sequence
           attribute :boot_order
 
-          # detemines how the disk will be presented to the guest OS if available
+          # detemines how the disk will be presented to the guest OS if available, supported values are:
+          # virtio, sata or scsi. See https://kubevirt.io/api-reference/master/definitions.html#_v1_disktarget
           attribute :bus
 
           def persisted?
