@@ -31,6 +31,8 @@ module Fog
       collection :storageclasses
       model      :template
       collection :templates
+      model      :volume
+      collection :volumes
 
       request_path 'fog/compute/kubevirt/requests'
       request :create_networkattachmentdef
@@ -67,6 +69,7 @@ module Fog
       request :list_services
       request :list_storageclasses
       request :list_templates
+      request :list_volumes
       request :update_vm
 
       module Shared

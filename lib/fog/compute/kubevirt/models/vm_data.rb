@@ -1,3 +1,5 @@
+require 'fog/compute/kubevirt/models/volume'
+
 module Fog
   module Compute
     class Kubevirt
@@ -55,7 +57,6 @@ module Fog
             disk = VmDisk.new
             disk.name = d[:name]
             disk.boot_order = d[:bootOrder]
-            disk.volume_name = d[:volumeName]
 
             if d.keys.include?(:cdrom)
               disk.type = 'cdrom'
@@ -82,12 +83,13 @@ module Fog
         # Returns an array of parsed volumes
         #
         # @param object [Hash] A hash with raw volumes data.
+        # @param disks [Array] the disks of the vm associated to the volumes
         #
-        def parse_volumes(object)
+        def parse_volumes(object, disks)
           return {} if object.nil?
           volumes = []
           object.each do |v|
-            volume = VmVolume.new
+            volume = Volume.new
             volume.name = v[:name]
             if v.keys.include?(:containerDisk)
               volume.type = 'containerDisk'
@@ -120,6 +122,12 @@ module Fog
               volume.type = 'configMap'
               volume.info = v.dig(:configMap, :name)
             end
+
+            volume.config = v[volume.type.to_sym]
+            disk = disks.select { |d| d.name == volume.name }.first
+            volume.boot_order = disk.boot_order
+            volume.bus = disk.bus if disk.respond_to?(:bus)
+
             volumes << volume
           end
 
@@ -143,26 +151,10 @@ module Fog
 
         class VmDisk
           attr_accessor :name,
-                        :volume_name,
                         :boot_order,
                         :type, # values: cdrom, disk, floppy, lun
                         :bus,
                         :readonly
-        end
-
-        class VmVolume < Fog::Model
-          identity :name
-          attribute :id
-          # values: containerDisk, persistentVolumeClaim, emptyDisk,
-          #         ephemeral, cloudInitNoCloud, hostDisk, secret,
-          #         dataVolume, serviceAccount, configMap
-          attribute :type
-
-          attribute :info # specific piece of information per volume type
-
-          def persisted?
-            !name.nil?
-          end
         end
       end
     end

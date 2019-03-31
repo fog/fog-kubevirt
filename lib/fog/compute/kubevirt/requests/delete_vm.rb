@@ -8,7 +8,7 @@ module Fog
       end
 
       class Mock
-        def delete_vm(name)
+        def delete_vm(name, namespace)
         end
       end
     end
