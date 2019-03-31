@@ -27,6 +27,9 @@ module Fog
           new service.get_vm(name)
         end
 
+        def delete(name)
+          service.delete_vm(name, service.namespace)
+        end
 
         # Creates a virtual machine using provided paramters:
         # :vm_name [String] - name of a vm
@@ -49,7 +52,9 @@ module Fog
         #       :macAddress => '12:34:56:AB:CD:EF' }
         #   ]
         #
-        # One of :image or :pvc needs to be provided.
+        # @param [String] :image name of container disk.
+        #
+        # @param [Array] :volumes the volumes (Fog::Kubevirt::Compute::Volume) to be used by the VM
         #
         # @param [Hash] attributes containing details about vm about to be
         #   created.
@@ -57,23 +62,16 @@ module Fog
           vm_name = args.fetch(:vm_name)
           cpus = args.fetch(:cpus, nil)
           memory_size = args.fetch(:memory_size)
-          image = args.fetch(:image, nil)
-          pvc = args.fetch(:pvc, nil)
           init = args.fetch(:cloudinit, {})
           networks = args.fetch(:networks, nil)
           interfaces = args.fetch(:interfaces, nil)
+          vm_volumes =  args.fetch(:volumes, nil)
 
-          if image.nil? && pvc.nil?
+          if vm_volumes.nil? || vm_volumes.empty?
             raise ::Fog::Kubevirt::Errors::ValidationError
           end
 
-          volumes = []
-          volume_name = vm_name.gsub(/[._]+/,'-') + "-disk-01"
-          if !image.nil?
-            volumes.push(:name => volume_name, :containerDisk => {:image => image})
-          else
-            volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => pvc})
-          end
+          volumes, disks = add_vm_storage(vm_name, vm_volumes)
 
           unless init.empty?
             volumes.push(:cloudInitNoCloud => init, :name => "cloudinitvolume")
@@ -100,13 +98,7 @@ module Fog
                 :spec => {
                   :domain => {
                     :devices => {
-                      :disks => [
-                        {:disk => {
-                           :bus => "virtio"
-                         },
-                         :name => volume_name,
-                        }
-                      ]
+                      :disks => disks
                     },
                     :machine => {
                       :type => ""
@@ -168,8 +160,45 @@ module Fog
               }
             }
           ) unless interfaces.nil?
-
           service.create_vm(vm)
+        end
+
+        def add_vm_storage(vm_name, vm_volumes)
+          normalized_vm_name = vm_name.gsub(/[._]+/,'-')
+          volumes, disks = [], []
+          vm_volumes.each_with_index do |v, idx|
+            volume_name = v.name || normalized_vm_name + "-disk-0" + idx.to_s
+            disk = {
+              :name => volume_name,
+              :disk => {}
+            }
+            disk[:bootOrder] = v.boot_order if v.boot_order
+
+            if v.type == 'containerDisk'
+              # set image
+              if v.config.nil?
+                volumes.push(:name => volume_name, :containerDisk => {:image => v.info})
+              else
+                volumes.push(:name => volume_name, v.type.to_sym => v.config)
+              end
+              disk[:disk][:bus] = v.bus || "virtio"
+            elsif v.type == 'persistentVolumeClaim'
+              # set claim
+              if v.config.nil?
+                volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => v.info})
+              else
+                volumes.push(:name => volume_name, v.type.to_sym => v.config)
+              end
+              disk[:disk][:bus] = v.bus || "virtio"
+            else
+              # convert type into symbol and pass :config as volume content
+              volumes.push(:name => volume_name, v.type.to_sym => v.config)
+              disk[:disk][:bus] = v.bus if v.bus
+            end
+            disks.push(disk)
+          end
+
+          return volumes, disks
         end
       end
     end

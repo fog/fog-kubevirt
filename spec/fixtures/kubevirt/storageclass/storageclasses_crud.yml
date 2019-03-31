@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
+      - Tue, 19 Mar 2019 13:55:34 GMT
       Content-Length:
       - '137'
     body:
@@ -30,7 +30,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 13:55:34 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1
@@ -54,7 +54,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
+      - Tue, 19 Mar 2019 13:55:34 GMT
       Transfer-Encoding:
       - chunked
     body:
@@ -63,13 +63,13 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 13:55:34 GMT
 - request:
     method: post
-    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/namespaces/default/storageclasses
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"name":"my-local-storage-pvc","namespace":"default"},"spec":{"storageClassName":"manual","resources":{"requests":{"storage":"2Gi"},"limits":{"storage":"3Gi"}},"selector":{"matchLabels":{},"matchExpressions":[]},"accessModes":["ReadWriteOnce"],"volumeMode":"Filesystem","volumeName":"my-local-storage"}}'
+      string: '{"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"name":"my-storage-class","namespace":"default"},"parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"mount_options":null,"provisioner":"kubernetes.io/glusterfs","volume_binding_mode":"Immediate","reclaim_policy":"Delete"}'
     headers:
       Accept:
       - "*/*"
@@ -82,7 +82,109 @@ http_interactions:
       Authorization:
       - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
       Content-Length:
-      - '364'
+      - '398'
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:12:04 GMT
+      Content-Length:
+      - '174'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"the
+        server could not find the requested resource","reason":"NotFound","details":{},"code":404}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:12:04 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '260'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"storage.k8s.io","versions":[{"groupVersion":"storage.k8s.io/v1","version":"v1"},{"groupVersion":"storage.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"storage.k8s.io/v1","version":"v1"}}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '593'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIResourceList","apiVersion":"v1","groupVersion":"storage.k8s.io/v1","resources":[{"name":"storageclasses","singularName":"","namespaced":false,"kind":"StorageClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sc"]},{"name":"volumeattachments","singularName":"","namespaced":false,"kind":"VolumeAttachment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"volumeattachments/status","singularName":"","namespaced":false,"kind":"VolumeAttachment","verbs":["get","patch","update"]}]}
+
+'
+    http_version:
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
+- request:
+    method: post
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/storageclasses
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"name":"my-storage-class"},"parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"mount_options":null,"provisioner":"kubernetes.io/glusterfs","volume_binding_mode":"Immediate","reclaim_policy":"Delete"}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+      Content-Length:
+      - '376'
   response:
     status:
       code: 201
@@ -91,19 +193,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
+      - Tue, 19 Mar 2019 14:48:35 GMT
       Content-Length:
-      - '574'
+      - '538'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"f616f5ab-4e71-11e9-8e8c-5254007d353d","resourceVersion":"3258448","creationTimestamp":"2019-03-24T20:18:17Z"},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"StorageClass","apiVersion":"storage.k8s.io/v1","metadata":{"name":"my-storage-class","selfLink":"/apis/storage.k8s.io/v1/storageclasses/my-storage-class","uid":"12cf7bd9-4a56-11e9-8999-5254007d353d","resourceVersion":"2615177","creationTimestamp":"2019-03-19T14:48:35Z"},"provisioner":"kubernetes.io/glusterfs","parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
 - request:
     method: get
-    uri: https://10.8.254.82:8443/api
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io
     body:
       encoding: US-ASCII
       string: ''
@@ -122,83 +224,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
+      - Tue, 19 Mar 2019 14:48:35 GMT
       Content-Length:
-      - '137'
+      - '260'
     body:
       encoding: UTF-8
-      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"storage.k8s.io","versions":[{"groupVersion":"storage.k8s.io/v1","version":"v1"},{"groupVersion":"storage.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"storage.k8s.io/v1","version":"v1"}}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
 - request:
     method: get
-    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
-      Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json
-      Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
-      Content-Length:
-      - '620'
-    body:
-      encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"f616f5ab-4e71-11e9-8e8c-5254007d353d","resourceVersion":"3258449","creationTimestamp":"2019-03-24T20:18:17Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
-
-'
-    http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
-- request:
-    method: get
-    uri: https://10.8.254.82:8443/api
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json
-      Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
-      Content-Length:
-      - '137'
-    body:
-      encoding: UTF-8
-      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
-
-'
-    http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
-- request:
-    method: get
-    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/storageclasses/my-storage-class
     body:
       encoding: US-ASCII
       string: ''
@@ -219,19 +257,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
-      Transfer-Encoding:
-      - chunked
+      - Tue, 19 Mar 2019 14:48:35 GMT
+      Content-Length:
+      - '538'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaimList","apiVersion":"v1","metadata":{"selfLink":"/api/v1/namespaces/default/persistentvolumeclaims","resourceVersion":"3258451"},"items":[{"metadata":{"name":"example-local-claim","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/example-local-claim","uid":"9dff5ace-4aee-11e9-8999-5254007d353d","resourceVersion":"2657730","creationTimestamp":"2019-03-20T09:00:32Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"5Gi"}},"volumeName":"example-local-pv","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}},{"metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"f616f5ab-4e71-11e9-8e8c-5254007d353d","resourceVersion":"3258449","creationTimestamp":"2019-03-24T20:18:17Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}},{"metadata":{"name":"task-pvc-1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/task-pvc-1","uid":"dcae2a60-2271-11e9-94df-5254007d353d","resourceVersion":"24786","creationTimestamp":"2019-01-27T20:26:44Z","annotations":{"pv.kubernetes.io/bind-completed":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"volumeName":"task-pv-volume1","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}},{"metadata":{"name":"task-pvc-2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/task-pvc-2","uid":"de51baab-2271-11e9-94df-5254007d353d","resourceVersion":"24769","creationTimestamp":"2019-01-27T20:26:46Z","annotations":{"pv.kubernetes.io/bind-completed":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"2Gi"}},"volumeName":"task-pv-volume2","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}},{"metadata":{"name":"task-pvc-3","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/task-pvc-3","uid":"dff6a5e1-2271-11e9-94df-5254007d353d","resourceVersion":"24784","creationTimestamp":"2019-01-27T20:26:49Z","annotations":{"pv.kubernetes.io/bind-completed":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"3Gi"}},"volumeName":"task-pv-volume3","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}},{"metadata":{"name":"task-pvc-4","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/task-pvc-4","uid":"e1be5a89-2271-11e9-94df-5254007d353d","resourceVersion":"24824","creationTimestamp":"2019-01-27T20:26:52Z","annotations":{"pv.kubernetes.io/bind-completed":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"4Gi"}},"volumeName":"task-pv-volume4","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}},{"metadata":{"name":"task-pvc-5","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/task-pvc-5","uid":"e34e0a43-2271-11e9-94df-5254007d353d","resourceVersion":"24826","creationTimestamp":"2019-01-27T20:26:55Z","annotations":{"pv.kubernetes.io/bind-completed":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"5Gi"}},"volumeName":"task-pv-volume5","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}]}
+      string: '{"kind":"StorageClass","apiVersion":"storage.k8s.io/v1","metadata":{"name":"my-storage-class","selfLink":"/apis/storage.k8s.io/v1/storageclasses/my-storage-class","uid":"12cf7bd9-4a56-11e9-8999-5254007d353d","resourceVersion":"2615177","creationTimestamp":"2019-03-19T14:48:35Z"},"provisioner":"kubernetes.io/glusterfs","parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
 - request:
     method: get
-    uri: https://10.8.254.82:8443/api
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io
     body:
       encoding: US-ASCII
       string: ''
@@ -250,19 +288,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
+      - Tue, 19 Mar 2019 14:48:35 GMT
       Content-Length:
-      - '137'
+      - '260'
     body:
       encoding: UTF-8
-      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"storage.k8s.io","versions":[{"groupVersion":"storage.k8s.io/v1","version":"v1"},{"groupVersion":"storage.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"storage.k8s.io/v1","version":"v1"}}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
 - request:
     method: get
-    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/storageclasses/my-storage-class
     body:
       encoding: US-ASCII
       string: ''
@@ -283,19 +321,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
+      - Tue, 19 Mar 2019 14:48:35 GMT
       Content-Length:
-      - '620'
+      - '538'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"f616f5ab-4e71-11e9-8e8c-5254007d353d","resourceVersion":"3258449","creationTimestamp":"2019-03-24T20:18:17Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"StorageClass","apiVersion":"storage.k8s.io/v1","metadata":{"name":"my-storage-class","selfLink":"/apis/storage.k8s.io/v1/storageclasses/my-storage-class","uid":"12cf7bd9-4a56-11e9-8999-5254007d353d","resourceVersion":"2615177","creationTimestamp":"2019-03-19T14:48:35Z"},"provisioner":"kubernetes.io/glusterfs","parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
 - request:
     method: get
-    uri: https://10.8.254.82:8443/api
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io
     body:
       encoding: US-ASCII
       string: ''
@@ -314,19 +352,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
+      - Tue, 19 Mar 2019 14:48:35 GMT
       Content-Length:
-      - '137'
+      - '260'
     body:
       encoding: UTF-8
-      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"storage.k8s.io","versions":[{"groupVersion":"storage.k8s.io/v1","version":"v1"},{"groupVersion":"storage.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"storage.k8s.io/v1","version":"v1"}}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
 - request:
     method: delete
-    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc
+    uri: https://10.8.254.82:8443/apis/storage.k8s.io/v1/storageclasses/my-storage-class
     body:
       encoding: US-ASCII
       string: ''
@@ -349,14 +387,14 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:18:17 GMT
+      - Tue, 19 Mar 2019 14:48:35 GMT
       Content-Length:
-      - '694'
+      - '538'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"my-local-storage-pvc","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/my-local-storage-pvc","uid":"f616f5ab-4e71-11e9-8e8c-5254007d353d","resourceVersion":"3258452","creationTimestamp":"2019-03-24T20:18:17Z","deletionTimestamp":"2019-03-24T20:18:17Z","deletionGracePeriodSeconds":0,"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"limits":{"storage":"3Gi"},"requests":{"storage":"2Gi"}},"volumeName":"my-local-storage","storageClassName":"manual","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"StorageClass","apiVersion":"storage.k8s.io/v1","metadata":{"name":"my-storage-class","selfLink":"/apis/storage.k8s.io/v1/storageclasses/my-storage-class","uid":"12cf7bd9-4a56-11e9-8999-5254007d353d","resourceVersion":"2615177","creationTimestamp":"2019-03-19T14:48:35Z"},"provisioner":"kubernetes.io/glusterfs","parameters":{"resturl":"http://heketi-storage.glusterfs.svc:8080","restuser":"admin","secretName":"heketi-storage-admin-secret","secretNamespace":"glusterfs"},"reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:18:17 GMT
+  recorded_at: Tue, 19 Mar 2019 14:48:35 GMT
 recorded_with: VCR 4.0.0

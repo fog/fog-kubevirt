@@ -1,80 +1,51 @@
+require 'fog/kubevirt/compute/models/pvc'
+
 module Fog
   module Kubevirt
     class Compute
+      # Volumes represents volumes exist on kubevirt for vms:
+      # If volume is attached to a VM by disk, it will contain the attachment properties
+      # Disk Attachment properties are: boot_order and bus (when avaiable).
+      # If the volume isn't attached to any VM, it will contain name, type and info.
+      # When the volume type is persistentVolumeClaim, it will contain also the claim entity
+      # In order to create a new volume, user have to create a Claim when wishes to use PVC
+      # by using the pvcs collection.
       class Volume < Fog::Model
-        identity :name
+          identity :name
 
-        attribute :resource_version, :aliases => 'metadata_resource_version'
-        attribute :uid,              :aliases => 'metadata_uid'
-        attribute :annotations,      :aliases => 'metadata_annotations'
-        attribute :labels,           :aliases => 'metadata_labels'
-		attribute :access_modes,	 :aliases => 'spec_access_modes'
-		attribute :mount_options,	 :aliases => 'spec_mount_options'
-		attribute :reclaim_policy,   :aliases => 'spec_reclaim_policy'
-		attribute :storage_class,    :aliases => 'spec_storage_class'
-        attribute :capacity,         :aliases => 'spec_capacity'
-        attribute :claim_ref,        :aliases => 'spec_claim_ref'
-        attribute :type,			 :aliases => 'spec_type'
-        attribute :config,			 :aliases => 'spec_config'
-        attribute :phase,            :aliases => 'status_phase'
-        attribute :reason,            :aliases => 'status_reason'
-        attribute :message,            :aliases => 'status_message'
+          # values: containerDisk, persistentVolumeClaim, emptyDisk,
+          #         ephemeral, cloudInitNoCloud, hostDisk, secret,
+          #         dataVolume, serviceAccount, configMap
+          attribute :type
 
-        def self.parse(object)
-          metadata = object[:metadata]
-          spec = object[:spec]
-          status = object[:status]
-          type = detect_type(spec)
+          # specific piece of information per volume type
+          # for containerDisk - contains the image
+          # for persistentVolumeClaim - contains the claim name
+          attribute :info
 
-          {
-            :name             => metadata[:name],
-            :resource_version => metadata[:resourceVersion],
-            :uid              => metadata[:uid],
-            :annotations      => metadata[:annotations],
-            :labels           => metadata[:labels],
-            :access_modes     => spec[:accessModes],
-            :mount_options    => spec[:mountOptions],
-            :reclaim_policy   => spec[:persistentVolumeReclaimPolicy],
-			:storage_class    => spec[:storageClassName],
-            :capacity         => spec.dig(:capacity, :storage),
-            :claim_ref        => spec[:claimRef],
-            :type             => type,
-            :config           => spec[type&.to_sym],
-            :phase            => status[:phase],
-            :reason           => status[:reason],
-            :message          => status[:message]
-          }
-        end
+          # holds the pvc entity if its type is persistentVolumeClaim
+          attribute :pvc
 
-        def self.detect_type(spec)
-            type = ''
-            type = 'awsElasticBlockStore' if spec.keys.include?(:awsElasticBlockStore)
-            type = 'azureDisk' if spec.keys.include?(:azureDisk)
-            type = 'azureFile' if spec.keys.include?(:azureFile)
-            type = 'cephfs' if spec.keys.include?(:cephfs)
-            type = 'configMap' if spec.keys.include?(:configMap)
-            type = 'csi' if spec.keys.include?(:csi)
-            type = 'downwardAPI' if spec.keys.include?(:downwardAPI)
-            type = 'emptyDir' if spec.keys.include?(:emptyDir)
-            type = 'fc' if spec.keys.include?(:fc)
-            type = 'flexVolume' if spec.keys.include?(:flexVolume)
-            type = 'flocker' if spec.keys.include?(:flocker)
-            type = 'gcePersistentDisk' if spec.keys.include?(:gcePersistentDisk)
-            type = 'glusterfs' if spec.keys.include?(:glusterfs)
-            type = 'hostPath' if spec.keys.include?(:hostPath)
-            type = 'iscsi' if spec.keys.include?(:iscsi)
-            type = 'local' if spec.keys.include?(:local)
-            type = 'nfs' if spec.keys.include?(:nfs)
-            type = 'persistentVolumeClaim' if spec.keys.include?(:persistentVolumeClaim)
-            type = 'projected' if spec.keys.include?(:projected)
-            type = 'portworxVolume' if spec.keys.include?(:portworxVolume)
-            type = 'quobyte' if spec.keys.include?(:quobyte)
-            type = 'rbd' if spec.keys.include?(:rbd)
-            type = 'scaleIO' if spec.keys.include?(:scaleIO)
-            type = 'secret' if spec.keys.include?(:secret)
-            type = 'storageos' if spec.keys.include?(:storageos)
-            type = 'vsphereVolume' if spec.keys.include?(:vsphereVolume)
-            type
+          # Hash that holds volume type specific configurations, used for adding volume for a vm
+          attribute :config
+
+          # Disk attachment properties:
+
+          # the order (integer) of the device during boot sequence
+          attribute :boot_order
+
+          # detemines how the disk will be presented to the guest OS if available
+          attribute :bus
+
+          def persisted?
+            !name.nil?
+          end
+
+        def self.parse(object, disk)
+          byebug
+          volume = parse_object(object)
+          volume[:boot_order] = object[:bootOrder]
+          volume
         end
       end
     end

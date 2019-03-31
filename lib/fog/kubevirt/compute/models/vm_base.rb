@@ -1,7 +1,11 @@
+require 'fog/kubevirt/compute/models/vm_data'
+
 module Fog
   module Kubevirt
     class Compute
       module VmBase
+        include VmData
+
         def define_properties
           identity :name
 
@@ -16,6 +20,9 @@ module Fog
           attribute :disks,            :aliases => 'spec_disks'
           attribute :volumes,          :aliases => 'spec_volumes'
           attribute :status,           :aliases => 'spec_running'
+          attribute :interfaces,       :aliases => 'spec_interfaces'
+          attribute :networks,         :aliases => 'spec_networks'
+          attribute :machine_type,     :aliases => 'spec_machine_type'
         end
 
         def parse_object(object)
@@ -26,15 +33,19 @@ module Fog
           annotations = metadata[:annotations]
           cpu = domain[:cpu]
           mem = domain.dig(:resources, :requests, :memory)
+          disks = parse_disks(domain[:devices][:disks])
           vm = {
             :namespace        => metadata[:namespace],
             :name             => metadata[:name],
             :resource_version => metadata[:resourceVersion],
             :uid              => metadata[:uid],
             :labels           => metadata[:labels],
-            :disks            => domain[:devices][:disks],
-            :volumes          => spec[:volumes],
+            :disks            => disks,
+            :volumes          => parse_volumes(spec[:volumes], disks),
             :status           => object[:spec][:running].to_s == "true" ? "running" : "stopped",
+            :interfaces       => parse_interfaces(domain[:devices][:interfaces]),
+            :networks         => parse_networks(spec[:networks]),
+            :machine_type     => domain.dig(:machine, :type)
           }
           vm[:owner_reference] = owner unless owner.nil?
           vm[:annotations] = annotations unless annotations.nil?

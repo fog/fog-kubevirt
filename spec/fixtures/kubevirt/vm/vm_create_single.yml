@@ -1,0 +1,362 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 24 Mar 2019 20:41:19 GMT
+      Content-Length:
+      - '1998'
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","items":[{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-24T20:41:19Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"3260847","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"2dbf05ef-4e75-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-21T08:53:21Z","generation":3,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-pvc","namespace":"default","resourceVersion":"2744764","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-pvc","uid":"c7c8e72d-4bb6-11e9-8e8c-5254007d353d"},"spec":{"running":true,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"de:00:00:11:11:de","name":"ovs-foreman"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"example-local-claim"}}]}}},"status":{"created":true,"ready":true}}],"kind":"VirtualMachineList","metadata":{"continue":"","resourceVersion":"3260847","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines"}}
+
+'
+    http_version:
+  recorded_at: Sun, 24 Mar 2019 20:41:19 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '1526'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIResourceList","apiVersion":"v1","groupVersion":"kubevirt.io/v1alpha3","resources":[{"name":"virtualmachineinstancemigrations","singularName":"virtualmachineinstancemigration","namespaced":true,"kind":"VirtualMachineInstanceMigration","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vmim","vmims"]},{"name":"virtualmachineinstancepresets","singularName":"virtualmachineinstancepreset","namespaced":true,"kind":"VirtualMachineInstancePreset","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vmipreset","vmipresets"]},{"name":"virtualmachineinstancereplicasets","singularName":"virtualmachineinstancereplicaset","namespaced":true,"kind":"VirtualMachineInstanceReplicaSet","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vmirs","vmirss"]},{"name":"virtualmachineinstancereplicasets/scale","singularName":"","namespaced":true,"group":"autoscaling","version":"v1","kind":"Scale","verbs":["get","patch","update"]},{"name":"virtualmachineinstances","singularName":"virtualmachineinstance","namespaced":true,"kind":"VirtualMachineInstance","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vmi","vmis"]},{"name":"virtualmachines","singularName":"virtualmachine","namespaced":true,"kind":"VirtualMachine","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vm","vms"]}]}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: post
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
+    body:
+      encoding: UTF-8
+      string: '{"kind":"VirtualMachine","metadata":{"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"devices":{"disks":[{"name":"test2-disk-00","disk":{"bus":"virtio"}}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}},"cpu":{"cores":1}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}},"apiVersion":"kubevirt.io/v1alpha3"}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+      Content-Length:
+      - '550'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '763'
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-25T09:40:38Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"3291939","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"0c0afe5d-4ee2-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '763'
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-25T09:40:38Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"3291939","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"0c0afe5d-4ee2-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '763'
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-25T09:40:38Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"3291939","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"0c0afe5d-4ee2-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+- request:
+    method: delete
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 25 Mar 2019 09:40:38 GMT
+      Content-Length:
+      - '188'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Success","details":{"name":"test2","group":"kubevirt.io","kind":"virtualmachines","uid":"0c0afe5d-4ee2-11e9-8e8c-5254007d353d"}}
+
+'
+    http_version:
+  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+recorded_with: VCR 4.0.0

@@ -18,12 +18,16 @@ module Fog
       collection :nodes
       model      :vm
       collection :vms
+      model      :persistentvolume
+      collection :persistentvolumes
       model      :pvc
       collection :pvcs
       model      :server
       collection :servers
       model      :service
       collection :services
+      model      :storageclass
+      collection :storageclasses
       model      :template
       collection :templates
       model      :volume
@@ -33,33 +37,38 @@ module Fog
       request :create_networkattachmentdef
       request :create_vm
       request :create_vminstance
+      request :create_persistentvolume
       request :create_pvc
       request :create_service
-      request :create_volume
+      request :create_storageclass
       request :delete_networkattachmentdef
+      request :delete_persistentvolume
       request :delete_pvc
       request :delete_service
+      request :delete_storageclass
       request :delete_vminstance
       request :delete_vm
-      request :delete_volume
       request :get_vminstance
       request :get_networkattachmentdef
       request :get_node
+      request :get_persistentvolume
       request :get_pvc
       request :get_vm
-      request :get_volume
       request :get_server
       request :get_service
+      request :get_storageclass
       request :get_template
       request :list_vminstances
       request :list_nodes
       request :list_networkattachmentdefs
       request :list_vms
+      request :list_persistentvolumes
       request :list_pvcs
-      request :list_volumes
       request :list_servers
       request :list_services
+      request :list_storageclasses
       request :list_templates
+      request :list_volumes
       request :update_vm
 
       module Shared
@@ -165,6 +174,11 @@ module Fog
         # The API group of the Kubernetes network extention:
         #
         NETWORK_GROUP = 'k8s.cni.cncf.io'.freeze
+
+        #
+        # The API group of the Kubernetes network extention:
+        #
+        STORAGE_GROUP = 'storage.k8s.io'.freeze
 
         def initialize(options={})
           require 'kubeclient'
@@ -421,7 +435,7 @@ module Fog
           # version detected based on
           # https://github.com/kubernetes-incubator/apiserver-builder/blob/master/docs/concepts/aggregation.md#viewing-discovery-information
           preferredVersion = response["preferredVersion"]
-          return preferredVersion["version"] if preferredVersion 
+          return preferredVersion["version"] if preferredVersion
           response["versions"][0]
         end
 
@@ -439,6 +453,10 @@ module Fog
 
         def kube_net_client
           create_client('/apis/' + NETWORK_GROUP)
+        end
+
+        def kube_storage_client
+          create_client('/apis/' + STORAGE_GROUP)
         end
 
         def log
