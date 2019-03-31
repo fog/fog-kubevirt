@@ -1,3 +1,12 @@
+### 1.1.0 / 2019-03-31
+
+* Replace VmVolume with Volume as main collection
+* Allow to create vm with multiple pvcs
+* Rename Volume to PersistentVolume
+* Add support for Storage Class
+* Make VmVolume a Fog model
+* Extend VMs, VM Instances and servers
+
 ### 1.0.2 / 2019-02-27
 
 * Asdd Watch VMIs
