@@ -430,7 +430,11 @@ module Fog
             ssl_client_key: ssl_options[:client_key],
           }
 
-          response = ::JSON.parse(RestClient::Resource.new(url, options).get)
+          begin
+            response = ::JSON.parse(RestClient::Resource.new(url, options).get)
+          rescue => e
+            raise ::Fog::Kubevirt::Errors::ClientError, e
+          end
 
           # version detected based on
           # https://github.com/kubernetes-incubator/apiserver-builder/blob/master/docs/concepts/aggregation.md#viewing-discovery-information
