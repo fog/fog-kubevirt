@@ -46,7 +46,6 @@ module Fog
           end
 
         def self.parse(object, disk)
-          byebug
           volume = parse_object(object)
           volume[:boot_order] = object[:bootOrder]
           volume
