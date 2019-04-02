@@ -1,3 +1,10 @@
+### 1.1.1 / 2019-04-03
+
+* Support SSL
+* Validate namespace exists
+* Make VmNic fog model
+* Minor bug
+
 ### 1.1.0 / 2019-03-31
 
 * Replace VmVolume with Volume as main collection
