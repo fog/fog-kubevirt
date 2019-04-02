@@ -134,14 +134,19 @@ module Fog
           volumes
         end
 
-        class VmNic
-          attr_accessor :name,
-                        :mac_address,
-                        :type, # values: bridge, slirp
-                        :model,
-                        :ports,
-                        :boot_order
+        class VmNic < Fog::Model
+          attr_accessor :name
+
+          attribute :mac_address
+          attribute :type # values: bridge, slirp
+          attribute :model
+          attribute :ports
+          attribute :boot_order
           alias :mac :mac_address
+
+          def persisted?
+            !name.nil?
+          end
         end
 
         class VmNetwork
