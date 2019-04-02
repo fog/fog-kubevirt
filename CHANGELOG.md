@@ -1,3 +1,10 @@
+### 0.3.0 / 2019-05-02
+
+* Replace VmVolume with Volume as main collection
+* Allow to create vm with multiple pvcs
+* Rename Volume to PersistentVolume
+* Add support for Storage Class
+
 ### 0.2.1 / 2019-02-5
 
 * Fix broken create VM due to API changes
