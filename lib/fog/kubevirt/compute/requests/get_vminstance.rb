@@ -12,47 +12,112 @@ module Fog
 
       class Mock
         def get_vminstance(name)
-          vm = { :apiVersion => "kubevirt.io/v1alpha2",
-                 :kind       => "VirtualMachineInstance",
-                 :metadata   => { :clusterName       => "",
-                                  :creationTimestamp => "2018-02-23T10:12:47Z",
-                                  :name              => "demo",
-                                  :namespace         => "default",
-                                  :ownerReferences   => [{ :apiVersion      => "kubevirt.io/v1alpha2",
-                                                           :kind            => "VirtualMachine",
-                                                           :name            => "demo",
-                                                           :uid             => "57e279c1-17ee-11e8-a9f9-525400a7f647"
-                                                         }
-                                                        ],
-                                  :resourceVersion   => "84873",
-                                  :selfLink          => "/apis/kubevirt.io/v1alpha2/namespaces/default/virtualmachineinstances/demo",
-                                  :uid               => "1906421f-1882-11e8-b539-525400a7f647"
-                                },
-                 :spec       => { :domain => { :cpu     => { :cores => "4" },
-                                               :devices => { :disks => [{ :disk       => { :dev => "vda" },
-                                                                          :name       => "containerDisk",
-                                                                          :volumeName => "containervolume"
-                                                                        },
-                                                                        { :disk       => { :dev => "vdb" },
-                                                                          :name       => "cloudinitdisk",
-                                                                          :volumeName => "cloudinitvolume"
-                                                                        }
-                                                                       ]
-                                                           },
-                                               :machine    => { :type => "q35" },
-                                               :resources  => { :requests => { :memory => "512Mi" }}
-                                             },
-                                  :volumes => [ { :name         => "containervolume",
-                                                  :containerDisk => { :image => "kubevirt/fedora-cloud-registry-disk-demo:latest" }
-                                                },
-                                                { :cloudInitNoCloud => { :userDataBase64 => "I2Nsb3VkLWNvbmZpZwpwYXNzd29yZDogYXRvbWljCnNzaF9wd2F1dGg6IFRydWUKY2hwYXNzd2Q6IHsgZXhwaXJlOiBGYWxzZSB9Cg==" },
-                                                  :name             => "cloudinitvolume"
-                                                }
-                                              ]
-                                  }
-               }
-          object = RecursiveOpenStruct.new(vm, recurse_over_arrays: true)
-          Vminstance.parse object_to_hash(object)
+          vm = {
+            :apiVersion=>"kubevirt.io/v1alpha3",
+            :kind=>"VirtualMachineInstance",
+            :metadata=>{
+              :creationTimestamp=>"2019-04-02T13:46:08Z",
+              :finalizers=>["foregroundDeleteVirtualMachine"],
+              :generation=>7,
+              :labels=>{
+                :"kubevirt.io/nodeName"=>"node02",
+                :special=>"vmi-multus-multiple-net"
+              },
+              :name=>"vmi-multus-multiple-net",
+              :namespace=>"default",
+              :resourceVersion=>"27047",
+              :selfLink=>"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachineinstances/vmi-multus-multiple-net",
+              :uid=>"ab5e450c-554d-11e9-a3d6-525500d15501"
+            },
+            :spec=>{
+              :domain=>{
+                :devices=>{
+                  :disks=>[
+                    {
+                      :disk=>{:bus=>"virtio"},
+                      :name=>"containerdisk"
+                    },
+                    {
+                      :disk=>{:bus=>"virtio"},
+                      :name=>"cloudinitdisk"
+                    }
+                  ],
+                  :interfaces=>[
+                    {
+                      :bridge=>{},
+                      :name=>"default"
+                    },
+                    {
+                      :bridge=>{},
+                      :name=>"ptp"
+                    }
+                  ]
+                },
+                :features=>{
+                  :acpi=>{:enabled=>true}
+                },
+                :firmware=>{:uuid=>"ff1ff019-c799-400f-9be1-375c3cee8b59"},
+                :machine=>{:type=>"q35"},
+                :resources=>{
+                  :requests=>{
+                    :memory=>"1024M"
+                  }
+                }
+              },
+              :networks=>[
+                {
+                  :name=>"default",
+                  :pod=>{}
+                },
+                {
+                  :multus=>{:networkName=>"ptp-conf"},
+                  :name=>"ptp"
+                }
+              ],
+              :terminationGracePeriodSeconds=>0,
+              :volumes=>[
+                {
+                  :containerDisk=>{:image=>"registry:5000/kubevirt/fedora-cloud-container-disk-demo:devel"},
+                  :name=>"containerdisk"
+                },
+                {
+                  :cloudInitNoCloud=>{:userData=>"#!/bin/bash\necho \"fedora\" |passwd fedora --stdin\ndhclient eth1\n"},
+                  :name=>"cloudinitdisk"
+                }
+              ]
+            },
+            :status=>{
+              :conditions=>[
+                {
+                  :lastProbeTime=>nil,
+                  :lastTransitionTime=>nil,
+                  :status=>"True",
+                  :type=>"LiveMigratable"
+                },
+                {
+                  :lastProbeTime=>nil,
+                  :lastTransitionTime=>"2019-04-02T13:46:24Z",
+                  :status=>"True",
+                  :type=>"Ready"
+                }
+              ],
+              :interfaces=>[
+                {
+                  :ipAddress=>"10.244.1.14",
+                  :mac=>"0e:fc:6c:c3:20:ec",
+                  :name=>"default"
+                },
+                {
+                  :mac=>"4a:90:1c:2e:fe:d7",
+                  :name=>"ptp"
+                }
+              ],
+              :migrationMethod=>"BlockMigration",
+              :nodeName=>"node02",
+              :phase=>"Running"
+            }
+          }
+          Vminstance.parse object_to_hash(vm)
         end
       end
     end
