@@ -471,7 +471,9 @@ module Fog
       class Mock
         include Shared
 
+        attr_accessor :namespace
         def initialize(options={})
+          @namespace = options[:namespace]
         end
 
         private
