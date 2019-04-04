@@ -19,8 +19,10 @@ module Fog
           service.delete_vm(name, namespace)
         end
 
+        # TODO: Once IP Addresses are reported to any networks, we should consider also
+        # the availabity of it (by extending the condition with !ip_address.empty?)
         def ready?
-          running?(status) && running?(state) && !ip_address.empty?
+          running?(status) && running?(state)
         end
 
         def self.parse(object)
