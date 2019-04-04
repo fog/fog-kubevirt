@@ -17,11 +17,11 @@ module Fog
           attribute :annotations,      :aliases => 'metadata_annotations'
           attribute :cpu_cores,        :aliases => 'spec_cpu_cores'
           attribute :memory,           :aliases => 'spec_memory'
-          attribute :disks,            :aliases => 'spec_disks'
-          attribute :volumes,          :aliases => 'spec_volumes'
+          attribute :disks,            :aliases => 'spec_disks',               :default => []
+          attribute :volumes,          :aliases => 'spec_volumes',             :default => []
           attribute :status,           :aliases => 'spec_running'
-          attribute :interfaces,       :aliases => 'spec_interfaces'
-          attribute :networks,         :aliases => 'spec_networks'
+          attribute :interfaces,       :aliases => 'spec_interfaces',          :default => []
+          attribute :networks,         :aliases => 'spec_networks',            :default => []
           attribute :machine_type,     :aliases => 'spec_machine_type'
         end
 
