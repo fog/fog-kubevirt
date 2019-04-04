@@ -1,3 +1,8 @@
+### 1.1.1 / 2019-04-04
+
+* Verify server is accessible before other validations
+* Do not rely on IP Address for VM readiness
+
 ### 1.1.1 / 2019-04-03
 
 * Support SSL
