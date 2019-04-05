@@ -1,4 +1,5 @@
 require 'fog/kubevirt/compute/models/volume'
+require 'fog/kubevirt/compute/models/vmnic'
 
 module Fog
   module Kubevirt
@@ -132,21 +133,6 @@ module Fog
           end
 
           volumes
-        end
-
-        class VmNic < Fog::Model
-          identity :mac_address
-          attr_accessor :name
-
-          attribute :type # values: bridge, slirp
-          attribute :model
-          attribute :ports
-          attribute :boot_order
-          alias :mac :mac_address
-
-          def persisted?
-            !name.nil?
-          end
         end
 
         class VmNetwork
