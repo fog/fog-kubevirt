@@ -135,9 +135,9 @@ module Fog
         end
 
         class VmNic < Fog::Model
+          identity :mac_address
           attr_accessor :name
 
-          attribute :mac_address
           attribute :type # values: bridge, slirp
           attribute :model
           attribute :ports
