@@ -1,10 +1,10 @@
-require 'fog/kubevirt/compute/models/vm_data'
+require 'fog/kubevirt/compute/models/vm_parser'
 
 module Fog
   module Kubevirt
     class Compute
       class Vminstance < Fog::Model
-        extend VmData
+        extend VmParser
 
         identity :name
 
