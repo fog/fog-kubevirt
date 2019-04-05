@@ -1,10 +1,10 @@
-require 'fog/kubevirt/compute/models/vm_data'
+require 'fog/kubevirt/compute/models/vm_parser'
 
 module Fog
   module Kubevirt
     class Compute
       module VmBase
-        include VmData
+        include VmParser
 
         def define_properties
           identity :name
@@ -53,32 +53,6 @@ module Fog
           vm[:memory] = mem unless mem.nil?
 
           vm
-        end
-      end
-
-      module VmAction
-        include Shared
-
-        def start(options = {})
-          # Change the `running` attribute to `true` so that the virtual machine controller will take it and
-          # create the virtual machine instance.
-          vm = service.get_raw_vm(name)
-          vm = deep_merge!(vm,
-            :spec => {
-              :running => true
-            }
-          )
-          service.update_vm(vm)
-        end
-
-        def stop(options = {})
-          vm = service.get_raw_vm(name)
-          vm = deep_merge!(vm,
-            :spec => {
-              :running => false
-            }
-          )
-          service.update_vm(vm)
         end
       end
     end

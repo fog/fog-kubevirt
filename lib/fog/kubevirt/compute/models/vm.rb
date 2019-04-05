@@ -1,4 +1,5 @@
 require 'fog/kubevirt/compute/models/vm_base'
+require 'fog/kubevirt/compute/models/vm_action'
 
 module Fog
   module Kubevirt
