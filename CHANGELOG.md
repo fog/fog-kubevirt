@@ -1,4 +1,11 @@
-### 1.1.1 / 2019-04-04
+### 1.1.3 / 2019-04-05
+
+* Refactor VM modules
+* Pull VmNic to its one file
+* Add identity to VmNic
+* Set default value to vm collections
+
+### 1.1.2 / 2019-04-04
 
 * Verify server is accessible before other validations
 * Do not rely on IP Address for VM readiness
