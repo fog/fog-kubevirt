@@ -523,6 +523,10 @@ module Fog
         def initialize(options={})
         end
 
+        def namespace
+          "default"
+        end
+
         private
 
         def client
