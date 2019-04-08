@@ -1,3 +1,8 @@
+### 1.2.0 / 2019-04-08
+
+* Replace state with phase of Server model
+* Add mocks
+
 ### 1.1.3 / 2019-04-05
 
 * Refactor VM modules
