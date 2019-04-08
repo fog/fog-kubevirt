@@ -15,6 +15,18 @@ module Fog
 
       class Mock
         def list_storageclasses(_filters = {})
+          if _filters == {}
+            [{
+              :name=>"local-storage",
+              :resource_version=>"775504",
+              :uid=>"c930bca9-5471-11e9-9132-525400c5a686",
+              :parameters=>nil,
+              :mount_options=>nil,
+              :provisioner=>"kubernetes.io/no-provisioner",
+              :reclaim_policy=>"Delete",
+              :volume_binding_mode=>"WaitForFirstConsumer"
+            }]
+          end
         end
       end
     end

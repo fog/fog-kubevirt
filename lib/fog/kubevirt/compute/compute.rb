@@ -520,16 +520,14 @@ module Fog
       class Mock
         include Shared
 
+        attr_accessor :namespace
         def initialize(options={})
+          @namespace = options[:namespace]
         end
-
-        private
 
         def client
           return @client if defined?(@client)
         end
-
-        # TODO provide mocking
       end
     end
   end
