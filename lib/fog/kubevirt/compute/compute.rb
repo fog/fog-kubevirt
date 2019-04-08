@@ -527,8 +527,6 @@ module Fog
           "default"
         end
 
-        private
-
         def client
           return @client if defined?(@client)
         end
