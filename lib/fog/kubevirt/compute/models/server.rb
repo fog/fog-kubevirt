@@ -11,7 +11,7 @@ module Fog
         extend VmBase
         define_properties
 
-        attribute :state, :aliases => 'phase'
+        attribute :phase
         attribute :ip_address
         attribute :node_name
 
@@ -23,12 +23,12 @@ module Fog
         # TODO: Once IP Addresses are reported to any networks, we should consider also
         # the availabity of it (by extending the condition with !ip_address.empty?)
         def ready?
-          running?(status) && running?(state)
+          running?(status) && running?(phase)
         end
 
         def self.parse(object)
           server = parse_object(object)
-          server[:state] = object[:phase]
+          server[:phase] = object[:phase]
           server[:node_name] = object[:node_name]
           server[:ip_address] = object[:ip_address]
           server
