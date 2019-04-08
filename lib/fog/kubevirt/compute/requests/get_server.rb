@@ -45,7 +45,7 @@ module Fog
           disk
         end
 
-        def vm_nic(mac_address: mac_address)
+        def vm_nic(mac_address: "")
           vm_nic = Fog::Kubevirt::Compute::VmNic.new
           vm_nic.mac_address = mac_address
           vm_nic.type = "bridge"
@@ -114,6 +114,8 @@ module Fog
               :ip_address => nil
             }
           end
+
+          raise ::Fog::Kubevirt::Errors::ClientError, "HTTP status code 404, virtualmachines.kubevirt.io \"#{name}\" not found for GET"
         end
       end
     end

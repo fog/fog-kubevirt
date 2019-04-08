@@ -12,7 +12,6 @@ module Fog
       end
 
       class Mock
-        # TODO provide implementation
         def list_networkattachmentdefs(_filters = {})
           if _filters == {}
             EntityCollection.new("NetworkAttachmentDefinition", "1080",
