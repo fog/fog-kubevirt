@@ -9,6 +9,7 @@ module Fog
 
         model Fog::Kubevirt::Compute::Server
 
+        # filters[Hash]  - if contains ':pvcs' set to true will popoulate pvcs for vms
         def all(filters = {})
           servers = service.list_servers(filters)
           @kind = servers.kind

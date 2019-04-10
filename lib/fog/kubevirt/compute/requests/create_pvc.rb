@@ -95,7 +95,7 @@ module Fog
                          :dataSource=>nil}
             result.status={:phase=>"Pending"}
             result
-         end
+          end
         end
       end
     end
