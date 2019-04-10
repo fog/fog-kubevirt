@@ -3,7 +3,19 @@ module Fog
     class Compute
       class Real
         def get_vm(name)
-          Vm.parse get_raw_vm(name)
+          vm = Vm.parse get_raw_vm(name)
+          populate_pvcs_for_vm(vm)
+          vm
+        end
+
+        def populate_pvcs_for_vm(vm)
+          vm[:volumes].each do |vol|
+            begin
+              vol.pvc = pvcs.get(vol.info) if vol.type == 'persistentVolumeClaim'
+            rescue
+              # there is an option that the PVC does not exist
+            end
+          end
         end
 
         def get_raw_vm(name)

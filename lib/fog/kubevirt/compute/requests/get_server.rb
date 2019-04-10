@@ -5,7 +5,9 @@ module Fog
         def get_server(name)
           vm = get_raw_vm(name)
           populate_runtime_info(vm)
-          Server.parse vm
+          server = Server.parse vm
+          populate_pvcs_for_vm(server)
+          server
         end
 
         # Updates a given VM raw entity with vm instance info if exists

@@ -5,12 +5,17 @@ module Fog
   module Kubevirt
     class Compute
       class Real
-        def list_servers(_filters = {})
+        # filters[Hash]  - if contains ':pvcs' set to true will popoulate pvcs for vms
+        def list_servers(filters = {})
           vms = kubevirt_client.get_virtual_machines(namespace: @namespace)
           entities = vms.map do |kubevirt_obj|
             vm_obj = object_to_hash(kubevirt_obj)
             populate_runtime_info(vm_obj)
-            Server.parse vm_obj
+            server = Server.parse vm_obj
+            if filters[:pvcs]
+              populate_pvcs_for_vm(server)
+            end
+            server
           end
           EntityCollection.new(vms.kind, vms.resourceVersion, entities)
         end

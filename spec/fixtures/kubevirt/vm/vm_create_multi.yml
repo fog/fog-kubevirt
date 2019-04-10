@@ -2,7 +2,143 @@
 http_interactions:
 - request:
     method: get
-    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachineinstances/devin-remis.example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:10:42 GMT
+      Content-Length:
+      - '286'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"virtualmachineinstances.kubevirt.io
+        \"devin-remis.example.com\" not found","reason":"NotFound","details":{"name":"devin-remis.example.com","group":"kubevirt.io","kind":"virtualmachineinstances"},"code":404}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:10:42 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachineinstances/test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:10:42 GMT
+      Content-Length:
+      - '248'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"virtualmachineinstances.kubevirt.io
+        \"test\" not found","reason":"NotFound","details":{"name":"test","group":"kubevirt.io","kind":"virtualmachineinstances"},"code":404}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:10:42 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachineinstances/vm-multus-no-selector
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:10:42 GMT
+      Content-Length:
+      - '282'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"virtualmachineinstances.kubevirt.io
+        \"vm-multus-no-selector\" not found","reason":"NotFound","details":{"name":"vm-multus-no-selector","group":"kubevirt.io","kind":"virtualmachineinstances"},"code":404}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:10:42 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachineinstances/vm-multus-pvc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:10:42 GMT
+      Content-Length:
+      - '266'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"virtualmachineinstances.kubevirt.io
+        \"vm-multus-pvc\" not found","reason":"NotFound","details":{"name":"vm-multus-pvc","group":"kubevirt.io","kind":"virtualmachineinstances"},"code":404}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:10:42 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-1
     body:
       encoding: US-ASCII
       string: ''
@@ -23,16 +159,444 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:41:45 GMT
-      Transfer-Encoding:
-      - chunked
+      - Wed, 10 Apr 2019 17:22:35 GMT
+      Content-Length:
+      - '784'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","items":[{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-24T20:41:19Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"3260848","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"2dca9be4-4e75-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test-disk-00"},{"disk":{"bus":"virtio"},"name":"test-disk-01"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-00","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc2"}}]}}}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-24T20:41:19Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"3260847","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"2dbf05ef-4e75-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-21T08:53:21Z","generation":3,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-pvc","namespace":"default","resourceVersion":"2744764","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-pvc","uid":"c7c8e72d-4bb6-11e9-8e8c-5254007d353d"},"spec":{"running":true,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"de:00:00:11:11:de","name":"ovs-foreman"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"example-local-claim"}}]}}},"status":{"created":true,"ready":true}}],"kind":"VirtualMachineList","metadata":{"continue":"","resourceVersion":"3260891","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"devin-remis-example-com-claim-1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-1","uid":"5f1ec8a1-57b1-11e9-b51c-5254007d353d","resourceVersion":"4236770","creationTimestamp":"2019-04-05T14:44:52Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"4G"}},"volumeName":"example-local-pv-1","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:41:45 GMT
+  recorded_at: Wed, 10 Apr 2019 17:22:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:22:35 GMT
+      Content-Length:
+      - '776'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"devin-remis-example-com-claim-2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-2","uid":"5f20c6ee-57b1-11e9-b51c-5254007d353d","resourceVersion":"4236767","creationTimestamp":"2019-04-05T14:44:52Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"2G"}},"volumeName":"local-pv-5","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:22:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/pvc-no-selector
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:22:35 GMT
+      Content-Length:
+      - '745'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"pvc-no-selector","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/pvc-no-selector","uid":"d0cb64c1-5b4c-11e9-847b-5254007d353d","resourceVersion":"4516669","creationTimestamp":"2019-04-10T04:55:09Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"5Gi"}},"volumeName":"local-pv-1","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:22:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/example-local-claim
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:22:35 GMT
+      Content-Length:
+      - '242'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"persistentvolumeclaims
+        \"example-local-claim\" not found","reason":"NotFound","details":{"name":"example-local-claim","kind":"persistentvolumeclaims"},"code":404}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:22:35 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:23:06 GMT
+      Content-Length:
+      - '784'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"devin-remis-example-com-claim-1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-1","uid":"5f1ec8a1-57b1-11e9-b51c-5254007d353d","resourceVersion":"4236770","creationTimestamp":"2019-04-05T14:44:52Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"4G"}},"volumeName":"example-local-pv-1","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:23:06 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:23:06 GMT
+      Content-Length:
+      - '776'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"devin-remis-example-com-claim-2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-2","uid":"5f20c6ee-57b1-11e9-b51c-5254007d353d","resourceVersion":"4236767","creationTimestamp":"2019-04-05T14:44:52Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"2G"}},"volumeName":"local-pv-5","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:23:06 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/pvc-no-selector
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:23:06 GMT
+      Content-Length:
+      - '745'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"pvc-no-selector","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/pvc-no-selector","uid":"d0cb64c1-5b4c-11e9-847b-5254007d353d","resourceVersion":"4516669","creationTimestamp":"2019-04-10T04:55:09Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"5Gi"}},"volumeName":"local-pv-1","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:23:06 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/example-local-claim
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:23:06 GMT
+      Content-Length:
+      - '242'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"persistentvolumeclaims
+        \"example-local-claim\" not found","reason":"NotFound","details":{"name":"example-local-claim","kind":"persistentvolumeclaims"},"code":404}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:23:06 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:25:12 GMT
+      Content-Length:
+      - '784'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"devin-remis-example-com-claim-1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-1","uid":"5f1ec8a1-57b1-11e9-b51c-5254007d353d","resourceVersion":"4236770","creationTimestamp":"2019-04-05T14:44:52Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"4G"}},"volumeName":"example-local-pv-1","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:25:12 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:25:12 GMT
+      Content-Length:
+      - '776'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"devin-remis-example-com-claim-2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/devin-remis-example-com-claim-2","uid":"5f20c6ee-57b1-11e9-b51c-5254007d353d","resourceVersion":"4236767","creationTimestamp":"2019-04-05T14:44:52Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"2G"}},"volumeName":"local-pv-5","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:25:12 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/pvc-no-selector
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:25:12 GMT
+      Content-Length:
+      - '745'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"pvc-no-selector","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/pvc-no-selector","uid":"d0cb64c1-5b4c-11e9-847b-5254007d353d","resourceVersion":"4516669","creationTimestamp":"2019-04-10T04:55:09Z","annotations":{"pv.kubernetes.io/bind-completed":"yes","pv.kubernetes.io/bound-by-controller":"yes"},"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"5Gi"}},"volumeName":"local-pv-1","storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Bound","accessModes":["ReadWriteOnce"],"capacity":{"storage":"10Gi"}}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:25:12 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/example-local-claim
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:25:12 GMT
+      Content-Length:
+      - '242'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"persistentvolumeclaims
+        \"example-local-claim\" not found","reason":"NotFound","details":{"name":"example-local-claim","kind":"persistentvolumeclaims"},"code":404}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:25:12 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:26:02 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:26:02 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:26:02 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:26:02 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
@@ -56,16 +620,646 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 24 Mar 2019 20:43:03 GMT
-      Content-Length:
-      - '1235'
+      - Wed, 10 Apr 2019 17:26:09 GMT
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","items":[{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-21T08:53:21Z","generation":3,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-pvc","namespace":"default","resourceVersion":"2744764","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-pvc","uid":"c7c8e72d-4bb6-11e9-8e8c-5254007d353d"},"spec":{"running":true,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"de:00:00:11:11:de","name":"ovs-foreman"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"example-local-claim"}}]}}},"status":{"created":true,"ready":true}}],"kind":"VirtualMachineList","metadata":{"continue":"","resourceVersion":"3261028","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines"}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","items":[{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-05T14:44:52Z","generation":65,"labels":{"kubevirt.io/vm":"devin-remis.example.com"},"name":"devin-remis.example.com","namespace":"default","resourceVersion":"4579098","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/devin-remis.example.com","uid":"5f2491c8-57b1-11e9-b51c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"devin-remis.example.com"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"devin-remis-example-com-disk-00"},{"disk":{"bus":"virtio"},"name":"devin-remis-example-com-disk-01"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"a2:a0:a2:a2:a3:a2","name":"ovs-foreman"}]},"machine":{"type":""},"resources":{"requests":{"memory":"1024M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"devin-remis-example-com-disk-00","persistentVolumeClaim":{"claimName":"devin-remis-example-com-claim-1"}},{"name":"devin-remis-example-com-disk-01","persistentVolumeClaim":{"claimName":"devin-remis-example-com-claim-2"}}]}}},"status":{}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:26:02Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584570","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"b6fb3c5a-5bb5-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T04:53:27Z","generation":13,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-no-selector","namespace":"default","resourceVersion":"4579110","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-no-selector","uid":"941a5c1e-5b4c-11e9-847b-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bridge":{},"name":"default"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"name":"default","pod":{}}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"pvc-no-selector"}}]}}},"status":{}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T14:48:52Z","generation":4,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-pvc","namespace":"default","resourceVersion":"4579119","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-pvc","uid":"c226f86e-5b9f-11e9-94b4-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"de:00:00:11:11:de","name":"ovs-foreman"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"example-local-claim"}}]}}},"status":{}}],"kind":"VirtualMachineList","metadata":{"continue":"","resourceVersion":"4584585","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines"}}
 
 '
     http_version:
-  recorded_at: Sun, 24 Mar 2019 20:43:03 GMT
+  recorded_at: Wed, 10 Apr 2019 17:26:09 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:26:12 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","items":[{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-05T14:44:52Z","generation":65,"labels":{"kubevirt.io/vm":"devin-remis.example.com"},"name":"devin-remis.example.com","namespace":"default","resourceVersion":"4579098","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/devin-remis.example.com","uid":"5f2491c8-57b1-11e9-b51c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"devin-remis.example.com"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"devin-remis-example-com-disk-00"},{"disk":{"bus":"virtio"},"name":"devin-remis-example-com-disk-01"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"a2:a0:a2:a2:a3:a2","name":"ovs-foreman"}]},"machine":{"type":""},"resources":{"requests":{"memory":"1024M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"devin-remis-example-com-disk-00","persistentVolumeClaim":{"claimName":"devin-remis-example-com-claim-1"}},{"name":"devin-remis-example-com-disk-01","persistentVolumeClaim":{"claimName":"devin-remis-example-com-claim-2"}}]}}},"status":{}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:26:02Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584570","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"b6fb3c5a-5bb5-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T04:53:27Z","generation":13,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-no-selector","namespace":"default","resourceVersion":"4579110","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-no-selector","uid":"941a5c1e-5b4c-11e9-847b-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bridge":{},"name":"default"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"name":"default","pod":{}}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"pvc-no-selector"}}]}}},"status":{}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T14:48:52Z","generation":4,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-pvc","namespace":"default","resourceVersion":"4579119","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-pvc","uid":"c226f86e-5b9f-11e9-94b4-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"de:00:00:11:11:de","name":"ovs-foreman"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"example-local-claim"}}]}}},"status":{}}],"kind":"VirtualMachineList","metadata":{"continue":"","resourceVersion":"4584589","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:26:12 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:26:15 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","items":[{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-05T14:44:52Z","generation":65,"labels":{"kubevirt.io/vm":"devin-remis.example.com"},"name":"devin-remis.example.com","namespace":"default","resourceVersion":"4579098","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/devin-remis.example.com","uid":"5f2491c8-57b1-11e9-b51c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"devin-remis.example.com"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"devin-remis-example-com-disk-00"},{"disk":{"bus":"virtio"},"name":"devin-remis-example-com-disk-01"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"a2:a0:a2:a2:a3:a2","name":"ovs-foreman"}]},"machine":{"type":""},"resources":{"requests":{"memory":"1024M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"devin-remis-example-com-disk-00","persistentVolumeClaim":{"claimName":"devin-remis-example-com-claim-1"}},{"name":"devin-remis-example-com-disk-01","persistentVolumeClaim":{"claimName":"devin-remis-example-com-claim-2"}}]}}},"status":{}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:26:02Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584570","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"b6fb3c5a-5bb5-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T04:53:27Z","generation":13,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-no-selector","namespace":"default","resourceVersion":"4579110","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-no-selector","uid":"941a5c1e-5b4c-11e9-847b-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bridge":{},"name":"default"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"name":"default","pod":{}}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"pvc-no-selector"}}]}}},"status":{}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T14:48:52Z","generation":4,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-pvc","namespace":"default","resourceVersion":"4579119","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-pvc","uid":"c226f86e-5b9f-11e9-94b4-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"de:00:00:11:11:de","name":"ovs-foreman"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"example-local-claim"}}]}}},"status":{}}],"kind":"VirtualMachineList","metadata":{"continue":"","resourceVersion":"4584594","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:26:15 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:26:27 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","items":[{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-05T14:44:52Z","generation":65,"labels":{"kubevirt.io/vm":"devin-remis.example.com"},"name":"devin-remis.example.com","namespace":"default","resourceVersion":"4579098","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/devin-remis.example.com","uid":"5f2491c8-57b1-11e9-b51c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"devin-remis.example.com"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"devin-remis-example-com-disk-00"},{"disk":{"bus":"virtio"},"name":"devin-remis-example-com-disk-01"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"a2:a0:a2:a2:a3:a2","name":"ovs-foreman"}]},"machine":{"type":""},"resources":{"requests":{"memory":"1024M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"devin-remis-example-com-disk-00","persistentVolumeClaim":{"claimName":"devin-remis-example-com-claim-1"}},{"name":"devin-remis-example-com-disk-01","persistentVolumeClaim":{"claimName":"devin-remis-example-com-claim-2"}}]}}},"status":{}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:26:02Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584570","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"b6fb3c5a-5bb5-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T04:53:27Z","generation":13,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-no-selector","namespace":"default","resourceVersion":"4579110","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-no-selector","uid":"941a5c1e-5b4c-11e9-847b-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bridge":{},"name":"default"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"name":"default","pod":{}}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"pvc-no-selector"}}]}}},"status":{}},{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T14:48:52Z","generation":4,"labels":{"special":"vm-multus-pvc"},"name":"vm-multus-pvc","namespace":"default","resourceVersion":"4579119","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/vm-multus-pvc","uid":"c226f86e-5b9f-11e9-94b4-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"vm-multus-pvc"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"vm-multus-pvc-volume"}],"interfaces":[{"bootOrder":1,"bridge":{},"macAddress":"de:00:00:11:11:de","name":"ovs-foreman"}]},"machine":{"type":"q35"},"resources":{"requests":{"memory":"512M"}}},"networks":[{"multus":{"networkName":"ovs-foreman"},"name":"ovs-foreman"}],"terminationGracePeriodSeconds":0,"volumes":[{"name":"vm-multus-pvc-volume","persistentVolumeClaim":{"claimName":"example-local-claim"}}]}}},"status":{}}],"kind":"VirtualMachineList","metadata":{"continue":"","resourceVersion":"4584616","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:26:27 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:27:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:27:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:27:36 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:27:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:27:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:27:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:27:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"055e30d4-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584823","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:14 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"0560f829-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584827","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '213'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test
@@ -89,16 +1283,144 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:36:51 GMT
+      - Wed, 10 Apr 2019 17:28:29 GMT
       Content-Length:
       - '1056'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-25T09:36:51Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"3291549","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"84cf39a1-4ee1-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:14Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584829","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"0565d863-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:36:51 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"055e30d4-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584823","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"0560f829-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584827","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -120,7 +1442,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:36:51 GMT
+      - Wed, 10 Apr 2019 17:28:29 GMT
       Content-Length:
       - '213'
     body:
@@ -129,7 +1451,366 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:36:51 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"055e30d4-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584823","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"0560f829-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584827","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:29 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIResourceList","groupVersion":"v1","resources":[{"name":"bindings","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"componentstatuses","singularName":"","namespaced":false,"kind":"ComponentStatus","verbs":["get","list"],"shortNames":["cs"]},{"name":"configmaps","singularName":"","namespaced":true,"kind":"ConfigMap","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cm"]},{"name":"endpoints","singularName":"","namespaced":true,"kind":"Endpoints","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ep"]},{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"]},{"name":"limitranges","singularName":"","namespaced":true,"kind":"LimitRange","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["limits"]},{"name":"namespaces","singularName":"","namespaced":false,"kind":"Namespace","verbs":["create","delete","get","list","patch","update","watch"],"shortNames":["ns"]},{"name":"namespaces/finalize","singularName":"","namespaced":false,"kind":"Namespace","verbs":["update"]},{"name":"namespaces/status","singularName":"","namespaced":false,"kind":"Namespace","verbs":["get","patch","update"]},{"name":"nodes","singularName":"","namespaced":false,"kind":"Node","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["no"]},{"name":"nodes/proxy","singularName":"","namespaced":false,"kind":"NodeProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"nodes/status","singularName":"","namespaced":false,"kind":"Node","verbs":["get","patch","update"]},{"name":"persistentvolumeclaims","singularName":"","namespaced":true,"kind":"PersistentVolumeClaim","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pvc"]},{"name":"persistentvolumeclaims/status","singularName":"","namespaced":true,"kind":"PersistentVolumeClaim","verbs":["get","patch","update"]},{"name":"persistentvolumes","singularName":"","namespaced":false,"kind":"PersistentVolume","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pv"]},{"name":"persistentvolumes/status","singularName":"","namespaced":false,"kind":"PersistentVolume","verbs":["get","patch","update"]},{"name":"pods","singularName":"","namespaced":true,"kind":"Pod","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["po"],"categories":["all"]},{"name":"pods/attach","singularName":"","namespaced":true,"kind":"PodAttachOptions","verbs":["create","get"]},{"name":"pods/binding","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"pods/eviction","singularName":"","namespaced":true,"group":"policy","version":"v1beta1","kind":"Eviction","verbs":["create"]},{"name":"pods/exec","singularName":"","namespaced":true,"kind":"PodExecOptions","verbs":["create","get"]},{"name":"pods/log","singularName":"","namespaced":true,"kind":"Pod","verbs":["get"]},{"name":"pods/portforward","singularName":"","namespaced":true,"kind":"PodPortForwardOptions","verbs":["create","get"]},{"name":"pods/proxy","singularName":"","namespaced":true,"kind":"PodProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"pods/status","singularName":"","namespaced":true,"kind":"Pod","verbs":["get","patch","update"]},{"name":"podtemplates","singularName":"","namespaced":true,"kind":"PodTemplate","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"replicationcontrollers","singularName":"","namespaced":true,"kind":"ReplicationController","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["rc"],"categories":["all"]},{"name":"replicationcontrollers/scale","singularName":"","namespaced":true,"group":"autoscaling","version":"v1","kind":"Scale","verbs":["get","patch","update"]},{"name":"replicationcontrollers/status","singularName":"","namespaced":true,"kind":"ReplicationController","verbs":["get","patch","update"]},{"name":"resourcequotas","singularName":"","namespaced":true,"kind":"ResourceQuota","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["quota"]},{"name":"resourcequotas/status","singularName":"","namespaced":true,"kind":"ResourceQuota","verbs":["get","patch","update"]},{"name":"secrets","singularName":"","namespaced":true,"kind":"Secret","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"serviceaccounts","singularName":"","namespaced":true,"kind":"ServiceAccount","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sa"]},{"name":"services","singularName":"","namespaced":true,"kind":"Service","verbs":["create","delete","get","list","patch","update","watch"],"shortNames":["svc"],"categories":["all"]},{"name":"services/proxy","singularName":"","namespaced":true,"kind":"ServiceProxyOptions","verbs":["create","delete","get","patch","update"]},{"name":"services/status","singularName":"","namespaced":true,"kind":"Service","verbs":["get","patch","update"]}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+- request:
+    method: post
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"name":"mypvc1","namespace":"default"},"spec":{"storageClassName":"local-storage","resources":{"requests":{"storage":"1Gi"}},"selector":{},"accessModes":["ReadWriteOnce"]}}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+      Content-Length:
+      - '234'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Content-Length:
+      - '494'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584884","creationTimestamp":"2019-04-10T17:28:36Z"},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+- request:
+    method: post
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"name":"mypvc2","namespace":"default"},"spec":{"storageClassName":"local-storage","resources":{"requests":{"storage":"1Gi"}},"selector":{},"accessModes":["ReadWriteOnce"]}}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+      Content-Length:
+      - '234'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Content-Length:
+      - '494'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584888","creationTimestamp":"2019-04-10T17:28:36Z"},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -151,7 +1832,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:38 GMT
+      - Wed, 10 Apr 2019 17:28:36 GMT
       Content-Length:
       - '213'
     body:
@@ -160,7 +1841,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -182,7 +1863,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:38 GMT
+      - Wed, 10 Apr 2019 17:28:36 GMT
       Content-Length:
       - '213'
     body:
@@ -191,7 +1872,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3
@@ -215,7 +1896,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:38 GMT
+      - Wed, 10 Apr 2019 17:28:36 GMT
       Content-Length:
       - '1526'
     body:
@@ -224,7 +1905,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
 - request:
     method: post
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
@@ -252,16 +1933,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:38 GMT
+      - Wed, 10 Apr 2019 17:28:36 GMT
       Content-Length:
       - '1056'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-25T09:40:38Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"3291941","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"0c1b4784-4ee2-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584893","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"127bd4e6-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -283,7 +1964,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:38 GMT
+      - Wed, 10 Apr 2019 17:28:36 GMT
       Content-Length:
       - '213'
     body:
@@ -292,7 +1973,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test
@@ -316,16 +1997,144 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:38 GMT
+      - Wed, 10 Apr 2019 17:28:36 GMT
       Content-Length:
       - '1056'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-25T09:40:38Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"3291941","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"0c1b4784-4ee2-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584893","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"127bd4e6-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584885","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:36 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584890","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -347,7 +2156,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:38 GMT
+      - Wed, 10 Apr 2019 17:28:37 GMT
       Content-Length:
       - '213'
     body:
@@ -356,7 +2165,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test
@@ -380,16 +2189,144 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:38 GMT
+      - Wed, 10 Apr 2019 17:28:37 GMT
       Content-Length:
       - '1056'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-03-25T09:40:38Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"3291941","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"0c1b4784-4ee2-11e9-8e8c-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584893","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"127bd4e6-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:38 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584885","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584890","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -411,7 +2348,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:56 GMT
+      - Wed, 10 Apr 2019 17:28:37 GMT
       Content-Length:
       - '213'
     body:
@@ -420,7 +2357,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:56 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
 - request:
     method: delete
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test
@@ -446,14 +2383,274 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 25 Mar 2019 09:40:56 GMT
+      - Wed, 10 Apr 2019 17:28:37 GMT
       Content-Length:
       - '187'
     body:
       encoding: UTF-8
-      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Success","details":{"name":"test","group":"kubevirt.io","kind":"virtualmachines","uid":"0c1b4784-4ee2-11e9-8e8c-5254007d353d"}}
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Success","details":{"name":"test","group":"kubevirt.io","kind":"virtualmachines","uid":"127bd4e6-5bb6-11e9-8e5e-5254007d353d"}}
 
 '
     http_version:
-  recorded_at: Mon, 25 Mar 2019 09:40:56 GMT
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584885","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: delete
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '614'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584897","creationTimestamp":"2019-04-10T17:28:36Z","deletionTimestamp":"2019-04-10T17:28:37Z","deletionGracePeriodSeconds":0,"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '540'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584890","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+- request:
+    method: delete
+    uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Apr 2019 17:28:37 GMT
+      Content-Length:
+      - '614'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584900","creationTimestamp":"2019-04-10T17:28:36Z","deletionTimestamp":"2019-04-10T17:28:37Z","deletionGracePeriodSeconds":0,"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+
+'
+    http_version:
+  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
 recorded_with: VCR 4.0.0
