@@ -537,68 +537,6 @@ http_interactions:
   recorded_at: Wed, 10 Apr 2019 17:25:12 GMT
 - request:
     method: get
-    uri: https://10.8.254.82:8443/api
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 10 Apr 2019 17:26:02 GMT
-      Content-Length:
-      - '137'
-    body:
-      encoding: UTF-8
-      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
-
-'
-    http_version:
-  recorded_at: Wed, 10 Apr 2019 17:26:02 GMT
-- request:
-    method: get
-    uri: https://10.8.254.82:8443/api
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 10 Apr 2019 17:26:02 GMT
-      Content-Length:
-      - '137'
-    body:
-      encoding: UTF-8
-      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
-
-'
-    http_version:
-  recorded_at: Wed, 10 Apr 2019 17:26:02 GMT
-- request:
-    method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
     body:
       encoding: US-ASCII
@@ -750,7 +688,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:27:36 GMT
+      - Thu, 11 Apr 2019 14:03:57 GMT
       Content-Length:
       - '137'
     body:
@@ -759,7 +697,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:03:57 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -781,7 +719,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:27:36 GMT
+      - Thu, 11 Apr 2019 14:03:57 GMT
       Content-Length:
       - '137'
     body:
@@ -790,7 +728,69 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:03:57 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 11 Apr 2019 14:03:57 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Thu, 11 Apr 2019 14:03:57 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.3.3p222
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 11 Apr 2019 14:03:57 GMT
+      Content-Length:
+      - '137'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"10.8.254.82:8443"}]}
+
+'
+    http_version:
+  recorded_at: Thu, 11 Apr 2019 14:03:57 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -812,7 +812,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:27:36 GMT
+      - Thu, 11 Apr 2019 14:03:57 GMT
       Content-Length:
       - '213'
     body:
@@ -821,7 +821,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:03:57 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -843,7 +843,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:27:36 GMT
+      - Thu, 11 Apr 2019 14:03:57 GMT
       Content-Length:
       - '137'
     body:
@@ -852,7 +852,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:03:57 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -874,7 +874,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:27:36 GMT
+      - Thu, 11 Apr 2019 14:03:57 GMT
       Content-Length:
       - '137'
     body:
@@ -883,7 +883,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:03:57 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -905,7 +905,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:27:36 GMT
+      - Thu, 11 Apr 2019 14:03:58 GMT
       Content-Length:
       - '137'
     body:
@@ -914,7 +914,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:03:58 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -936,7 +936,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:27:36 GMT
+      - Thu, 11 Apr 2019 14:03:58 GMT
       Content-Length:
       - '137'
     body:
@@ -945,7 +945,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:27:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:03:58 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -967,7 +967,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '137'
     body:
@@ -976,7 +976,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -998,7 +998,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '137'
     body:
@@ -1007,7 +1007,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -1029,7 +1029,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '213'
     body:
@@ -1038,7 +1038,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -1060,7 +1060,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '213'
     body:
@@ -1069,7 +1069,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -1091,7 +1091,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '213'
     body:
@@ -1100,7 +1100,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1122,7 +1122,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '137'
     body:
@@ -1131,7 +1131,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
@@ -1155,16 +1155,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"055e30d4-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584823","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"cfbec056-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640005","creationTimestamp":"2019-04-11T14:12:16Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1186,7 +1186,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '137'
     body:
@@ -1195,7 +1195,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
@@ -1219,16 +1219,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:14 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"0560f829-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584827","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"cfc12d53-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640010","creationTimestamp":"2019-04-11T14:12:16Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:14 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -1250,7 +1250,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '213'
     body:
@@ -1259,7 +1259,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test
@@ -1283,16 +1283,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '1056'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:14Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584829","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"0565d863-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:16Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4640012","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"cfc5ffc7-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1314,7 +1314,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '137'
     body:
@@ -1323,7 +1323,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
@@ -1347,16 +1347,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"055e30d4-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584823","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"cfbec056-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640005","creationTimestamp":"2019-04-11T14:12:16Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1378,7 +1378,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '137'
     body:
@@ -1387,7 +1387,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
@@ -1411,16 +1411,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"0560f829-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584827","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"cfc12d53-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640010","creationTimestamp":"2019-04-11T14:12:16Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -1442,7 +1442,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:16 GMT
       Content-Length:
       - '213'
     body:
@@ -1451,7 +1451,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:16 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1473,7 +1473,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:17 GMT
       Content-Length:
       - '137'
     body:
@@ -1482,7 +1482,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:17 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
@@ -1506,16 +1506,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:17 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"055e30d4-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584823","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"cfbec056-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640005","creationTimestamp":"2019-04-11T14:12:16Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:17 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1537,7 +1537,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:17 GMT
       Content-Length:
       - '137'
     body:
@@ -1546,7 +1546,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:17 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1568,7 +1568,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:17 GMT
       Content-Length:
       - '137'
     body:
@@ -1577,7 +1577,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:17 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
@@ -1601,16 +1601,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:17 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"0560f829-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584827","creationTimestamp":"2019-04-10T17:28:14Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"cfc12d53-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640010","creationTimestamp":"2019-04-11T14:12:16Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:17 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1632,7 +1632,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:29 GMT
+      - Thu, 11 Apr 2019 14:12:17 GMT
       Content-Length:
       - '137'
     body:
@@ -1641,7 +1641,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:29 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:17 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1663,7 +1663,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -1672,7 +1672,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1
@@ -1696,7 +1696,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Transfer-Encoding:
       - chunked
     body:
@@ -1705,13 +1705,13 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: post
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"name":"mypvc1","namespace":"default"},"spec":{"storageClassName":"local-storage","resources":{"requests":{"storage":"1Gi"}},"selector":{},"accessModes":["ReadWriteOnce"]}}'
+      string: '{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"name":"mypvc1","namespace":"default"},"spec":{"storageClassName":"local-storage","resources":{"requests":{"storage":"1Gi"}},"accessModes":["ReadWriteOnce"]}}'
     headers:
       Accept:
       - "*/*"
@@ -1724,7 +1724,7 @@ http_interactions:
       Authorization:
       - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
       Content-Length:
-      - '234'
+      - '220'
   response:
     status:
       code: 201
@@ -1733,16 +1733,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '494'
+      - '480'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584884","creationTimestamp":"2019-04-10T17:28:36Z"},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"d2d75d78-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640038","creationTimestamp":"2019-04-11T14:12:22Z"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -1764,7 +1764,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -1773,13 +1773,13 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: post
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"name":"mypvc2","namespace":"default"},"spec":{"storageClassName":"local-storage","resources":{"requests":{"storage":"1Gi"}},"selector":{},"accessModes":["ReadWriteOnce"]}}'
+      string: '{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"name":"mypvc2","namespace":"default"},"spec":{"storageClassName":"local-storage","resources":{"requests":{"storage":"1Gi"}},"accessModes":["ReadWriteOnce"]}}'
     headers:
       Accept:
       - "*/*"
@@ -1792,7 +1792,7 @@ http_interactions:
       Authorization:
       - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImZvcmVtYW4tYWNjb3VudC10b2tlbi1yY3ByMiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJmb3JlbWFuLWFjY291bnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGY3NTc4NC0yMjUyLTExZTktYjU1NS01MjU0MDA3ZDM1M2QiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpmb3JlbWFuLWFjY291bnQifQ.UDzZu0_mLkJZvgeGE-lgKJOXtwWGt6WoNuEpm8k7VK61_bQFavEsETRUrGar68cebUPdUTWFoFlVStcQXoQoS0PUvqNPmznBcHDUW5Jw7pKaLHUhsqQkOoNzDD4eGcl1KDoagL1E-CkTglcYiMYHM9yykxnK58jyP3HF1rsDLG-c8N-T3bK_tLQ__eqKwPJ7R3RHuCg3M5FX1mH86wuaEsOPW3KW7tlGQpP5hj33-97KMp4GgH3pZMTLgo1JDwGT2GXPW12V7juE18KEvvot6q5S0Akl85Vp_5NCxNANRG9YCsSnUiB1opHBqfTxIO1ykSYHfg2IkuovQh68HDNV5A
       Content-Length:
-      - '234'
+      - '220'
   response:
     status:
       code: 201
@@ -1801,16 +1801,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '494'
+      - '480'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584888","creationTimestamp":"2019-04-10T17:28:36Z"},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"d2d9e781-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640042","creationTimestamp":"2019-04-11T14:12:22Z"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -1832,7 +1832,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '213'
     body:
@@ -1841,7 +1841,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -1863,7 +1863,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '213'
     body:
@@ -1872,7 +1872,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3
@@ -1896,7 +1896,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '1526'
     body:
@@ -1905,7 +1905,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: post
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
@@ -1933,16 +1933,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '1056'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584893","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"127bd4e6-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:22Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4640046","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"d2de4916-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -1964,7 +1964,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '213'
     body:
@@ -1973,7 +1973,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test
@@ -1997,16 +1997,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '1056'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584893","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"127bd4e6-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:22Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4640046","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"d2de4916-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -2028,7 +2028,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -2037,7 +2037,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
@@ -2061,16 +2061,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584885","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"d2d75d78-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640040","creationTimestamp":"2019-04-11T14:12:22Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -2092,7 +2092,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -2101,7 +2101,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
@@ -2125,16 +2125,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584890","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"d2d9e781-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640043","creationTimestamp":"2019-04-11T14:12:22Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -2156,7 +2156,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '213'
     body:
@@ -2165,7 +2165,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test
@@ -2189,16 +2189,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '1056'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4584893","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"127bd4e6-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:22Z","generation":1,"labels":{"kubevirt.io/vm":"test"},"name":"test","namespace":"default","resourceVersion":"4640046","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test","uid":"d2de4916-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"test-disk-01"},{"bootOrder":2,"disk":{"bus":"virtio"},"name":"test-disk-02"},{"bootOrder":3,"disk":{},"name":"test-disk-03"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test-disk-01","persistentVolumeClaim":{"claimName":"mypvc1"}},{"name":"test-disk-02","persistentVolumeClaim":{"claimName":"mypvc2"}},{"hostDisk":{"capacity":"1Gi","path":"/mnt/data/disk.img","type":"DiskOrCreate"},"name":"test-disk-03"}]}}}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -2220,7 +2220,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -2229,7 +2229,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
@@ -2253,16 +2253,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584885","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"d2d75d78-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640040","creationTimestamp":"2019-04-11T14:12:22Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -2284,7 +2284,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -2293,7 +2293,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
@@ -2317,16 +2317,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584890","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"d2d9e781-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640043","creationTimestamp":"2019-04-11T14:12:22Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -2348,7 +2348,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '213'
     body:
@@ -2357,7 +2357,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: delete
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test
@@ -2383,16 +2383,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '187'
     body:
       encoding: UTF-8
-      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Success","details":{"name":"test","group":"kubevirt.io","kind":"virtualmachines","uid":"127bd4e6-5bb6-11e9-8e5e-5254007d353d"}}
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Success","details":{"name":"test","group":"kubevirt.io","kind":"virtualmachines","uid":"d2de4916-5c63-11e9-8e5e-5254007d353d"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -2414,7 +2414,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -2423,7 +2423,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
@@ -2447,16 +2447,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584885","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"d2d75d78-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640040","creationTimestamp":"2019-04-11T14:12:22Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -2478,7 +2478,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -2487,7 +2487,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: delete
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc1
@@ -2513,16 +2513,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '614'
+      - '600'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"1274dddd-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584897","creationTimestamp":"2019-04-10T17:28:36Z","deletionTimestamp":"2019-04-10T17:28:37Z","deletionGracePeriodSeconds":0,"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc1","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc1","uid":"d2d75d78-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640048","creationTimestamp":"2019-04-11T14:12:22Z","deletionTimestamp":"2019-04-11T14:12:22Z","deletionGracePeriodSeconds":0,"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -2544,7 +2544,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -2553,7 +2553,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
@@ -2577,16 +2577,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '540'
+      - '526'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584890","creationTimestamp":"2019-04-10T17:28:36Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"d2d9e781-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640043","creationTimestamp":"2019-04-11T14:12:22Z","finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -2608,7 +2608,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
       - '137'
     body:
@@ -2617,7 +2617,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 - request:
     method: delete
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc2
@@ -2643,14 +2643,14 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:37 GMT
+      - Thu, 11 Apr 2019 14:12:22 GMT
       Content-Length:
-      - '614'
+      - '600'
     body:
       encoding: UTF-8
-      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"12772b23-5bb6-11e9-8e5e-5254007d353d","resourceVersion":"4584900","creationTimestamp":"2019-04-10T17:28:36Z","deletionTimestamp":"2019-04-10T17:28:37Z","deletionGracePeriodSeconds":0,"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"selector":{},"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
+      string: '{"kind":"PersistentVolumeClaim","apiVersion":"v1","metadata":{"name":"mypvc2","namespace":"default","selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/mypvc2","uid":"d2d9e781-5c63-11e9-8e5e-5254007d353d","resourceVersion":"4640051","creationTimestamp":"2019-04-11T14:12:22Z","deletionTimestamp":"2019-04-11T14:12:22Z","deletionGracePeriodSeconds":0,"finalizers":["kubernetes.io/pvc-protection"]},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"1Gi"}},"storageClassName":"local-storage","volumeMode":"Filesystem","dataSource":null},"status":{"phase":"Pending"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:37 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:22 GMT
 recorded_with: VCR 4.0.0

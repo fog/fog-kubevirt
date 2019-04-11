@@ -45,15 +45,19 @@ module Fog
             },
             :spec => {
               :storageClassName => args[:storage_class],
-              :resources        => {},
-              :selector         => {},
+              :resources        => {}
             }
           }
 
           pvc[:spec][:resources].merge!(:requests => args[:requests]) if args[:requests]
           pvc[:spec][:resources].merge!(:limits => args[:limits]) if args[:limits]
-          pvc[:spec][:selector].merge!(:matchLabels => args[:match_labels]) if args[:match_labels]
-          pvc[:spec][:selector].merge!(:matchExpressions => args[:match_expressions]) if args[:match_expressions]
+
+          if args[:match_labels] || args[:match_expressions]
+            pvc[:spec][:selector] = {}
+            pvc[:spec][:selector].merge!(:matchLabels => args[:match_labels]) if args[:match_labels]
+            pvc[:spec][:selector].merge!(:matchExpressions => args[:match_expressions]) if args[:match_expressions]
+          end
+
           pvc[:spec][:accessModes] = args[:access_modes] if args[:access_modes]
           pvc[:spec][:volumeMode] = args[:volume_mode] if args[:volume_mode]
           pvc[:spec][:volumeName] = args[:volume_name] if args[:volume_name]
