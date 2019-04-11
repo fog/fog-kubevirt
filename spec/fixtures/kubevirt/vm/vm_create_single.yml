@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '213'
     body:
@@ -30,7 +30,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -52,7 +52,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '213'
     body:
@@ -61,7 +61,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3
@@ -85,7 +85,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '1526'
     body:
@@ -94,7 +94,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: post
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines
@@ -122,16 +122,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '763'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4584882","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"12605aba-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -153,7 +153,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '213'
     body:
@@ -162,7 +162,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2
@@ -186,16 +186,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '763'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4584882","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"12605aba-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -217,7 +217,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '137'
     body:
@@ -226,7 +226,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1
@@ -250,7 +250,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Transfer-Encoding:
       - chunked
     body:
@@ -259,7 +259,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc3
@@ -283,7 +283,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '216'
     body:
@@ -293,7 +293,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -315,7 +315,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '213'
     body:
@@ -324,7 +324,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2
@@ -348,16 +348,16 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '763'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-10T17:28:36Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4584882","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"12605aba-5bb6-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1alpha3","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api
@@ -379,7 +379,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '137'
     body:
@@ -388,7 +388,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/api/v1/namespaces/default/persistentvolumeclaims/mypvc3
@@ -412,7 +412,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '216'
     body:
@@ -422,7 +422,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: get
     uri: https://10.8.254.82:8443/apis/kubevirt.io
@@ -444,7 +444,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '213'
     body:
@@ -453,7 +453,7 @@ http_interactions:
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 - request:
     method: delete
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1alpha3/namespaces/default/virtualmachines/test2
@@ -479,14 +479,14 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Apr 2019 17:28:36 GMT
+      - Thu, 11 Apr 2019 14:12:21 GMT
       Content-Length:
       - '188'
     body:
       encoding: UTF-8
-      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Success","details":{"name":"test2","group":"kubevirt.io","kind":"virtualmachines","uid":"12605aba-5bb6-11e9-8e5e-5254007d353d"}}
+      string: '{"kind":"Status","apiVersion":"v1","metadata":{},"status":"Success","details":{"name":"test2","group":"kubevirt.io","kind":"virtualmachines","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"}}
 
 '
     http_version:
-  recorded_at: Wed, 10 Apr 2019 17:28:36 GMT
+  recorded_at: Thu, 11 Apr 2019 14:12:21 GMT
 recorded_with: VCR 4.0.0
