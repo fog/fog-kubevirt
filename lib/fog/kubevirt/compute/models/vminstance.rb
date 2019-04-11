@@ -40,7 +40,7 @@ module Fog
             :memory           => domain[:resources][:requests][:memory],
             :disks            => disks,
             :volumes          => parse_volumes(spec[:volumes], disks),
-            :interfaces       => parse_interfaces(domain[:devices][:interfaces]),
+            :interfaces       => parse_interfaces(domain[:devices][:interfaces], status[:interfaces]),
             :networks         => parse_networks(spec[:networks]),
             :ip_address       => status.dig(:interfaces, 0, :ipAddress),
             :node_name        => status[:nodeName],
