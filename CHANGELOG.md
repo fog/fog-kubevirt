@@ -1,3 +1,9 @@
+### 1.2.1 / 2019-04-12
+
+* Use mac address reported by kubevirt
+* Do not pass an empty selector
+* Populate PVC for VM volume
+
 ### 1.2.0 / 2019-04-08
 
 * Replace state with phase of Server model
