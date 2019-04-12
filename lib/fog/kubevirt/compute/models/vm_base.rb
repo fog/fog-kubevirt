@@ -43,7 +43,7 @@ module Fog
             :disks            => disks,
             :volumes          => parse_volumes(spec[:volumes], disks),
             :status           => object[:spec][:running].to_s == "true" ? "running" : "stopped",
-            :interfaces       => parse_interfaces(domain[:devices][:interfaces]),
+            :interfaces       => parse_interfaces(domain[:devices][:interfaces], object[:status].nil? ? [] : object[:status][:interfaces]),
             :networks         => parse_networks(spec[:networks]),
             :machine_type     => domain.dig(:machine, :type)
           }

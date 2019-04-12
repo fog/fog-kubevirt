@@ -12,13 +12,15 @@ module Fog
         #
         # @param object [Hash] A hash with raw interfaces data.
         #
-        def parse_interfaces(object)
+        def parse_interfaces(object, object_status)
           return {} if object.nil?
           nics = []
           object.each do |iface|
             nic = VmNic.new
             nic.name = iface[:name]
-            nic.mac_address = iface[:macAddress]
+            status_iface = object_status.find { |hash| hash[:name] == iface[:name] }
+            # get mac address from status and use device definition if not available
+            nic.mac_address = !status_iface.nil? && status_iface.key?(:mac) ? status_iface[:mac] : iface[:macAddress]
             nic.type = 'bridge' if iface.keys.include?(:bridge)
             nic.type = 'slirp' if iface.keys.include?(:slirp)
             nics << nic
