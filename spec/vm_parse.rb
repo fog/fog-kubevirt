@@ -14,4 +14,11 @@ describe Fog::Kubevirt::Compute do
     assert_equal(vm[:interfaces][0].mac_address, '0e:fc:6c:c3:20:ec')
     assert_equal(vm[:interfaces][1].mac_address, '4a:90:1c:2e:fe:d7')
   end
+
+  it 'parses not ready server' do
+    mock = Fog::Kubevirt::Compute::Mock.new
+    server = mock.get_server('no_interfaces')
+
+    assert_nil(server[:interfaces])
+  end
 end

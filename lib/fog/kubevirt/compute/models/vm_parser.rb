@@ -18,7 +18,7 @@ module Fog
           object.each do |iface|
             nic = VmNic.new
             nic.name = iface[:name]
-            status_iface = object_status.find { |hash| hash[:name] == iface[:name] }
+            status_iface = object_status.find { |hash| hash[:name] == iface[:name] } unless object_status.nil?
             # get mac address from status and use device definition if not available
             nic.mac_address = !status_iface.nil? && status_iface.key?(:mac) ? status_iface[:mac] : iface[:macAddress]
             nic.type = 'bridge' if iface.keys.include?(:bridge)
