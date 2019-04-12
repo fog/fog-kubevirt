@@ -57,7 +57,7 @@ module Fog
         end
 
         def get_server(name)
-          if name == "robin-rykert.example.com"
+          if name == "robin-rykert.example.com" || name == 'no_interfaces'
             disk1 = disk(name: "robin-rykert-example-com-disk-00", boot_order: nil,type: "disk", bus: "virtio", readonly: nil)
             disk2 = disk(name: "robin-rykert-example-com-disk-01", boot_order: nil,type: "disk", bus: "virtio", readonly: nil)
 
@@ -70,6 +70,8 @@ module Fog
             vm_network.name="ovs-foreman"
             vm_network.type="multus"
 
+            interfaces = name != 'no_interfaces' ? [vm_nic(mac_address: "a2:b4:a2:b6:a2:a8")] : nil
+
             return {
               :namespace=>"default",
               :name=>"robin-rykert.example.com",
@@ -79,7 +81,7 @@ module Fog
               :disks=>[disk1, disk2],
               :volumes=>[volume1, volume2],
               :status=>"stopped",
-              :interfaces=>[vm_nic(mac_address: "a2:b4:a2:b6:a2:a8")],
+              :interfaces=>interfaces,
               :networks=>[vm_network],
               :machine_type=>"",
               :cpu_cores=>1,
