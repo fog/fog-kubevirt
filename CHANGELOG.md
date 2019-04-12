@@ -1,3 +1,7 @@
+### 1.2.2 / 2019-04-12
+
+* Fix minor bugs
+
 ### 1.2.1 / 2019-04-12
 
 * Use mac address reported by kubevirt
