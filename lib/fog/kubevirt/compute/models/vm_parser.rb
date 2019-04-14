@@ -12,7 +12,7 @@ module Fog
         #
         # @param object [Hash] A hash with raw interfaces data.
         #
-        def parse_interfaces(object, object_status)
+        def parse_interfaces(object, object_status, networks)
           return {} if object.nil?
           nics = []
           object.each do |iface|
@@ -23,6 +23,13 @@ module Fog
             nic.mac_address = !status_iface.nil? && status_iface.key?(:mac) ? status_iface[:mac] : iface[:macAddress]
             nic.type = 'bridge' if iface.keys.include?(:bridge)
             nic.type = 'slirp' if iface.keys.include?(:slirp)
+
+            net = networks.detect { |net| net.name == iface[:name] }
+            if net
+              nic.cni_provider = net.type
+              nic.network = net.network_name
+            end
+
             nics << nic
           end
 
@@ -41,7 +48,10 @@ module Fog
             network = VmData::VmNetwork.new
             network.name = net[:name]
             network.type = 'pod' if net.keys.include?(:pod)
-            network.type = 'multus' if net.keys.include?(:multus)
+            if net.keys.include?(:multus)
+              network.type = 'multus'
+              network.network_name = net[:multus][:networkName]
+            end
             network.type = 'genie' if net.keys.include?(:genie)
             networks << network
           end

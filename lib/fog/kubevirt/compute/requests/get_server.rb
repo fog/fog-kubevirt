@@ -47,13 +47,15 @@ module Fog
           disk
         end
 
-        def vm_nic(mac_address: "")
+        def vm_nic(mac_address: "", network: "ovs-foreman")
           vm_nic = Fog::Kubevirt::Compute::VmNic.new
           vm_nic.mac_address = mac_address
           vm_nic.type = "bridge"
+          vm_nic.network = network
           vm_nic.model = nil
           vm_nic.ports = nil
           vm_nic.boot_order = nil
+          vm_nic
         end
 
         def get_server(name)
@@ -69,6 +71,7 @@ module Fog
             vm_network = Fog::Kubevirt::Compute::VmData::VmNetwork.new
             vm_network.name="ovs-foreman"
             vm_network.type="multus"
+            vm_network.network_name="ovs-foreman"
 
             interfaces = name != 'no_interfaces' ? [vm_nic(mac_address: "a2:b4:a2:b6:a2:a8")] : nil
 
