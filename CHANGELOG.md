@@ -1,3 +1,7 @@
+### 1.2.3 / 2019-04-15
+
+* Add network details to VmNic
+
 ### 1.2.2 / 2019-04-12
 
 * Fix minor bugs
