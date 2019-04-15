@@ -49,7 +49,7 @@ require 'spec_helper'
 
           # test all volumes based on PVCs
           volumes = @service.volumes.all
-          volume = volumes.select { |v| v.name == name }.first
+          volume = volumes.detect { |v| v.name == name }
           refute_nil(volume)
           assert_equal(volume.name, 'my-local-storage-pvc')
           assert_equal(volume.type, 'persistentVolumeClaim')
@@ -90,7 +90,7 @@ require 'spec_helper'
 
           # test all volumes based on PVCs
           volumes = @service.volumes.all
-          volume = volumes.select { |v| v.name == name }.first
+          volume = volumes.detect { |v| v.name == name }
           refute_nil(volume)
           assert_equal(volume.name, 'my-local-storage-pvc')
           assert_equal(volume.type, 'persistentVolumeClaim')
