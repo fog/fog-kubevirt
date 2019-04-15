@@ -9,6 +9,8 @@ module Fog
         attribute :model
         attribute :ports
         attribute :boot_order
+        attribute :network
+        attribute :cni_provider
         alias :mac :mac_address
 
         def persisted?

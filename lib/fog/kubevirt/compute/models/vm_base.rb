@@ -34,6 +34,7 @@ module Fog
           cpu = domain[:cpu]
           mem = domain.dig(:resources, :requests, :memory)
           disks = parse_disks(domain[:devices][:disks])
+          networks = parse_networks(spec[:networks])
           vm = {
             :namespace        => metadata[:namespace],
             :name             => metadata[:name],
@@ -43,8 +44,8 @@ module Fog
             :disks            => disks,
             :volumes          => parse_volumes(spec[:volumes], disks),
             :status           => object[:spec][:running].to_s == "true" ? "running" : "stopped",
-            :interfaces       => parse_interfaces(domain[:devices][:interfaces], object[:status].nil? ? [] : object[:status][:interfaces]),
-            :networks         => parse_networks(spec[:networks]),
+            :interfaces       => parse_interfaces(domain[:devices][:interfaces], object[:status].nil? ? [] : object[:status][:interfaces], networks),
+            :networks         => networks,
             :machine_type     => domain.dig(:machine, :type)
           }
           vm[:owner_reference] = owner unless owner.nil?

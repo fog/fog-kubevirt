@@ -21,4 +21,15 @@ describe Fog::Kubevirt::Compute do
 
     assert_nil(server[:interfaces])
   end
+
+  it 'parses vm interface of pod network' do
+    mock = Fog::Kubevirt::Compute::Mock.new
+    vm = mock.get_vm('robin-rykert.example.com')
+
+    assert_nil(vm[:interfaces][0].network)
+    assert_equal(vm[:interfaces][0].cni_provider, "pod")
+
+    assert_equal(vm[:interfaces][1].network, "ptp-conf")
+    assert_equal(vm[:interfaces][1].cni_provider, "multus")
+  end
 end
