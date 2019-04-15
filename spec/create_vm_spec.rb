@@ -58,7 +58,7 @@ describe Fog::Compute do
         assert_equal(volumes.count, 3)
 
         # verify first claim values
-        volume = volumes.select { |v| v.name == 'test-disk-01' }.first
+        volume = volumes.detect { |v| v.name == 'test-disk-01' }
         refute_nil(volume)
         refute_nil(volume.pvc)
         assert_equal(volume.name, 'test-disk-01')
@@ -66,7 +66,7 @@ describe Fog::Compute do
         assert_equal(volume.type, 'persistentVolumeClaim')
 
         # verify second claim values
-        volume = volumes.select { |v| v.name == 'test-disk-02' }.first
+        volume = volumes.detect { |v| v.name == 'test-disk-02' }
         refute_nil(volume)
         refute_nil(volume.pvc)
         assert_equal(volume.pvc.name, pvc2)
@@ -74,7 +74,7 @@ describe Fog::Compute do
         assert_equal(volume.type, 'persistentVolumeClaim')
 
         # verify third claim values
-        volume = volumes.select { |v| v.name == 'test-disk-03' }.first
+        volume = volumes.detect { |v| v.name == 'test-disk-03' }
         refute_nil(volume)
         assert_equal(volume.name, 'test-disk-03')
         assert_equal(volume.type, 'hostDisk')

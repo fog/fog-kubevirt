@@ -24,7 +24,7 @@ module Fog
             nic.type = 'bridge' if iface.keys.include?(:bridge)
             nic.type = 'slirp' if iface.keys.include?(:slirp)
 
-            net = networks.detect { |net| net.name == iface[:name] }
+            net = networks.detect { |n| n.name == iface[:name] }
             if net
               nic.cni_provider = net.type
               nic.network = net.network_name
@@ -138,7 +138,7 @@ module Fog
             end
 
             volume.config = v[volume.type.to_sym]
-            disk = disks.select { |d| d.name == volume.name }.first
+            disk = disks.detect { |d| d.name == volume.name }
             volume.boot_order = disk.boot_order
             volume.bus = disk.bus if disk.respond_to?(:bus)
 
