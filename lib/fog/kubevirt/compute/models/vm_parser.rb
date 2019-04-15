@@ -24,7 +24,7 @@ module Fog
             nic.type = 'bridge' if iface.keys.include?(:bridge)
             nic.type = 'slirp' if iface.keys.include?(:slirp)
 
-            net = networks.detect { |net| net.name == iface[:name] }
+            net = networks.detect { |n| n.name == iface[:name] }
             if net
               nic.cni_provider = net.type
               nic.network = net.network_name
