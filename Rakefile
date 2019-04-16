@@ -10,8 +10,15 @@ namespace :tests do
   Rake::TestTask.new do |t|
     t.name = 'spec'
     t.libs.push %w[lib spec]
-    t.pattern = 'spec/**/*_spec.rb'
+    t.pattern = 'spec/unit/*_spec.rb'
     t.verbose = true
+  end
+
+  Rake::TestTask.new do |t|
+    t.libs.push %w[lib spec]
+    t.name = 'integration'
+    t.warning = true
+    t.test_files = FileList['spec/integration/*_spec.rb']
   end
 end
 

@@ -49,7 +49,8 @@ module Fog
             }
           }
 
-          pvc[:spec][:resources].merge!(:requests => args[:requests]) if args[:requests]
+          # requests is required
+          pvc[:spec][:resources].merge!(:requests => args[:requests])
           pvc[:spec][:resources].merge!(:limits => args[:limits]) if args[:limits]
 
           if args[:match_labels] || args[:match_expressions]
@@ -58,7 +59,8 @@ module Fog
             pvc[:spec][:selector].merge!(:matchExpressions => args[:match_expressions]) if args[:match_expressions]
           end
 
-          pvc[:spec][:accessModes] = args[:access_modes] if args[:access_modes]
+          # access mode is required
+          pvc[:spec][:accessModes] = args[:access_modes]
           pvc[:spec][:volumeMode] = args[:volume_mode] if args[:volume_mode]
           pvc[:spec][:volumeName] = args[:volume_name] if args[:volume_name]
           service.create_pvc(pvc)
