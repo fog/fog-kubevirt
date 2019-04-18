@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.email         = authors_hash.values
   spec.summary       = "Module for the 'fog' gem to support Kubevirt."
   spec.description   = 'This library can be used as a module for `fog`.'
-  spec.homepage      = 'https://github.com/pkliczewski/fog-kubevirt'
+  spec.homepage      = 'https://github.com/fog/fog-kubevirt'
   spec.license       = "Apache-2.0"
 
   spec.files         = `git ls-files -- lib/*`.split("\n")
