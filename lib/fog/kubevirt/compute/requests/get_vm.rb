@@ -10,12 +10,24 @@ module Fog
 
         def populate_pvcs_for_vm(vm)
           vm[:volumes].each do |vol|
+            set_volume_pvc_attributes(vol)
+          end
+        end
+
+        def set_volume_pvc_attributes(volume, pvc = nil)
+          return unless volume.type == 'persistentVolumeClaim'
+          if pvc.nil?
             begin
-              vol.pvc = pvcs.get(vol.info) if vol.type == 'persistentVolumeClaim'
+              pvc = pvcs.get(volume.info)
             rescue
               # there is an option that the PVC does not exist
+              return
             end
           end
+
+          volume.pvc = pvc
+          volume.capacity = pvc&.requests[:storage]
+          volume.storage_class = pvc.storage_class
         end
 
         def get_raw_vm(name)

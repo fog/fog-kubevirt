@@ -10,7 +10,7 @@ module Fog
               volume = Volume.new
               volume.name = pvc.name
               volume.type = 'persistentVolumeClaim'
-              volume.pvc = pvc
+              set_volume_pvc_attributes(volume, pvc)
               volume
             end
             EntityCollection.new('Volume', pvcs.resource_version, entities)

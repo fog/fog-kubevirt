@@ -26,6 +26,12 @@ module Fog
           # holds the pvc entity if its type is persistentVolumeClaim
           attribute :pvc
 
+          # the capacity of the volume, when supported
+          attribute :capacity
+
+          # the storage class used for the volume, i.e. when type is persistentVolumeClaim
+          attribute :storage_class
+
           # Hash that holds volume type specific configurations, used for adding volume for a vm
           # The set of config properties may change from type to type, see documentation for the supported
           # keys of each volume type:
@@ -44,12 +50,6 @@ module Fog
           def persisted?
             !name.nil?
           end
-
-        def self.parse(object, disk)
-          volume = parse_object(object)
-          volume[:boot_order] = object[:bootOrder]
-          volume
-        end
       end
     end
   end
