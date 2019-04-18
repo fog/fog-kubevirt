@@ -23,6 +23,15 @@ module Fog
           load vms
         end
 
+        def new(attributes = {})
+          vm = super
+          vm.disks = [] unless vm.disks
+          vm.volumes = [] unless vm.volumes
+          vm.interfaces = [] unless vm.interfaces
+          vm.networks = [] unless vm.networks
+          vm
+        end
+
         def get(name)
           new service.get_vm(name)
         end

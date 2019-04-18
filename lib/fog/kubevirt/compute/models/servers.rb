@@ -21,6 +21,15 @@ module Fog
           new service.get_server(id)
         end
 
+        def new(attributes = {})
+          server = super
+          server.disks = [] unless server.disks
+          server.volumes = [] unless server.volumes
+          server.interfaces = [] unless server.interfaces
+          server.networks = [] unless server.networks
+          server
+        end
+
         def bootstrap(new_attributes = {})
           server = create(new_attributes)
           server.wait_for { stopped? }

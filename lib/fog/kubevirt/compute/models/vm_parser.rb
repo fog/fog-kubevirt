@@ -13,7 +13,7 @@ module Fog
         # @param object [Hash] A hash with raw interfaces data.
         #
         def parse_interfaces(object, object_status, networks)
-          return {} if object.nil?
+          return [] if object.nil?
           nics = []
           object.each do |iface|
             nic = VmNic.new
@@ -42,7 +42,7 @@ module Fog
         # @param object [Hash] A hash with raw networks data.
         #
         def parse_networks(object)
-          return {} if object.nil?
+          return [] if object.nil?
           networks = []
           object.each do |net|
             network = VmData::VmNetwork.new
@@ -65,7 +65,7 @@ module Fog
         # @param object [Hash] A hash with raw disks data.
         #
         def parse_disks(object)
-          return {} if object.nil?
+          return [] if object.nil?
           disks = []
           object.each do |d|
             disk = VmData::VmDisk.new
@@ -100,7 +100,7 @@ module Fog
         # @param disks [Array] the disks of the vm associated to the volumes
         #
         def parse_volumes(object, disks)
-          return {} if object.nil?
+          return [] if object.nil?
           volumes = []
           object.each do |v|
             volume = Volume.new
