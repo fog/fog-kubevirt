@@ -1,3 +1,8 @@
+### 1.2.4 / 2019-04-18
+
+* Do not rely on attributes defaults
+* Populate PVC attributes for Volume
+
 ### 1.2.3 / 2019-04-15
 
 * Add network details to VmNic
