@@ -24,12 +24,12 @@ Gem::Specification.new do |spec|
   # spec.test_files   += %w[.rspec]
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'minitest'
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "minitest", "~> 5.11"
+  spec.add_development_dependency "rake", "~> 12.3"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop"
-  spec.add_development_dependency "vcr"
-  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency "rubocop", "~> 0.67"
+  spec.add_development_dependency "vcr", "~> 4.0"
+  spec.add_development_dependency "webmock", "~> 3.5"
 
   spec.add_dependency("fog-core", "~> 2.1")
   spec.add_dependency("kubeclient", "~> 4.1.2")
