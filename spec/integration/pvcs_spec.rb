@@ -38,4 +38,20 @@ describe Fog::Kubevirt::Compute do
       fail "pvc should not exist"
     end
   end
+
+  it 'fails with wrong size format' do
+    pvc = {
+      :name => 'test-pvc',
+      :namespace => 'default',
+      :storage_class => '',
+      :access_modes => ['ReadWriteOnce'],
+      :requests => { storage: "X" }
+    }
+    begin
+      @client.create(pvc)
+      fail "requested size is not correct"
+    rescue ::Fog::Kubevirt::Errors::ValidationError
+      # expected
+    end
+  end
 end
