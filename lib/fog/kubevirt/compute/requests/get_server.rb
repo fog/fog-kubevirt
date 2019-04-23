@@ -4,21 +4,43 @@ module Fog
       class Real
         def get_server(name)
           vm = get_raw_vm(name)
-          populate_runtime_info(vm)
+          vmi = runtime_vm(vm)
+
+          populate_runtime_info(vm, vmi)
           server = Server.parse vm
           populate_pvcs_for_vm(server)
+          populate_runtime_nets(server, vmi)
           server
         end
 
         # Updates a given VM raw entity with vm instance info if exists
         #
         # @param vm [Hash] A hash with vm raw data.
-        def populate_runtime_info(vm)
-          vmi = get_vminstance(vm[:metadata][:name])
+        # @param vmi VMInstance object
+        def populate_runtime_info(vm, vmi)
+          return if vmi.nil?
+
           vm[:ip_address] = vmi[:ip_address]
           vm[:node_name] = vmi[:node_name]
           vm[:phase] = vmi[:status]
           vm
+        end
+
+        # Updates a given Server entity with vm instance networking details if exists
+        #
+        # @param server Server object
+        # @param vmi VMInstance object
+        def populate_runtime_nets(server, vmi)
+          return if vmi.nil?
+
+          server[:networks] = vmi[:networks]
+          server[:interfaces] = vmi[:interfaces]
+        end
+
+        private
+
+        def runtime_vm(vm)
+          get_vminstance(vm[:metadata][:name])
         rescue
           # do nothing if vmi doesn't exist
         end

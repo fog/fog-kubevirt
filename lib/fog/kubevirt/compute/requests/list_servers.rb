@@ -10,8 +10,10 @@ module Fog
           vms = kubevirt_client.get_virtual_machines(namespace: @namespace)
           entities = vms.map do |kubevirt_obj|
             vm_obj = object_to_hash(kubevirt_obj)
-            populate_runtime_info(vm_obj)
+            vmi = runtime_vm(vm_obj)
+            populate_runtime_info(vm_obj, vmi)
             server = Server.parse vm_obj
+            populate_runtime_nets(server, vmi)
             if filters[:pvcs]
               populate_pvcs_for_vm(server)
             end
