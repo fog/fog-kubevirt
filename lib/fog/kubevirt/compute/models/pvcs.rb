@@ -50,7 +50,9 @@ module Fog
           }
 
           # requests is required
+          check_size(args[:requests])
           pvc[:spec][:resources].merge!(:requests => args[:requests])
+          check_size(args[:limits]) if args[:limits]
           pvc[:spec][:resources].merge!(:limits => args[:limits]) if args[:limits]
 
           if args[:match_labels] || args[:match_expressions]
@@ -75,6 +77,12 @@ module Fog
           end
 
           service.delete_pvc(name) unless pvc.nil?
+        end
+
+        private
+
+        def check_size(value)
+          ::Fog::Kubevirt::Compute::Shared::UnitConverter.validate(value[:storage])
         end
       end
     end
