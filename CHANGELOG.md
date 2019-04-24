@@ -1,3 +1,9 @@
+### 1.2.5 / 2019-04-24
+
+* Add validattion for PVC request size and limit
+* Update networks from vmi on Server
+* Update kubeclient version to 4.3.0
+
 ### 1.2.4 / 2019-04-18
 
 * Do not rely on attributes defaults
