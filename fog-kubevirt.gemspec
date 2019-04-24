@@ -32,5 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock", "~> 3.5"
 
   spec.add_dependency("fog-core", "~> 2.1")
-  spec.add_dependency("kubeclient", "~> 4.1.2")
+  spec.add_dependency("kubeclient", "~> 4.3.0")
 end
