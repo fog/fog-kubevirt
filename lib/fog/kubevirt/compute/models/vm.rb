@@ -6,6 +6,7 @@ module Fog
     class Compute
       class Vm < Fog::Model
         include VmAction
+        include Shared
         extend VmBase
         define_properties
 

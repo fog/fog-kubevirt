@@ -37,7 +37,7 @@ module Fog
           service.delete_vm(name, namespace)
 
           # delete vm instance
-          service.delete_vminstance(name, namespace) unless vm_instance.nil?
+          service.delete_vminstance(name) unless vm_instance.nil?
         end
       end
     end
