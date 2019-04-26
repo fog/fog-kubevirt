@@ -35,6 +35,11 @@ module Fog
           name = args[:name]
           labels = args[:labels]
 
+          # type is required
+          if args[:type].nil? || args[:type].empty?
+            raise ::Fog::Kubevirt::Errors::ValidationError "Type of storage can not be empty"
+          end
+
           volume = {
             :apiVersion => "v1",
             :kind => "PersistentVolume",
@@ -52,7 +57,7 @@ module Fog
           } if args[:capacity]
 
           volume[:spec][:accessModes] = args[:access_modes] if args[:access_modes]
-          volume[:spec][args[:type].to_sym] = args[:config] if args[:type]
+          volume[:spec][args[:type].to_sym] = args[:config]
 
           service.create_persistentvolume(volume)
         end
