@@ -173,10 +173,9 @@ module Fog
         end
 
         def add_vm_storage(vm_name, vm_volumes)
-          normalized_vm_name = vm_name.gsub(/[._]+/,'-')
           volumes, disks = [], []
           vm_volumes.each_with_index do |v, idx|
-            volume_name = v.name || normalized_vm_name + "-disk-0" + idx.to_s
+            volume_name = v.name.nil? ? normalized_name(vm_name) + "-disk-0" + idx.to_s : normalized_name(v.name)
             disk = {
               :name => volume_name,
               :disk => {}
@@ -208,6 +207,12 @@ module Fog
           end
 
           return volumes, disks
+        end
+
+        private
+
+        def normalized_name(name)
+          name.gsub(/[._]+/,'-')
         end
       end
     end
