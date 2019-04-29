@@ -8,17 +8,17 @@ module Fog
         attribute :uid,              :aliases => 'metadata_uid'
         attribute :annotations,      :aliases => 'metadata_annotations'
         attribute :labels,           :aliases => 'metadata_labels'
-		attribute :access_modes,	 :aliases => 'spec_access_modes'
-		attribute :mount_options,	 :aliases => 'spec_mount_options'
-		attribute :reclaim_policy,   :aliases => 'spec_reclaim_policy'
-		attribute :storage_class,    :aliases => 'spec_storage_class'
+        attribute :access_modes,     :aliases => 'spec_access_modes'
+        attribute :mount_options,    :aliases => 'spec_mount_options'
+        attribute :reclaim_policy,   :aliases => 'spec_reclaim_policy'
+        attribute :storage_class,    :aliases => 'spec_storage_class'
         attribute :capacity,         :aliases => 'spec_capacity'
         attribute :claim_ref,        :aliases => 'spec_claim_ref'
-        attribute :type,			 :aliases => 'spec_type'
-        attribute :config,			 :aliases => 'spec_config'
+        attribute :type,             :aliases => 'spec_type'
+        attribute :config,           :aliases => 'spec_config'
         attribute :phase,            :aliases => 'status_phase'
-        attribute :reason,            :aliases => 'status_reason'
-        attribute :message,            :aliases => 'status_message'
+        attribute :reason,           :aliases => 'status_reason'
+        attribute :message,          :aliases => 'status_message'
 
         def self.parse(object)
           metadata = object[:metadata]
@@ -35,7 +35,7 @@ module Fog
             :access_modes     => spec[:accessModes],
             :mount_options    => spec[:mountOptions],
             :reclaim_policy   => spec[:persistentVolumeReclaimPolicy],
-			:storage_class    => spec[:storageClassName],
+            :storage_class    => spec[:storageClassName],
             :capacity         => spec.dig(:capacity, :storage),
             :claim_ref        => spec[:claimRef],
             :type             => type,
