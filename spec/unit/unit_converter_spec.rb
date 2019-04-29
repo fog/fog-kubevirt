@@ -1,8 +1,10 @@
 require_relative './spec_helper'
 
-describe Fog::Kubevirt::Compute::Shared::UnitConverter do
+require 'fog/kubevirt/compute/utils/unit_converter'
 
-  described_class = Fog::Kubevirt::Compute::Shared::UnitConverter
+describe Fog::Kubevirt::Utils::UnitConverter do
+
+  described_class = Fog::Kubevirt::Utils::UnitConverter
 
   describe '.convert' do
     it 'converts correctly units that correspond to powers of 10' do

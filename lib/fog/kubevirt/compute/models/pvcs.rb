@@ -1,10 +1,12 @@
 require 'fog/core/collection'
 require 'fog/kubevirt/compute/models/pvc'
+require 'fog/kubevirt/compute/utils/unit_converter'
 
 module Fog
   module Kubevirt
     class Compute
       class Pvcs < Fog::Collection
+
         attr_reader :kind, :resource_version
 
         model Fog::Kubevirt::Compute::Pvc
@@ -82,7 +84,7 @@ module Fog
         private
 
         def check_size(value)
-          ::Fog::Kubevirt::Compute::Shared::UnitConverter.validate(value[:storage])
+          ::Fog::Kubevirt::Utils::UnitConverter.validate(value[:storage])
         end
       end
     end

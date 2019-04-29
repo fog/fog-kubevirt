@@ -15,6 +15,12 @@ module Fog
         attribute :objects
         attribute :parameters
 
+        #
+        # Label name which identifies operation system information
+        #
+        OS_LABEL = 'kubevirt.io/os'.freeze
+        OS_LABEL_SYMBOL = :'kubevirt.io/os'
+
         def clone(options = {})
           params = values(options)
 
