@@ -55,7 +55,7 @@ describe Fog::Kubevirt::Compute do
     vmis = @client.vminstances.all()
     @watch = @client.watch_vminstances(:resource_version => vmis.resource_version)
 
-    @client.vminstances.destroy(vm_name, 'default')
+    @client.vminstances.destroy(vm_name, @client.namespace)
 
     thread = Thread.new do
       @watch.each do |notice|
