@@ -3,13 +3,14 @@ require_relative './shared_context'
 describe Fog::Kubevirt::Compute do
   before :all do
     conn = KubevirtConnection.new()
+    @namespace = conn.client.namespace
     @client = conn.client.pvcs
   end
 
   it 'CRD pvc' do
     pvc = {
       :name => 'test-pvc',
-      :namespace => 'default',
+      :namespace => @namespace,
       :storage_class => '',
       :access_modes => ['ReadWriteOnce'],
       :requests => { storage: "1Gi" }
@@ -42,7 +43,7 @@ describe Fog::Kubevirt::Compute do
   it 'fails with wrong size format' do
     pvc = {
       :name => 'test-pvc',
-      :namespace => 'default',
+      :namespace => @namespace,
       :storage_class => '',
       :access_modes => ['ReadWriteOnce'],
       :requests => { storage: "X" }
