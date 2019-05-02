@@ -29,14 +29,14 @@ describe Fog::Kubevirt::Compute do
     begin
       @client.create(name: 'aaa')
       fail "empty config can not be nil"
-    rescue ::Fog::Kubevirt::Errors::AlreadyExistsError
+    rescue ::Fog::Kubevirt::Errors::ClientError
       # expected
     end
 
     begin
       @client.create(name: 'aaa', config: '{}')
       fail "empty config can not be nil"
-    rescue ::Fog::Kubevirt::Errors::AlreadyExistsError
+    rescue ::Fog::Kubevirt::Errors::ClientError
       # expected
     end  
   end

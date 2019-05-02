@@ -4,9 +4,6 @@ module Fog
       class Real
         def create_service(srv)
           kube_client.create_service(srv)
-        rescue ::Fog::Kubevirt::Errors::ClientError => err
-          log.warn(err)
-          raise ::Fog::Kubevirt::Errors::AlreadyExistsError
         end
       end
 
