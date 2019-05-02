@@ -6,9 +6,6 @@ module Fog
           vm[:apiVersion] = kubevirt_client.version
 
           kubevirt_client.create_virtual_machine(vm)
-        rescue ::Fog::Kubevirt::Errors::ClientError => err
-          log.warn(err)
-          raise ::Fog::Kubevirt::Errors::AlreadyExistsError
         end
       end
 

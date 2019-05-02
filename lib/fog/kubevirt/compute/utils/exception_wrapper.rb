@@ -2,9 +2,10 @@ module Fog
   module Kubevirt
     module Utils
       class ExceptionWrapper
-        def initialize(client, version)
+        def initialize(client, version, log)
           @client = client
           @version = version
+          @log = log
         end
   
         def method_missing(symbol, *args)
@@ -18,7 +19,14 @@ module Fog
             @client.__send__(symbol, *args)
           end
         rescue KubeException => e
-          raise ::Fog::Kubevirt::Errors::ClientError, e
+          @log.warn(e)
+          if e.error_code == 409
+            raise ::Fog::Kubevirt::Errors::AlreadyExistsError, e
+          elsif e.error_code == 404
+            raise ::Fog::Kubevirt::Errors::NotFoundError, e
+          else 
+            raise ::Fog::Kubevirt::Errors::ClientError, e
+          end
         end
   
         def respond_to_missing?(method_name, include_private = false)

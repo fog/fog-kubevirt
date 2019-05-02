@@ -395,7 +395,7 @@ module Fog
         end
 
         def wrap_client(client, version, key)
-          wrapped_client = ::Fog::Kubevirt::Utils::ExceptionWrapper.new(client, version)
+          wrapped_client = ::Fog::Kubevirt::Utils::ExceptionWrapper.new(client, version, @log)
           @clients[key] = wrapped_client
 
           wrapped_client

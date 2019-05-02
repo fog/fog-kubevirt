@@ -22,9 +22,6 @@ module Fog
             net_att = deep_merge!(net_att, metadata: { namespace: @namespace })
           end
           kube_net_client.create_network_attachment_definition(net_att)
-        rescue ::Fog::Kubevirt::Errors::ClientError => err
-          log.warn(err)
-          raise ::Fog::Kubevirt::Errors::AlreadyExistsError
         end
       end
 
