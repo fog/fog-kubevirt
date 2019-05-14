@@ -1,3 +1,14 @@
+### 1.2.6 / 2019-05-14
+
+* Log exception for client errors
+* Support memory unit in create_vm
+* Exception handling improvements
+* Add tests to allow configure namespace
+* Add tests for provision vmi/server and check mac
+* Add volumes tests
+* Refactor utils module
+* Add network attachement definitions tests
+
 ### 1.2.5 / 2019-04-24
 
 * Add validattion for PVC request size and limit
