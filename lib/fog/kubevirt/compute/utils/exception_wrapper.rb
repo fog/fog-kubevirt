@@ -7,7 +7,7 @@ module Fog
           @version = version
           @log = log
         end
-  
+
         def method_missing(symbol, *args)
           super unless @client.respond_to?(symbol)
 
@@ -19,20 +19,21 @@ module Fog
             @client.__send__(symbol, *args)
           end
         rescue KubeException => e
-          @log.debug(e)
           if e.error_code == 409
+            @log.warn(e)
             raise ::Fog::Kubevirt::Errors::AlreadyExistsError, e
           elsif e.error_code == 404
             raise ::Fog::Kubevirt::Errors::NotFoundError, e
-          else 
+          else
+            @log.warn(e)
             raise ::Fog::Kubevirt::Errors::ClientError, e
           end
         end
-  
+
         def respond_to_missing?(method_name, include_private = false)
-          @client.respond_to?(symbol, include_all) || super
+          @client.respond_to?(method_name, include_private) || super
         end
-  
+
         def version
           @version
         end
