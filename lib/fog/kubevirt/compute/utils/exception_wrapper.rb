@@ -19,7 +19,7 @@ module Fog
             @client.__send__(symbol, *args)
           end
         rescue KubeException => e
-          @log.warn(e)
+          @log.debug(e)
           if e.error_code == 409
             raise ::Fog::Kubevirt::Errors::AlreadyExistsError, e
           elsif e.error_code == 404
