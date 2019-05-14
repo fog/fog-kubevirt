@@ -44,6 +44,7 @@ module Fog
         # :vm_name [String] - name of a vm
         # :cpus [String] - number of cpus
         # :memory_size [String] - amount of memory
+        # :memory_unit [String] - memory unit to use, default to 'M'
         # :image [String] - name of a container disk
         # :pvc [String] - name of a persistent volume claim
         # :cloudinit [Hash] - number of items needed to configure cloud-init
@@ -71,6 +72,7 @@ module Fog
           vm_name = args.fetch(:vm_name)
           cpus = args.fetch(:cpus, nil)
           memory_size = args.fetch(:memory_size)
+          memory_unit = args.fetch(:memory_unit, "M")
           init = args.fetch(:cloudinit, {})
           networks = args.fetch(:networks, nil)
           interfaces = args.fetch(:interfaces, nil)
@@ -80,6 +82,8 @@ module Fog
             raise ::Fog::Kubevirt::Errors::ValidationError
           end
 
+          memory = "#{memory_size}#{memory_unit}"
+          ::Fog::Kubevirt::Utils::UnitConverter.validate(memory)
           volumes, disks = add_vm_storage(vm_name, vm_volumes)
 
           unless init.empty?
@@ -114,7 +118,7 @@ module Fog
                     },
                     :resources => {
                       :requests => {
-                        :memory => "#{memory_size}M"
+                        :memory => memory
                       }
                     }
                   },
