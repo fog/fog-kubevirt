@@ -18,7 +18,7 @@ describe Fog::Compute do
       begin
         vm_name = 'test'
         cpus = 1
-        memory_size = 64
+        memory_size = '64'
         pvc1 = 'mypvc1'
         pvc2 = 'mypvc2'
 
@@ -104,12 +104,13 @@ describe Fog::Compute do
       begin
         vm_name = 'test2'
         cpus = 1
-        memory_size = 64
+        memory_size = '64'
+        memory_unit = 'M'
 
         volume = Fog::Kubevirt::Compute::Volume.new
         volume.type = 'persistentVolumeClaim'
         volume.info = 'mypvc3'
-        @service.vms.create(vm_name: vm_name, cpus: cpus, memory_size: memory_size, volumes: [volume])
+        @service.vms.create(vm_name: vm_name, cpus: cpus, memory_size: memory_size, memory_unit: memory_unit, volumes: [volume])
 
         vm = @service.vms.get(vm_name)
 
