@@ -408,6 +408,7 @@ module Fog
             verify_ssl: ssl_options[:verify_ssl],
             ssl_client_cert: ssl_options[:client_cert],
             ssl_client_key: ssl_options[:client_key],
+            headers: { Authorization: "Bearer #{@opts[:auth_options][:bearer_token]}"}
           }
 
           begin
