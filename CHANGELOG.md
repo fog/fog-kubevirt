@@ -1,3 +1,7 @@
+### 1.3.1 / 2019-07-07
+
+* Fixes #1726635 - Add token for detect version request
+
 ### 1.3.0 / 2019-05-14
 
 * Log exception for client errors
