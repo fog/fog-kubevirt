@@ -60,6 +60,7 @@ module Fog
       request :get_service
       request :get_storageclass
       request :get_template
+      request :get_vnc_console_details
       request :list_vminstances
       request :list_nodes
       request :list_networkattachmentdefs

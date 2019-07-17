@@ -39,6 +39,10 @@ module Fog
           # delete vm instance
           service.delete_vminstance(name) unless vm_instance.nil?
         end
+
+        def get_vnc_console_details(name, namespace)
+          service.get_vnc_console_details(name, namespace)
+        end
       end
     end
   end
