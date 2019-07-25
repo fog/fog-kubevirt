@@ -139,7 +139,7 @@ module Fog
 
             volume.config = v[volume.type.to_sym]
             disk = disks.detect { |d| d.name == volume.name }
-            volume.boot_order = disk.boot_order
+            volume.boot_order = disk.boot_order if disk.respond_to?(:boot_order)
             volume.bus = disk.bus if disk.respond_to?(:bus)
 
             volumes << volume
