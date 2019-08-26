@@ -1,3 +1,9 @@
+### 1.3.2 / 2019-08-26
+
+* Fixes #1728671 - fix undefined boot_order
+* Add VNC console details function
+
+
 ### 1.3.1 / 2019-07-07
 
 * Fixes #1726635 - Add token for detect version request
