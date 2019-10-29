@@ -9,7 +9,7 @@ module Fog
   module Kubevirt
     class Compute < Fog::Service
       recognizes :kubevirt_token, :kubevirt_hostname, :kubevirt_port, :kubevirt_namespace, \
-                 :kubevirt_log, :kubevirt_verify_ssl, :kubevirt_ca_cert
+                 :kubevirt_log, :kubevirt_verify_ssl, :kubevirt_ca_cert , :kubevirt_version
 
       model_path 'fog/kubevirt/compute/models'
       model      :vminstance
@@ -154,6 +154,7 @@ module Fog
           @kubevirt_token = options[:kubevirt_token]
           @host = options[:kubevirt_hostname]
           @port = options[:kubevirt_port]
+          @kubevirt_version = options[:kubevirt_version]
 
           @log = options[:kubevirt_log]
           @log ||= ::Logger.new(STDOUT)
@@ -356,7 +357,7 @@ module Fog
               :bearer_token => @kubevirt_token
             }
           }
-          version = detect_version(url.to_s, @opts[:ssl_options])
+          version = @kubevirt_version || detect_version(url.to_s, @opts[:ssl_options])
           key = url.path + '/' + version
 
           client = check_client(key)
@@ -375,7 +376,7 @@ module Fog
           config = Kubeclient::Config.read(ENV['KUBECONFIG'] || ENV['HOME']+'/.kube/config')
           context = config.context
           url = context.api_endpoint
-          version = detect_version(url + path, context.ssl_options)
+          version = @kubevirt_version || detect_version(url + path, context.ssl_options)
           key = path + '/' + version
 
           client = check_client(key)
