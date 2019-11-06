@@ -357,7 +357,7 @@ module Fog
               :bearer_token => @kubevirt_token
             }
           }
-          version = @kubevirt_version || detect_version(url.to_s, @opts[:ssl_options])
+          version = detect_version(url.to_s, @opts[:ssl_options])
           key = url.path + '/' + version
 
           client = check_client(key)
@@ -376,7 +376,7 @@ module Fog
           config = Kubeclient::Config.read(ENV['KUBECONFIG'] || ENV['HOME']+'/.kube/config')
           context = config.context
           url = context.api_endpoint
-          version = @kubevirt_version || detect_version(url + path, context.ssl_options)
+          version = detect_version(url + path, context.ssl_options)
           key = path + '/' + version
 
           client = check_client(key)
@@ -422,8 +422,13 @@ module Fog
           # version detected based on
           # https://github.com/kubernetes-incubator/apiserver-builder/blob/master/docs/concepts/aggregation.md#viewing-discovery-information
           preferredVersion = response["preferredVersion"]
-          return preferredVersion["version"] if preferredVersion
-          response["versions"][0]
+          if url.include? KUBEVIRT_GROUP
+            version = @kubevirt_version || preferredVersion["version"]
+          else
+            version = preferredVersion["version"] if preferredVersion
+            version = version || response["versions"][0]
+          end
+          version
         end
 
         def openshift_client
