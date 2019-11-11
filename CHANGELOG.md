@@ -1,3 +1,8 @@
+### 1.3.3 / 2019-11-11
+
+* Fix api versions
+* Add option to specify the kubevirt API version
+
 ### 1.3.2 / 2019-08-26
 
 * Fixes #1728671 - fix undefined boot_order
