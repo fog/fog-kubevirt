@@ -1,3 +1,7 @@
+### 1.3.4 / 2020-05-10
+
+* Allow for newer versions of kubeclient
+
 ### 1.3.3 / 2019-11-11
 
 * Fix api versions
