@@ -455,6 +455,10 @@ module Fog
           @log
         end
 
+        def cert_expired?(cert)
+          Time.now > cert.not_after
+        end
+
         #
         # Prepare the TLS and authentication options that will be used for the
         # standard Kubernetes API and also for the KubeVirt extension
@@ -472,6 +476,7 @@ module Fog
 
             cert_store = OpenSSL::X509::Store.new
             certs.each do |cert|
+              raise ::Fog::Kubevirt::Errors::ValidationError, "Certificate has been expired" if cert_expired?(cert)
               cert_store.add_cert(cert)
             end
 
