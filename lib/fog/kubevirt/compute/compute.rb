@@ -148,6 +148,11 @@ module Fog
         #
         STORAGE_GROUP = 'storage.k8s.io'.freeze
 
+        #
+        # The API group of the Openshift Templates extension:
+        #
+        TEMPLATE_GROUP = 'template.openshift.io'.freeze
+
         def initialize(options={})
           require 'kubeclient'
 
@@ -285,7 +290,7 @@ module Fog
             populate_notice_attributes(template, notice)
             template
           end
-          watch = openshift_client.watch_templates(opts)
+          watch = openshift_template_client.watch_templates(opts)
 
           WatchWrapper.new(watch, mapper)
         end
@@ -431,8 +436,8 @@ module Fog
           version
         end
 
-        def openshift_client
-          create_client('/oapi')
+        def openshift_template_client
+          create_client('/apis/' + TEMPLATE_GROUP)
         end
 
         def kube_client

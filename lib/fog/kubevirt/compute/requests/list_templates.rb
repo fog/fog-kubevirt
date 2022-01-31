@@ -5,7 +5,7 @@ module Fog
     class Compute
       class Real
         def list_templates(_filters = {})
-          temps = openshift_client.get_templates(namespace: @namespace)
+          temps = openshift_template_client.get_templates(namespace: @namespace)
           entities = temps.map do |kubevirt_obj|
             Template.parse object_to_hash(kubevirt_obj)
           end
