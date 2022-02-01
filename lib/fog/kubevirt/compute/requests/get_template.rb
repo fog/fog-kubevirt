@@ -3,7 +3,7 @@ module Fog
     class Compute
       class Real
         def get_template(name)
-          Template.parse object_to_hash( openshift_client.get_template(name, @namespace) )
+          Template.parse object_to_hash( openshift_template_client.get_template(name, @namespace) )
         end
       end
 
