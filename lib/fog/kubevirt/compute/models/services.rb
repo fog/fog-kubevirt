@@ -12,12 +12,16 @@ module Fog
         def all(filters = {})
           begin
             srvs = service.list_services(filters)
+
+            @kind = srvs.kind
+            @resource_version = srvs.resource_version
           rescue ::Fog::Kubevirt::Errors::ClientError
             # we assume that we get 404
             srvs = []
+
+            @kind = 'Service'
           end
-          @kind = srvs.kind
-          @resource_version = srvs.resource_version
+
           load srvs
         end
 
