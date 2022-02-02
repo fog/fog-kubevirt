@@ -1,3 +1,7 @@
+### 1.3.6 / 2022-02-02
+
+* Fix undefined method exception handling 404 error
+
 ### 1.3.5 / 2022-02-02
 
 * Fix templates API group
