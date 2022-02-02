@@ -1,3 +1,7 @@
+### 1.3.5 / 2022-02-02
+
+* Fix templates API group
+
 ### 1.3.4 / 2020-05-10
 
 * Allow for newer versions of kubeclient
