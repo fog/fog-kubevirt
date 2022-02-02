@@ -14,12 +14,16 @@ module Fog
         def all(filters = {})
           begin
             vms = service.list_vms(filters)
+
+            @kind = vms.kind
+            @resource_version = vms.resource_version
           rescue ::Fog::Kubevirt::Errors::ClientError
             # we assume that we get 404
             vms = []
+
+            @kind = 'VirtualMachine'
           end
-          @kind = vms.kind
-          @resource_version = vms.resource_version
+
           load vms
         end
 
