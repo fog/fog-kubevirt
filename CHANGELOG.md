@@ -1,3 +1,7 @@
+### 1.3.7 / 2022-05-11
+
+* Fix CVE-2022-0759
+
 ### 1.3.6 / 2022-02-02
 
 * Fix undefined method exception handling 404 error
