@@ -371,7 +371,7 @@ module Fog
           client = Kubeclient::Client.new(
             url.to_s,
             version,
-            @opts
+            **@opts
           )
 
           wrap_client(client, version, key)
