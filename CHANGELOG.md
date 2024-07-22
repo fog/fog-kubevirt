@@ -1,3 +1,9 @@
+### 1.4.0 / 2024-07-22
+
+* Fix keyword arguments error on ruby 3 ([#156](https://github.com/fog/fog-kubevirt/pull/156))
+* Add Github Actions support ([#158](https://github.com/fog/fog-kubevirt/pull/158))
+* Test with ruby 3.0, 3.1, and 3.2 ([#159](https://github.com/fog/fog-kubevirt/pull/159))
+
 ### 1.3.7 / 2022-05-11
 
 * Fix CVE-2022-0759
