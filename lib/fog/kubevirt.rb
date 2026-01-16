@@ -10,6 +10,8 @@ module Fog
       class ClientError < Fog::Errors::Error; end
       class AlreadyExistsError < ClientError; end
       class NotFoundError < ClientError; end
+      class UnauthorizedError < ClientError; end
+      class ForbiddenError < ClientError; end
       class ValidationError < ClientError; end
     end
 

@@ -192,13 +192,7 @@ module Fog
 
         def valid?
           kube_client.api_valid?
-
-          begin
-            kube_client.get_namespace(namespace)
-          rescue => err
-            @log.warn("The namespace [#{namespace}] does not exist on the kubernetes cluster: #{err.message}")
-            raise "The namespace '#{namespace}' does not exist on the kubernetes cluster"
-          end
+          kube_client.get_namespace(namespace)
         end
 
         class WatchWrapper
