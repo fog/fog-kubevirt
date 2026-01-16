@@ -1,3 +1,6 @@
+### 1.5.0 / 2026-01-16
+* Fix Compute.valid? suppressing the original error ([#162](https://github.com/fog/fog-kubevirt/pull/162))
+
 ### 1.4.0 / 2024-07-22
 
 * Fix keyword arguments error on ruby 3 ([#156](https://github.com/fog/fog-kubevirt/pull/156))
