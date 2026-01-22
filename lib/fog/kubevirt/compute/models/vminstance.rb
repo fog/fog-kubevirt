@@ -45,7 +45,7 @@ module Fog
             :networks         => networks,
             :ip_address       => status.dig(:interfaces, 0, :ipAddress),
             :node_name        => status[:nodeName],
-            :status           => status[:phase]
+            :status           => parse_status(object, :phase)
           }
         end
       end

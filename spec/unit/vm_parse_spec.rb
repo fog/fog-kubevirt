@@ -42,4 +42,23 @@ describe Fog::Kubevirt::Compute do
     assert_equal(vm[:interfaces][1].cni_provider, "multus")
     Fog.unmock!
   end
+
+  it 'parses vm status' do
+    Fog.mock!
+    mock = Fog::Kubevirt::Compute.new
+    vm = mock.get_vm('test')
+
+    assert_equal(vm[:status], "running")
+    Fog.unmock!
+  end
+
+  it 'parses vmi status' do
+    Fog.mock!
+    mock = Fog::Kubevirt::Compute.new
+    vmi = mock.get_vminstance('test')
+
+    # phase value is used for the status in vminstance.rb, not printableStatus
+    assert_equal(vmi[:status], "running")
+    Fog.unmock!
+  end
 end

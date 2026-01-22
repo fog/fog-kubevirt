@@ -122,6 +122,9 @@ module Fog
                   ]
                 }
               }
+            },
+            :status=>{
+              :printableStatus=>"Running",
             }
           }
         end
