@@ -216,6 +216,14 @@ module Fog
                 volumes.push(:name => volume_name, v.type.to_sym => v.config)
               end
               disk[:disk][:bus] = v.bus || "virtio"
+            elsif v.type == 'dataVolume'
+              # set name
+              if v.config.nil?
+                volumes.push(:name => volume_name, :dataVolume => {:name => v.info})
+              else
+                volumes.push(:name => volume_name, v.type.to_sym => v.config)
+              end
+              disk[:disk][:bus] = v.bus || "virtio"
             else
               # convert type into symbol and pass :config as volume content
               volumes.push(:name => volume_name, v.type.to_sym => v.config)
