@@ -2,25 +2,23 @@ module Fog
   module Kubevirt
     class Compute
       module VmAction
+        # Handles both legacy (spec.running) and modern (spec.runStrategy) formats
+
         def start(options = {})
-          # Change the `running` attribute to `true` so that the virtual machine controller will take it and
-          # create the virtual machine instance.
           vm = service.get_raw_vm(name)
-          vm = deep_merge!(vm,
-            :spec => {
-              :running => true
-            }
-          )
+
+          spec = vm.dig(:spec, :running).nil? ? : {:runStrategy => "Always"} : {:running => true}
+          vm = deep_merge!(vm, :spec => spec)
+
           service.update_vm(vm)
         end
 
         def stop(options = {})
           vm = service.get_raw_vm(name)
-          vm = deep_merge!(vm,
-            :spec => {
-              :running => false
-            }
-          )
+
+          spec = vm.dig(:spec, :running).nil? ? : {:runStrategy => "Halted"} : {:running => false}
+          vm = deep_merge!(vm, :spec => spec)
+
           service.update_vm(vm)
         end
       end
