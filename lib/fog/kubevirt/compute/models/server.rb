@@ -28,7 +28,7 @@ module Fog
 
         def self.parse(object)
           server = parse_object(object)
-          server[:phase] = parse_status(object, :phase)
+          server[:phase] = object[:phase]
           server[:node_name] = object[:node_name]
           server[:ip_address] = object[:ip_address]
           server
