@@ -457,22 +457,26 @@ module Fog
         def obtain_ssl_options(options)
           verify_ssl = options.fetch(:kubevirt_verify_ssl, true)
           if verify_ssl == true
-            ca = options[:kubevirt_ca_cert] || ""
-            ca = IO.read(ca) if File.file?(ca)
-            certs = ca.split(/(?=-----BEGIN)/).reject(&:empty?).collect do |pem|
-              OpenSSL::X509::Certificate.new(pem)
-            end
-
-            cert_store = OpenSSL::X509::Store.new
-            certs.each do |cert|
-              raise ::Fog::Kubevirt::Errors::ValidationError, "Certificate has been expired" if cert_expired?(cert)
-              cert_store.add_cert(cert)
-            end
-
             ssl_options = {
               :verify_ssl => OpenSSL::SSL::VERIFY_PEER,
-              :cert_store => cert_store
             }
+
+            ca = options[:kubevirt_ca_cert] || ""
+            unless ca == ""
+              ca = IO.read(ca) if File.file?(ca)
+              certs = ca.split(/(?=-----BEGIN)/).reject(&:empty?).collect do |pem|
+                OpenSSL::X509::Certificate.new(pem)
+              end
+
+              cert_store = OpenSSL::X509::Store.new
+              certs.each do |cert|
+                raise ::Fog::Kubevirt::Errors::ValidationError, "Certificate has been expired" if cert_expired?(cert)
+                cert_store.add_cert(cert)
+              end
+              ssl_options[:cert_store] = cert_store
+            end
+
+            ssl_options
           elsif verify_ssl == false || verify_ssl.to_s.empty?
             ssl_options = {
               :verify_ssl => OpenSSL::SSL::VERIFY_NONE
