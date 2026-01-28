@@ -346,16 +346,6 @@ module Fog
         end
 
         def create_client_from_token(url)
-          # Prepare the TLS and authentication options that will be used for the standard Kubernetes API
-          # and also for the KubeVirt extension:
-          @opts = {
-            :ssl_options  => {
-              :verify_ssl => OpenSSL::SSL::VERIFY_NONE,
-            },
-            :auth_options => {
-              :bearer_token => @kubevirt_token
-            }
-          }
           version = detect_version(url.to_s, @opts[:ssl_options])
           key = url.path + '/' + version
 
