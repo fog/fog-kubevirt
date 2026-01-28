@@ -7,7 +7,7 @@ module Fog
         def start(options = {})
           vm = service.get_raw_vm(name)
 
-          spec = vm.dig(:spec, :running).nil? ? : {:runStrategy => "Always"} : {:running => true}
+          spec = vm.dig(:spec, :running).nil? ? { runStrategy: "Always" } : { running: true }
           vm = deep_merge!(vm, :spec => spec)
 
           service.update_vm(vm)
@@ -16,7 +16,7 @@ module Fog
         def stop(options = {})
           vm = service.get_raw_vm(name)
 
-          spec = vm.dig(:spec, :running).nil? ? : {:runStrategy => "Halted"} : {:running => false}
+          spec = vm.dig(:spec, :running).nil? ? { runStrategy: "Halted" } : { running: false }
           vm = deep_merge!(vm, :spec => spec)
 
           service.update_vm(vm)
