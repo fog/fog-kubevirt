@@ -147,6 +147,16 @@ module Fog
 
           volumes
         end
+
+        #
+        # Returns the status of the vm
+        #
+        # @param object [Hash] A hash with raw object data.
+        # @param status_key [Symbol] The key of the status to parse, :printableStatus or :phase
+        #
+        def parse_status(object, status_key)
+          object.dig(:status, status_key)&.downcase
+        end
       end
     end
   end

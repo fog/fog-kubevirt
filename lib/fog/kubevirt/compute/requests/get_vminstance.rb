@@ -114,7 +114,7 @@ module Fog
               ],
               :migrationMethod=>"BlockMigration",
               :nodeName=>"node02",
-              :phase=>"Running"
+              :phase=>"Running",
             }
           }
           Vminstance.parse object_to_hash(vm)
