@@ -1,3 +1,6 @@
+### 1.5.1 / 2026-01-28
+* CVE-2026-1530 - Don't override @opts in create_client_from_token ([#168](https://github.com/fog/fog-kubevirt/pull/168))
+
 ### 1.5.0 / 2026-01-16
 * Fix Compute.valid? suppressing the original error ([#162](https://github.com/fog/fog-kubevirt/pull/162))
 
