@@ -455,7 +455,7 @@ module Fog
         # @param options [Hash] a hash with connection options
         #
         def obtain_ssl_options(options)
-          verify_ssl = options[:kubevirt_verify_ssl]
+          verify_ssl = options.fetch(:kubevirt_verify_ssl, true)
           if verify_ssl == true
             ca = options[:kubevirt_ca_cert] || ""
             ca = IO.read(ca) if File.file?(ca)
