@@ -139,12 +139,12 @@ module Fog
         KUBEVIRT_GROUP = 'kubevirt.io'.freeze
 
         #
-        # The API group of the Kubernetes network extention:
+        # The API group of the Kubernetes network extension:
         #
         NETWORK_GROUP = 'k8s.cni.cncf.io'.freeze
 
         #
-        # The API group of the Kubernetes network extention:
+        # The API group of the Kubernetes storage extension:
         #
         STORAGE_GROUP = 'storage.k8s.io'.freeze
 
