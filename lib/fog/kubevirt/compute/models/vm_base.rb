@@ -32,7 +32,7 @@ module Fog
           owner = metadata[:ownerReferences]
           annotations = metadata[:annotations]
           cpu = domain[:cpu]
-          mem = domain.dig(:resources, :requests, :memory)
+          mem = domain.dig(:resources, :requests, :memory) || domain.dig(:memory, :guest)
           disks = parse_disks(domain[:devices][:disks])
           networks = parse_networks(spec[:networks])
           vm = {
