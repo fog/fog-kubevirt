@@ -70,6 +70,8 @@ module Fog
         #
         # @param [Array] :volumes the volumes (Fog::Kubevirt::Compute::Volume) to be used by the VM
         #
+        # @param [Array] :volume_templates the dataVolumeTemplates to be used by the VM
+        #
         # @param [Hash] attributes containing details about vm about to be
         #   created.
         def create(args = {})
@@ -81,6 +83,7 @@ module Fog
           networks = args.fetch(:networks, nil)
           interfaces = args.fetch(:interfaces, nil)
           vm_volumes =  args.fetch(:volumes, nil)
+          volume_templates = args.fetch(:volume_templates, nil)
 
           if vm_volumes.nil? || vm_volumes.empty?
             raise ::Fog::Kubevirt::Errors::ValidationError
@@ -177,6 +180,13 @@ module Fog
               }
             }
           ) unless interfaces.nil?
+
+          vm = deep_merge!(vm,
+             :spec => {
+               :dataVolumeTemplates => volume_templates
+             }
+          ) unless volume_templates.nil? || volume_templates.empty?
+
           service.create_vm(vm)
         end
 
@@ -202,6 +212,14 @@ module Fog
               # set claim
               if v.config.nil?
                 volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => v.info})
+              else
+                volumes.push(:name => volume_name, v.type.to_sym => v.config)
+              end
+              disk[:disk][:bus] = v.bus || "virtio"
+            elsif v.type == 'dataVolume'
+              # set name
+              if v.config.nil?
+                volumes.push(:name => volume_name, :dataVolume => {:name => v.info})
               else
                 volumes.push(:name => volume_name, v.type.to_sym => v.config)
               end
