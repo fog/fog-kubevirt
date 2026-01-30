@@ -38,7 +38,7 @@ module Fog
             :owner_name       => metadata.dig(:ownerReferences, 0, :name),
             :owner_uid        => metadata.dig(:ownerReferences, 0, :uid),
             :cpu_cores        => domain.dig(:cpu, :cores),
-            :memory           => domain[:resources][:requests][:memory],
+            :memory           => domain.dig(:resources, :requests, :memory) || domain.dig(:memory, :guest),
             :disks            => disks,
             :volumes          => parse_volumes(spec[:volumes], disks),
             :interfaces       => parse_interfaces(domain[:devices][:interfaces], status[:interfaces], networks),
