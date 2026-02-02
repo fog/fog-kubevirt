@@ -19,6 +19,7 @@ module Fog
           attribute :memory,           :aliases => 'spec_memory'
           attribute :disks,            :aliases => 'spec_disks'
           attribute :volumes,          :aliases => 'spec_volumes'
+          attribute :volume_templates, :aliases => 'spec_volume_templates'
           attribute :status,           :aliases => 'spec_running'
           attribute :interfaces,       :aliases => 'spec_interfaces'
           attribute :networks,         :aliases => 'spec_networks'
@@ -35,6 +36,7 @@ module Fog
           mem = domain.dig(:resources, :requests, :memory) || domain.dig(:memory, :guest)
           disks = parse_disks(domain[:devices][:disks])
           networks = parse_networks(spec[:networks])
+          volume_templates = object[:spec][:dataVolumeTemplates]
           vm = {
             :namespace        => metadata[:namespace],
             :name             => metadata[:name],
@@ -52,6 +54,7 @@ module Fog
           vm[:annotations] = annotations unless annotations.nil?
           vm[:cpu_cores] = cpu[:cores] unless cpu.nil?
           vm[:memory] = mem unless mem.nil?
+          vm[:volume_templates] = volume_templates unless volume_templates.nil?
 
           vm
         end

@@ -70,6 +70,8 @@ module Fog
         #
         # @param [Array] :volumes the volumes (Fog::Kubevirt::Compute::Volume) to be used by the VM
         #
+        # @param [Array] :volume_templates the dataVolumeTemplates to be used by the VM
+        #
         # @param [Hash] attributes containing details about vm about to be
         #   created.
         def create(args = {})
@@ -81,6 +83,7 @@ module Fog
           networks = args.fetch(:networks, nil)
           interfaces = args.fetch(:interfaces, nil)
           vm_volumes =  args.fetch(:volumes, nil)
+          volume_templates = args.fetch(:volume_templates, nil)
 
           if vm_volumes.nil? || vm_volumes.empty?
             raise ::Fog::Kubevirt::Errors::ValidationError
@@ -177,6 +180,13 @@ module Fog
               }
             }
           ) unless interfaces.nil?
+
+          vm = deep_merge!(vm,
+             :spec => {
+               :dataVolumeTemplates => volume_templates
+             }
+          ) unless volume_templates.nil? || volume_templates.empty?
+
           service.create_vm(vm)
         end
 
@@ -190,27 +200,21 @@ module Fog
             }
             disk[:bootOrder] = v.boot_order if v.boot_order
 
+            volume_config = v.config
             if v.type == 'containerDisk'
-              # set image
-              if v.config.nil?
-                volumes.push(:name => volume_name, :containerDisk => {:image => v.info})
-              else
-                volumes.push(:name => volume_name, v.type.to_sym => v.config)
-              end
+              volume_config ||= {:image => v.info}
               disk[:disk][:bus] = v.bus || "virtio"
             elsif v.type == 'persistentVolumeClaim'
-              # set claim
-              if v.config.nil?
-                volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => v.info})
-              else
-                volumes.push(:name => volume_name, v.type.to_sym => v.config)
-              end
+              volume_config ||= {:claimName => v.info}
+              disk[:disk][:bus] = v.bus || "virtio"
+            elsif v.type == 'dataVolume'
+              volume_config ||= {:name => v.info}
               disk[:disk][:bus] = v.bus || "virtio"
             else
-              # convert type into symbol and pass :config as volume content
-              volumes.push(:name => volume_name, v.type.to_sym => v.config)
               disk[:disk][:bus] = v.bus if v.bus
             end
+            # convert type into symbol and pass :config as volume content
+            volumes.push(:name => volume_name, v.type.to_sym => volume_config)
             disks.push(disk)
           end
 
