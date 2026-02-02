@@ -1,5 +1,8 @@
 require 'vcr'
 
+FAKE_HOST = "10.8.254.82"
+FAKE_PORT = "8443"
+
 class KubevirtVCR
 	attr_reader :service,
 	            :host,
@@ -13,8 +16,8 @@ class KubevirtVCR
     use_recorded = !ENV.key?('KUBE_HOST') || ENV['USE_VCR'] == 'true'
     if use_recorded
       Fog.interval = 0
-      @host = "10.8.254.82"
-      @port = "8443"
+      @host = FAKE_HOST
+      @port = FAKE_PORT
     else
       @host = ENV['KUBE_HOST']
       @port = ENV['KUBE_PORT']
@@ -31,6 +34,12 @@ class KubevirtVCR
       else
         config.cassette_library_dir = "spec/debug"
         config.default_cassette_options = {:record => :all}
+
+        config.filter_sensitive_data('Bearer <TOKEN>') do |interaction|
+          interaction.request.headers['Authorization']&.first
+        end
+        config.filter_sensitive_data(FAKE_HOST) { @host }
+        config.filter_sensitive_data(FAKE_PORT) { @port }
       end
     end
 
@@ -44,7 +53,8 @@ class KubevirtVCR
       connection_params = {
         kubevirt_hostname: @host,
         kubevirt_port: @port,
-        kubevirt_token: @token
+        kubevirt_token: @token,
+        kubevirt_verify_ssl: false,
       }
 
       @service = @service_class.new(connection_params)
