@@ -200,35 +200,21 @@ module Fog
             }
             disk[:bootOrder] = v.boot_order if v.boot_order
 
+            volume_config = v.config
             if v.type == 'containerDisk'
-              # set image
-              if v.config.nil?
-                volumes.push(:name => volume_name, :containerDisk => {:image => v.info})
-              else
-                volumes.push(:name => volume_name, v.type.to_sym => v.config)
-              end
+              volume_config ||= {:image => v.info}
               disk[:disk][:bus] = v.bus || "virtio"
             elsif v.type == 'persistentVolumeClaim'
-              # set claim
-              if v.config.nil?
-                volumes.push(:name => volume_name, :persistentVolumeClaim => {:claimName => v.info})
-              else
-                volumes.push(:name => volume_name, v.type.to_sym => v.config)
-              end
+              volume_config ||= {:claimName => v.info}
               disk[:disk][:bus] = v.bus || "virtio"
             elsif v.type == 'dataVolume'
-              # set name
-              if v.config.nil?
-                volumes.push(:name => volume_name, :dataVolume => {:name => v.info})
-              else
-                volumes.push(:name => volume_name, v.type.to_sym => v.config)
-              end
+              volume_config ||= {:name => v.info}
               disk[:disk][:bus] = v.bus || "virtio"
             else
-              # convert type into symbol and pass :config as volume content
-              volumes.push(:name => volume_name, v.type.to_sym => v.config)
               disk[:disk][:bus] = v.bus if v.bus
             end
+            # convert type into symbol and pass :config as volume content
+            volumes.push(:name => volume_name, v.type.to_sym => volume_config)
             disks.push(disk)
           end
 
