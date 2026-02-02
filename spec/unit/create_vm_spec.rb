@@ -128,4 +128,52 @@ describe Fog::Compute do
       end
     end
   end
+
+  it 'creates vm using a datavolumetemplate' do
+    VCR.use_cassette("vm_create_datavolumetemplate") do
+      begin
+        vm_name = 'test3'
+        cpus = 1
+        memory_size = '64'
+        memory_unit = 'M'
+
+        volume_template = {
+          :kind=>"DataVolume",
+          :metadata=>{:name=>"rootdisk"},
+          :spec=>{
+            :sourceRef=>{:kind=>"DataSource", :name=>"centos-stream9-amd64", :namespace=>"openshift-virtualization-os-images"},
+            :storage=>{:resources=>{:requests=>{:storage=>"30Gi"}}}
+          }
+        }
+
+        volume = Fog::Kubevirt::Compute::Volume.new
+        volume.type = 'dataVolume'
+        volume.info = 'rootdisk'
+
+        @service.vms.create(vm_name: vm_name, cpus: cpus, memory_size: memory_size, memory_unit: memory_unit, volumes: [volume], volume_templates: [volume_template])
+
+        vm = @service.vms.get(vm_name)
+
+        # test vm volumes
+        volumes = @service.volumes.all vm_name
+        assert_equal(volumes.count, 1)
+
+        # verify volume values
+        volume = volumes.first
+        refute_nil(volume)
+        assert_equal(volume.name, 'test3-disk-00')
+        assert_equal(volume.type, 'dataVolume')
+
+        # verify template values
+        template = vm.volume_templates&.first
+        refute_nil(template)
+        assert_equal(template[:kind], 'DataVolume')
+        assert_equal(template[:spec][:sourceRef][:kind], 'DataSource')
+        assert_equal(template[:spec][:sourceRef][:name], 'centos-stream9-amd64')
+        assert_equal(template[:spec][:sourceRef][:namespace], 'openshift-virtualization-os-images')
+      ensure
+        @service.vms.delete(vm_name) if vm
+      end
+    end
+  end
 end
