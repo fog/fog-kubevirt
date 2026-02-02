@@ -1,3 +1,12 @@
+## 1.6.0 / 2026-02-02
+
+* Fix status & phase for VirtualMachine ([#163](https://github.com/fog/fog-kubevirt/pull/163))
+* verify SSL by default ([#169](https://github.com/fog/fog-kubevirt/pull/16))
+* only populate the cert_store if kubevirt_ca_cert was provided ([#170](https://github.com/fog/fog-kubevirt/pull/170)
+* Fix start/stop for VMs using runStrategy instead of deprecated running ([#165](https://github.com/fog/fog-kubevirt/pull/165))
+* Fallback to `domain.memory.guest` in case `domain.resources.requests.memory` is empty ([#167](https://github.com/fog/fog-kubevirt/pull/167))
+* allow passing volume_templates to create dataVolumeTemplates in CNV ([#164](https://github.com/fog/fog-kubevirt/pull/164))
+
 ### 1.5.1 / 2026-01-28
 * CVE-2026-1530 - Don't override @opts in create_client_from_token ([#168](https://github.com/fog/fog-kubevirt/pull/168))
 
