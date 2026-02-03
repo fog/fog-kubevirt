@@ -16,7 +16,7 @@ module Fog
       class Mock
         def list_storageclasses(_filters = {})
           if _filters == {}
-            [{
+            EntityCollection.new("StorageClass", "775504", [{
               :name=>"local-storage",
               :resource_version=>"775504",
               :uid=>"c930bca9-5471-11e9-9132-525400c5a686",
@@ -25,7 +25,7 @@ module Fog
               :provisioner=>"kubernetes.io/no-provisioner",
               :reclaim_policy=>"Delete",
               :volume_binding_mode=>"WaitForFirstConsumer"
-            }]
+            }])
           end
         end
       end
