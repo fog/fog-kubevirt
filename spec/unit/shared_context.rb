@@ -2,6 +2,7 @@ require 'vcr'
 
 FAKE_HOST = "10.8.254.82"
 FAKE_PORT = "8443"
+FAKE_NAMESPACE = "default"
 
 class KubevirtVCR
 	attr_reader :service,
@@ -18,9 +19,11 @@ class KubevirtVCR
       Fog.interval = 0
       @host = FAKE_HOST
       @port = FAKE_PORT
+      @namespace = FAKE_NAMESPACE
     else
       @host = ENV['KUBE_HOST']
       @port = ENV['KUBE_PORT']
+      @namespace = ENV['KUBE_NAMESPACE']
     end
 
     VCR.configure do |config|
@@ -40,6 +43,7 @@ class KubevirtVCR
         end
         config.filter_sensitive_data(FAKE_HOST) { @host }
         config.filter_sensitive_data(FAKE_PORT) { @port }
+        config.filter_sensitive_data(FAKE_NAMESPACE) { @namespace } if @namespace != FAKE_NAMESPACE
       end
     end
 
@@ -54,6 +58,7 @@ class KubevirtVCR
         kubevirt_hostname: @host,
         kubevirt_port: @port,
         kubevirt_token: @token,
+        kubevirt_namespace: @namespace,
         kubevirt_verify_ssl: false,
       }
 
