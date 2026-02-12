@@ -23,6 +23,8 @@ module Fog
           vm[:ip_address] = vmi[:ip_address]
           vm[:node_name] = vmi[:node_name]
           vm[:phase] = vmi[:status]
+          vm[:memory] = vmi[:memory]
+          vm[:cpu_cores] = vmi[:cpu_cores]
           vm
         end
 

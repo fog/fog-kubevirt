@@ -32,8 +32,8 @@ module Fog
           domain = spec[:domain]
           owner = metadata[:ownerReferences]
           annotations = metadata[:annotations]
-          cpu = domain[:cpu]
-          mem = domain.dig(:resources, :requests, :memory) || domain.dig(:memory, :guest)
+          cpu = object[:cpu_cores] || domain.dig(:cpu, :cores)
+          mem = object[:memory] || domain.dig(:resources, :requests, :memory) || domain.dig(:memory, :guest)
           disks = parse_disks(domain[:devices][:disks])
           networks = parse_networks(spec[:networks])
           volume_templates = object[:spec][:dataVolumeTemplates]
@@ -52,7 +52,7 @@ module Fog
           }
           vm[:owner_reference] = owner unless owner.nil?
           vm[:annotations] = annotations unless annotations.nil?
-          vm[:cpu_cores] = cpu[:cores] unless cpu.nil?
+          vm[:cpu_cores] = cpu unless cpu.nil?
           vm[:memory] = mem unless mem.nil?
           vm[:volume_templates] = volume_templates unless volume_templates.nil?
 
