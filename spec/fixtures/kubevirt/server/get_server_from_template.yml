@@ -1,0 +1,224 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.7p220
+      Authorization:
+      - Bearer <TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Audit-Id:
+      - 25d82f37-37fc-424f-9ba4-ac9992b82d10
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Kubernetes-Pf-Flowschema-Uid:
+      - '080d0e0a-b469-4f1d-9f06-670434a51f48'
+      X-Kubernetes-Pf-Prioritylevel-Uid:
+      - 233f65ed-bcb3-4980-b99c-9a367e9f2eef
+      Date:
+      - Tue, 10 Feb 2026 08:06:08 GMT
+      Content-Length:
+      - '250'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1","version":"v1"},{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1","version":"v1"}}
+
+        '
+  recorded_at: Tue, 10 Feb 2026 08:06:08 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.7p220
+      Authorization:
+      - Bearer <TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Audit-Id:
+      - 59ed2797-b980-45fd-99fe-eeadcde0f16f
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Kubernetes-Pf-Flowschema-Uid:
+      - '080d0e0a-b469-4f1d-9f06-670434a51f48'
+      X-Kubernetes-Pf-Prioritylevel-Uid:
+      - 233f65ed-bcb3-4980-b99c-9a367e9f2eef
+      Date:
+      - Tue, 10 Feb 2026 08:06:08 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIResourceList","apiVersion":"v1","groupVersion":"kubevirt.io/v1","resources":[{"name":"virtualmachines","singularName":"virtualmachine","namespaced":true,"kind":"VirtualMachine","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vm","vms"],"categories":["all"],"storageVersionHash":"v2rohjOGqcY="},{"name":"virtualmachines/status","singularName":"","namespaced":true,"kind":"VirtualMachine","verbs":["get","patch","update"]},{"name":"virtualmachineinstances","singularName":"virtualmachineinstance","namespaced":true,"kind":"VirtualMachineInstance","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vmi","vmis"],"categories":["all"],"storageVersionHash":"1DClFQM6+os="},{"name":"virtualmachineinstancemigrations","singularName":"virtualmachineinstancemigration","namespaced":true,"kind":"VirtualMachineInstanceMigration","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vmim","vmims"],"categories":["all"],"storageVersionHash":"ByphcRAtdtg="},{"name":"virtualmachineinstancemigrations/status","singularName":"","namespaced":true,"kind":"VirtualMachineInstanceMigration","verbs":["get","patch","update"]},{"name":"virtualmachineinstancereplicasets","singularName":"virtualmachineinstancereplicaset","namespaced":true,"kind":"VirtualMachineInstanceReplicaSet","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vmirs","vmirss"],"categories":["all"],"storageVersionHash":"VyiLSe/5A2Q="},{"name":"virtualmachineinstancereplicasets/status","singularName":"","namespaced":true,"kind":"VirtualMachineInstanceReplicaSet","verbs":["get","patch","update"]},{"name":"virtualmachineinstancereplicasets/scale","singularName":"","namespaced":true,"group":"autoscaling","version":"v1","kind":"Scale","verbs":["get","patch","update"]},{"name":"virtualmachineinstancepresets","singularName":"virtualmachineinstancepreset","namespaced":true,"kind":"VirtualMachineInstancePreset","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["vmipreset","vmipresets"],"categories":["all"],"storageVersionHash":"oZZyVoiG8GU="},{"name":"kubevirts","singularName":"kubevirt","namespaced":true,"kind":"KubeVirt","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"shortNames":["kv","kvs"],"categories":["all"],"storageVersionHash":"+s0w/mxiw14="},{"name":"kubevirts/status","singularName":"","namespaced":true,"kind":"KubeVirt","verbs":["get","patch","update"]}]}
+
+        '
+  recorded_at: Tue, 10 Feb 2026 08:06:08 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1/namespaces/default/virtualmachines/ls-vm-from-template
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.7p220
+      Authorization:
+      - Bearer <TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Audit-Id:
+      - c068b03c-f078-4435-a53d-b1f772b18bfd
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Kubernetes-Pf-Flowschema-Uid:
+      - '080d0e0a-b469-4f1d-9f06-670434a51f48'
+      X-Kubernetes-Pf-Prioritylevel-Uid:
+      - 233f65ed-bcb3-4980-b99c-9a367e9f2eef
+      Date:
+      - Tue, 10 Feb 2026 08:06:09 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1","kind":"VirtualMachine","metadata":{"annotations":{"kubemacpool.io/transaction-timestamp":"2026-02-10T07:02:06.117613324Z","kubevirt.io/latest-observed-api-version":"v1","kubevirt.io/storage-observed-api-version":"v1","vm.kubevirt.io/validations":"[\n  {\n    \"name\":
+        \"minimal-required-memory\",\n    \"path\": \"jsonpath::.spec.domain.memory.guest\",\n    \"rule\":
+        \"integer\",\n    \"message\": \"This VM requires more memory.\",\n    \"min\":
+        1610612736\n  }\n]\n"},"creationTimestamp":"2026-02-10T07:01:02Z","finalizers":["kubevirt.io/virtualMachineControllerFinalize"],"generation":1,"labels":{"app":"ls-vm-from-template","kubevirt.io/dynamic-credentials-support":"true","vm.kubevirt.io/template":"centos-stream9-server-small","vm.kubevirt.io/template.namespace":"openshift","vm.kubevirt.io/template.revision":"1","vm.kubevirt.io/template.version":"v0.34.1","vm.openshift.io/folder":""},"managedFields":[{"apiVersion":"kubevirt.io/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{"f:kubevirt.io/latest-observed-api-version":{},"f:kubevirt.io/storage-observed-api-version":{}},"f:finalizers":{".":{},"v:\"kubevirt.io/virtualMachineControllerFinalize\"":{}}}},"manager":"virt-controller","operation":"Update","time":"2026-02-10T07:01:02Z"},{"apiVersion":"kubevirt.io/v1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{".":{},"f:conditions":{},"f:created":{},"f:desiredGeneration":{},"f:observedGeneration":{},"f:printableStatus":{},"f:ready":{},"f:runStrategy":{},"f:volumeSnapshotStatuses":{}}},"manager":"virt-controller","operation":"Update","subresource":"status","time":"2026-02-10T07:01:43Z"},{"apiVersion":"kubevirt.io/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:vm.kubevirt.io/validations":{}},"f:labels":{".":{},"f:app":{},"f:kubevirt.io/dynamic-credentials-support":{},"f:vm.kubevirt.io/template":{},"f:vm.kubevirt.io/template.namespace":{},"f:vm.kubevirt.io/template.revision":{},"f:vm.kubevirt.io/template.version":{},"f:vm.openshift.io/folder":{}}},"f:spec":{".":{},"f:dataVolumeTemplates":{},"f:runStrategy":{},"f:template":{".":{},"f:metadata":{".":{},"f:annotations":{".":{},"f:vm.kubevirt.io/flavor":{},"f:vm.kubevirt.io/os":{},"f:vm.kubevirt.io/workload":{}},"f:labels":{".":{},"f:kubevirt.io/domain":{},"f:kubevirt.io/size":{},"f:network.kubevirt.io/headlessService":{}}},"f:spec":{".":{},"f:accessCredentials":{},"f:architecture":{},"f:domain":{".":{},"f:cpu":{".":{},"f:cores":{},"f:sockets":{},"f:threads":{}},"f:devices":{".":{},"f:disks":{},"f:interfaces":{},"f:logSerialConsole":{},"f:rng":{}},"f:memory":{".":{},"f:guest":{}}},"f:networks":{},"f:terminationGracePeriodSeconds":{},"f:volumes":{}}}}},"manager":"Mozilla","operation":"Update","time":"2026-02-10T07:02:06Z"}],"name":"ls-vm-from-template","namespace":"default","resourceVersion":"11074482774","uid":"a7cce0cc-4b27-42b8-9862-04843e2bddd0"},"spec":{"dataVolumeTemplates":[{"apiVersion":"cdi.kubevirt.io/v1beta1","kind":"DataVolume","metadata":{"creationTimestamp":null,"name":"ls-vm-from-template"},"spec":{"sourceRef":{"kind":"DataSource","name":"centos-stream9-amd64","namespace":"openshift-virtualization-os-images"},"storage":{"resources":{"requests":{"storage":"30Gi"}}}}}],"runStrategy":"RerunOnFailure","template":{"metadata":{"annotations":{"vm.kubevirt.io/flavor":"small","vm.kubevirt.io/os":"centos-stream9","vm.kubevirt.io/workload":"server"},"creationTimestamp":null,"labels":{"kubevirt.io/domain":"ls-vm-from-template","kubevirt.io/size":"small","network.kubevirt.io/headlessService":"headless"}},"spec":{"accessCredentials":[{"sshPublicKey":{"propagationMethod":{"noCloud":{}},"source":{"secret":{"secretName":"default-id-rsa-pub"}}}}],"architecture":"amd64","domain":{"cpu":{"cores":1,"sockets":1,"threads":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"rootdisk"},{"disk":{"bus":"virtio"},"name":"cloudinitdisk"}],"interfaces":[{"macAddress":"02:26:19:7b:6c:14","masquerade":{},"model":"virtio","name":"default"}],"logSerialConsole":false,"rng":{}},"firmware":{"serial":"0f1139e6-2b9f-4082-925c-333297a103ca","uuid":"6770893f-9247-468d-9559-9d9d809a13d9"},"machine":{"type":"pc-q35-rhel9.6.0"},"memory":{"guest":"2Gi"},"resources":{}},"networks":[{"name":"default","pod":{}}],"terminationGracePeriodSeconds":180,"volumes":[{"dataVolume":{"name":"ls-vm-from-template"},"name":"rootdisk"},{"cloudInitNoCloud":{"userData":"#cloud-config\nuser:
+        centos\npassword: 3gtm-hli1-1kvl\nchpasswd: { expire: False }"},"name":"cloudinitdisk"}]}}},"status":{"conditions":[{"lastProbeTime":null,"lastTransitionTime":"2026-02-10T07:01:20Z","status":"True","type":"Ready"},{"lastProbeTime":null,"lastTransitionTime":null,"message":"All
+        of the VMI''s DVs are bound and ready","reason":"AllDVsReady","status":"True","type":"DataVolumesReady"},{"lastProbeTime":null,"lastTransitionTime":null,"status":"True","type":"LiveMigratable"},{"lastProbeTime":null,"lastTransitionTime":null,"status":"True","type":"StorageLiveMigratable"},{"lastProbeTime":"2026-02-10T07:01:43Z","lastTransitionTime":null,"status":"True","type":"AgentConnected"}],"created":true,"desiredGeneration":1,"observedGeneration":1,"printableStatus":"Running","ready":true,"runStrategy":"RerunOnFailure","volumeSnapshotStatuses":[{"enabled":true,"name":"rootdisk"},{"enabled":false,"name":"cloudinitdisk","reason":"Snapshot
+        is not supported for this volumeSource type [cloudinitdisk]"}]}}
+
+        '
+  recorded_at: Tue, 10 Feb 2026 08:06:09 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.7p220
+      Authorization:
+      - Bearer <TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Audit-Id:
+      - b954d60e-401b-4df0-850b-969b0b4b7bee
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Kubernetes-Pf-Flowschema-Uid:
+      - '080d0e0a-b469-4f1d-9f06-670434a51f48'
+      X-Kubernetes-Pf-Prioritylevel-Uid:
+      - 233f65ed-bcb3-4980-b99c-9a367e9f2eef
+      Date:
+      - Tue, 10 Feb 2026 08:06:09 GMT
+      Content-Length:
+      - '250'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"APIGroup","apiVersion":"v1","name":"kubevirt.io","versions":[{"groupVersion":"kubevirt.io/v1","version":"v1"},{"groupVersion":"kubevirt.io/v1alpha3","version":"v1alpha3"}],"preferredVersion":{"groupVersion":"kubevirt.io/v1","version":"v1"}}
+
+        '
+  recorded_at: Tue, 10 Feb 2026 08:06:09 GMT
+- request:
+    method: get
+    uri: https://10.8.254.82:8443/apis/kubevirt.io/v1/namespaces/default/virtualmachineinstances/ls-vm-from-template
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.7p220
+      Authorization:
+      - Bearer <TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Audit-Id:
+      - 8c5edb4c-21c3-4afe-ae8b-56bd8cd5c2a5
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Kubernetes-Pf-Flowschema-Uid:
+      - '080d0e0a-b469-4f1d-9f06-670434a51f48'
+      X-Kubernetes-Pf-Prioritylevel-Uid:
+      - 233f65ed-bcb3-4980-b99c-9a367e9f2eef
+      Date:
+      - Tue, 10 Feb 2026 08:06:10 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"kubevirt.io/v1","kind":"VirtualMachineInstance","metadata":{"annotations":{"kubevirt.io/latest-observed-api-version":"v1","kubevirt.io/storage-observed-api-version":"v1","kubevirt.io/vm-generation":"1","vm.kubevirt.io/flavor":"small","vm.kubevirt.io/os":"centos-stream9","vm.kubevirt.io/workload":"server"},"creationTimestamp":"2026-02-10T07:01:14Z","finalizers":["kubevirt.io/virtualMachineControllerFinalize","foregroundDeleteVirtualMachine"],"generation":13,"labels":{"kubevirt.io/domain":"ls-vm-from-template","kubevirt.io/nodeName":"zeus08.lab.eng.tlv2.redhat.com","kubevirt.io/size":"small","network.kubevirt.io/headlessService":"headless"},"managedFields":[{"apiVersion":"kubevirt.io/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:kubevirt.io/latest-observed-api-version":{},"f:kubevirt.io/storage-observed-api-version":{},"f:kubevirt.io/vm-generation":{},"f:vm.kubevirt.io/flavor":{},"f:vm.kubevirt.io/os":{},"f:vm.kubevirt.io/workload":{}},"f:finalizers":{".":{},"v:\"kubevirt.io/virtualMachineControllerFinalize\"":{}},"f:labels":{".":{},"f:kubevirt.io/domain":{},"f:kubevirt.io/nodeName":{},"f:kubevirt.io/size":{},"f:network.kubevirt.io/headlessService":{}},"f:ownerReferences":{".":{},"k:{\"uid\":\"a7cce0cc-4b27-42b8-9862-04843e2bddd0\"}":{}}},"f:spec":{".":{},"f:accessCredentials":{},"f:architecture":{},"f:domain":{".":{},"f:cpu":{".":{},"f:cores":{},"f:sockets":{},"f:threads":{}},"f:devices":{".":{},"f:disks":{},"f:interfaces":{},"f:logSerialConsole":{},"f:rng":{}},"f:firmware":{".":{},"f:serial":{},"f:uuid":{}},"f:machine":{".":{},"f:type":{}},"f:memory":{".":{},"f:guest":{}},"f:resources":{}},"f:networks":{},"f:terminationGracePeriodSeconds":{},"f:volumes":{}},"f:status":{".":{},"f:activePods":{".":{},"f:6bc82bc1-4f2b-4af5-a3b3-5c6a96a8a71c":{}},"f:guestOSInfo":{},"f:launcherContainerImageVersion":{},"f:migrationTransport":{},"f:nodeName":{},"f:qosClass":{},"f:runtimeUser":{},"f:virtualMachineRevisionName":{}}},"manager":"virt-controller","operation":"Update","time":"2026-02-10T07:01:23Z"},{"apiVersion":"kubevirt.io/v1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:conditions":{},"f:guestOSInfo":{"f:id":{},"f:kernelRelease":{},"f:kernelVersion":{},"f:machine":{},"f:name":{},"f:prettyName":{},"f:version":{},"f:versionId":{}},"f:interfaces":{},"f:machine":{".":{},"f:type":{}},"f:migrationMethod":{},"f:phase":{},"f:phaseTransitionTimestamps":{},"f:selinuxContext":{},"f:volumeStatus":{}}},"manager":"virt-handler","operation":"Update","time":"2026-02-10T07:01:53Z"}],"name":"ls-vm-from-template","namespace":"default","ownerReferences":[{"apiVersion":"kubevirt.io/v1","blockOwnerDeletion":true,"controller":true,"kind":"VirtualMachine","name":"ls-vm-from-template","uid":"a7cce0cc-4b27-42b8-9862-04843e2bddd0"}],"resourceVersion":"11074480528","uid":"5fe69285-d553-4bc7-adb5-4b53be2e36c1"},"spec":{"accessCredentials":[{"sshPublicKey":{"propagationMethod":{"noCloud":{}},"source":{"secret":{"secretName":"default-id-rsa-pub"}}}}],"architecture":"amd64","domain":{"cpu":{"cores":1,"maxSockets":4,"model":"host-model","sockets":1,"threads":1},"devices":{"disks":[{"bootOrder":1,"disk":{"bus":"virtio"},"name":"rootdisk"},{"disk":{"bus":"virtio"},"name":"cloudinitdisk"}],"interfaces":[{"macAddress":"02:26:19:7b:6c:14","masquerade":{},"model":"virtio","name":"default"}],"logSerialConsole":false,"rng":{}},"features":{"acpi":{"enabled":true}},"firmware":{"serial":"0f1139e6-2b9f-4082-925c-333297a103ca","uuid":"6770893f-9247-468d-9559-9d9d809a13d9"},"machine":{"type":"pc-q35-rhel9.6.0"},"memory":{"guest":"2Gi","maxGuest":"8Gi"},"resources":{}},"evictionStrategy":"LiveMigrateIfPossible","networks":[{"name":"default","pod":{}}],"terminationGracePeriodSeconds":180,"volumes":[{"dataVolume":{"name":"ls-vm-from-template"},"name":"rootdisk"},{"cloudInitNoCloud":{"userData":"#cloud-config\nuser:
+        centos\npassword: 3gtm-hli1-1kvl\nchpasswd: { expire: False }"},"name":"cloudinitdisk"}]},"status":{"activePods":{"6bc82bc1-4f2b-4af5-a3b3-5c6a96a8a71c":"zeus08.lab.eng.tlv2.redhat.com"},"conditions":[{"lastProbeTime":null,"lastTransitionTime":"2026-02-10T07:01:20Z","status":"True","type":"Ready"},{"lastProbeTime":null,"lastTransitionTime":null,"message":"All
+        of the VMI''s DVs are bound and ready","reason":"AllDVsReady","status":"True","type":"DataVolumesReady"},{"lastProbeTime":null,"lastTransitionTime":null,"status":"True","type":"LiveMigratable"},{"lastProbeTime":null,"lastTransitionTime":null,"status":"True","type":"StorageLiveMigratable"},{"lastProbeTime":"2026-02-10T07:01:43Z","lastTransitionTime":null,"status":"True","type":"AgentConnected"}],"currentCPUTopology":{"cores":1,"sockets":1,"threads":1},"guestOSInfo":{"id":"centos","kernelRelease":"5.14.0-669.el9.x86_64","kernelVersion":"#1
+        SMP PREEMPT_DYNAMIC Wed Jan 28 11:11:41 UTC 2026","machine":"x86_64","name":"CentOS
+        Stream","prettyName":"CentOS Stream 9","version":"9","versionId":"9"},"interfaces":[{"infoSource":"domain,
+        guest-agent","interfaceName":"eth0","ipAddress":"10.130.3.78","ipAddresses":["10.130.3.78"],"linkState":"up","mac":"02:26:19:7b:6c:14","name":"default","podInterfaceName":"eth0","queueCount":1}],"launcherContainerImageVersion":"quay.io/openshift-cnv/container-native-virtualization-virt-launcher-rhel9@sha256:eddadbb81044a8e7a67ada287b36988f8661ddd6394b634ca6302caa546a5610","machine":{"type":"pc-q35-rhel9.6.0"},"memory":{"guestAtBoot":"2Gi","guestCurrent":"2Gi","guestRequested":"2Gi"},"migrationMethod":"BlockMigration","migrationTransport":"Unix","nodeName":"zeus08.lab.eng.tlv2.redhat.com","phase":"Running","phaseTransitionTimestamps":[{"phase":"Pending","phaseTransitionTimestamp":"2026-02-10T07:01:14Z"},{"phase":"Scheduling","phaseTransitionTimestamp":"2026-02-10T07:01:14Z"},{"phase":"Scheduled","phaseTransitionTimestamp":"2026-02-10T07:01:20Z"},{"phase":"Running","phaseTransitionTimestamp":"2026-02-10T07:01:23Z"}],"qosClass":"Burstable","runtimeUser":107,"selinuxContext":"system_u:object_r:container_file_t:s0:c38,c922","virtualMachineRevisionName":"revision-start-vm-a7cce0cc-4b27-42b8-9862-04843e2bddd0-1","volumeStatus":[{"name":"cloudinitdisk","size":1048576,"target":"vdb"},{"name":"rootdisk","persistentVolumeClaimInfo":{"accessModes":["ReadWriteMany"],"capacity":{"storage":"34144990004"},"claimName":"ls-vm-from-template","filesystemOverhead":"0.06","requests":{"storage":"34144990004"},"volumeMode":"Filesystem"},"target":"vda"}]}}
+
+        '
+  recorded_at: Tue, 10 Feb 2026 08:06:10 GMT
+recorded_with: VCR 6.4.0
