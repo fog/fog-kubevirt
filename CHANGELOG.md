@@ -1,3 +1,9 @@
+## 1.6.1 / 2026-02-18
+
+* Runtime values for memory & CPU from VMI -> VM -> server ([#173](https://github.com/fog/fog-kubevirt/pull/173))
+* Fix the mocked list_storageclasses response ([#172](https://github.com/fog/fog-kubevirt/pull/172))
+* Add packit configuration ([#171](https://github.com/fog/fog-kubevirt/pull/171))
+
 ## 1.6.0 / 2026-02-02
 
 * Fix status & phase for VirtualMachine ([#163](https://github.com/fog/fog-kubevirt/pull/163))
