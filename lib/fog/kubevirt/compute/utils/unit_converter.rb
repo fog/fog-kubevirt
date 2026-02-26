@@ -39,7 +39,7 @@ module Fog
         # @return [MatchData] describing the match, or ValidationError is raised if no match.
         #
         def self.validate(value)
-          match = VALUE_RE.match(value)
+          match = VALUE_RE.match(value.to_s)
           raise ::Fog::Kubevirt::Errors::ValidationError, "The value '#{value}' isn't a valid unit" unless match
 
           match
@@ -49,7 +49,7 @@ module Fog
         # Regular expression used to match values and to separate them into the numeric value and the
         # optional unit suffix.
         #
-        VALUE_RE = /^\s*(?<value>[[:digit:]]+)\s*(?<suffix>[[:alpha:]]+)?\s*$/i
+        VALUE_RE = /^\s*(?<value>[[:digit:]]+)\s*(?<suffix>[[:alpha:]]+)\s*$/i
         private_constant :VALUE_RE
 
         #

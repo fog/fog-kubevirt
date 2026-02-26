@@ -114,11 +114,11 @@ describe Fog::Kubevirt::Utils::UnitConverter do
 
   describe '.validate' do
     it 'fails to validate' do
-      assert_raises ::Fog::Kubevirt::Errors::ValidationError do
-        described_class.validate('X')
-        # Value without unit is not valid
-        described_class.validate('100')
-        described_class.validate(100)
+      values = ['X', '100', 100, nil, {}, true, []]
+      values.each do |value|
+        assert_raises ::Fog::Kubevirt::Errors::ValidationError do
+          described_class.validate(value)
+        end
       end
     end
 
