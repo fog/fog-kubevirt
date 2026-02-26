@@ -32,6 +32,8 @@ module Fog
       collection :storageclasses
       model      :template
       collection :templates
+      model      :secret
+      collection :secrets
       model      :volume
       collection :volumes
 
@@ -58,6 +60,7 @@ module Fog
       request :get_vm
       request :get_server
       request :get_service
+      request :get_secret
       request :get_storageclass
       request :get_template
       request :get_vnc_console_details
@@ -69,6 +72,7 @@ module Fog
       request :list_pvcs
       request :list_servers
       request :list_services
+      request :list_secrets
       request :list_storageclasses
       request :list_templates
       request :list_volumes
