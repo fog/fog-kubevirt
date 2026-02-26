@@ -28,7 +28,7 @@ describe Fog::Kubevirt::Utils::UnitConverter do
       assert_equal(described_class.convert('1ZiB', :b).to_i, 2**70)
       assert_equal(described_class.convert('1YiB', :b).to_i, 2**80)
     end
-  
+
     it 'converts correclty powers of 10 to powers of 2' do
       assert_equal(described_class.convert('1000KB', :kib).to_i, 976)
       assert_equal(described_class.convert('1000MB', :mib).to_i, 953)
@@ -39,7 +39,7 @@ describe Fog::Kubevirt::Utils::UnitConverter do
       assert_equal(described_class.convert('1000ZB', :zib).to_i, 847)
       assert_equal(described_class.convert('1000YB', :yib).to_i, 827)
     end
-  
+
     it 'converts correclty powers of 2 to powers of 10' do
       assert_equal(described_class.convert('1000KiB', :kb).to_i, 1024)
       assert_equal(described_class.convert('1000MiB', :mb).to_i, 1048)
@@ -50,7 +50,7 @@ describe Fog::Kubevirt::Utils::UnitConverter do
       assert_equal(described_class.convert('1000ZiB', :zb).to_i, 1180)
       assert_equal(described_class.convert('1000YiB', :yb).to_i, 1208)
     end
-  
+
     it 'converts to smaller powers of 10 correclty' do
       assert_equal(described_class.convert('1KB', 'B').to_i, 10**3)
       assert_equal(described_class.convert('1MB', 'KB').to_i, 10**3)
@@ -61,7 +61,7 @@ describe Fog::Kubevirt::Utils::UnitConverter do
       assert_equal(described_class.convert('1ZB', 'EB').to_i, 10**3)
       assert_equal(described_class.convert('1YB', 'ZB').to_i, 10**3)
     end
-  
+
     it 'converts to smaller powers of 2 correclty' do
       assert_equal(described_class.convert('1KiB', 'B').to_i, 2**10)
       assert_equal(described_class.convert('1MiB', 'KiB').to_i, 2**10)
@@ -72,7 +72,7 @@ describe Fog::Kubevirt::Utils::UnitConverter do
       assert_equal(described_class.convert('1ZiB', 'EiB').to_i, 2**10)
       assert_equal(described_class.convert('1YiB', 'ZiB').to_i, 2**10)
     end
-  
+
     it 'converts to larger powers of 10 correclty' do
       assert_equal(described_class.convert('1000b', 'kb').to_i, 1)
       assert_equal(described_class.convert('1000kb', 'mb').to_i, 1)
@@ -83,7 +83,7 @@ describe Fog::Kubevirt::Utils::UnitConverter do
       assert_equal(described_class.convert('1000eb', 'zb').to_i, 1)
       assert_equal(described_class.convert('1000zb', 'yb').to_i, 1)
     end
-  
+
     it 'converts to larger powers of 2 correclty' do
       assert_equal(described_class.convert('1024b', 'ki').to_i, 1)
       assert_equal(described_class.convert('1024kib', 'mi').to_i, 1)
@@ -94,19 +94,19 @@ describe Fog::Kubevirt::Utils::UnitConverter do
       assert_equal(described_class.convert('1024eib', 'zi').to_i, 1)
       assert_equal(described_class.convert('1024zib', 'yi').to_i, 1)
     end
-  
+
     it 'accepts spaces between the numeric value and the unit suffix' do
       assert_equal(described_class.convert('2 KiB', :b).to_i, 2048)
     end
-  
+
     it 'accepts spaces before the numeric value' do
       assert_equal(described_class.convert(' 2KiB', :b).to_i, 2048)
     end
-  
+
     it 'accepts spaces after the unit suffix' do
       assert_equal(described_class.convert('2KiB ', :b).to_i, 2048)
     end
-  
+
     it 'returns nil if no value is given' do
       assert_nil(described_class.convert(nil, :b))
     end
@@ -114,8 +114,11 @@ describe Fog::Kubevirt::Utils::UnitConverter do
 
   describe '.validate' do
     it 'fails to validate' do
-      assert_raises ::Fog::Kubevirt::Errors::ValidationError do
-        described_class.validate('X')
+      values = ['X', '100', 100, nil, {}, true, []]
+      values.each do |value|
+        assert_raises ::Fog::Kubevirt::Errors::ValidationError do
+          described_class.validate(value)
+        end
       end
     end
 
