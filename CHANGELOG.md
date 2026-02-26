@@ -1,3 +1,7 @@
+## 1.6.2 / 2026-02-26
+
+* Fixed `UnitConverter` not requiring unit ([#174](https://github.com/fog/fog-kubevirt/pull/174))
+
 ## 1.6.1 / 2026-02-18
 
 * Runtime values for memory & CPU from VMI -> VM -> server ([#173](https://github.com/fog/fog-kubevirt/pull/173))
