@@ -47,6 +47,12 @@ module Fog
           self
         end
 
+        def destroy
+          service.delete_secret(name, namespace || (service && service.namespace))
+          uid = nil
+          self
+        end
+
         def self.parse(object)
           metadata = object[:metadata] || {}
           data_hash = object[:data].is_a?(Hash) ? object[:data] : {}

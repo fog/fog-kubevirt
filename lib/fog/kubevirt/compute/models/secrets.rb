@@ -26,6 +26,16 @@ module Fog
         def get(name)
           new service.get_secret(name)
         end
+
+        def delete(name)
+          begin
+            secret = get(name)
+          rescue ::Fog::Kubevirt::Errors::ClientError
+            secret = nil
+          end
+
+          service.delete_secret(name, service.namespace) unless secret.nil?
+        end
       end
     end
   end

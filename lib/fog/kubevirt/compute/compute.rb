@@ -49,6 +49,7 @@ module Fog
       request :delete_networkattachmentdef
       request :delete_persistentvolume
       request :delete_pvc
+      request :delete_secret
       request :delete_service
       request :delete_storageclass
       request :delete_vminstance
