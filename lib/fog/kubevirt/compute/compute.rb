@@ -43,6 +43,7 @@ module Fog
       request :create_vminstance
       request :create_persistentvolume
       request :create_pvc
+      request :create_secret
       request :create_service
       request :create_storageclass
       request :delete_networkattachmentdef
@@ -77,6 +78,7 @@ module Fog
       request :list_templates
       request :list_volumes
       request :update_vm
+      request :update_secret
 
       module Shared
 

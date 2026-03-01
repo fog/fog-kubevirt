@@ -44,4 +44,49 @@ describe Fog::Kubevirt::Compute::Secret do
       assert_equal 'Opaque', result[:type]
     end
   end
+
+  describe '#persisted?' do
+    it 'returns false when uid is nil' do
+      secret = Fog::Kubevirt::Compute::Secret.new(name: 'x', uid: nil)
+      assert_equal false, secret.persisted?
+    end
+
+    it 'returns false when uid is empty string' do
+      secret = Fog::Kubevirt::Compute::Secret.new(name: 'x', uid: '')
+      assert_equal false, secret.persisted?
+    end
+
+    it 'returns true when uid is present' do
+      secret = Fog::Kubevirt::Compute::Secret.new(name: 'x', uid: 'b64ca739-8d66-4c98-831b-5a18d24ca2cf')
+      assert_equal true, secret.persisted?
+    end
+  end
+
+  describe '#to_secret_hash' do
+    it 'builds API hash with name, namespace, data, type' do
+      secret = Fog::Kubevirt::Compute::Secret.new(
+        name: 'my-secret',
+        namespace: 'myns',
+        data: { key: 'dmFsdWU=' },
+        type: 'Opaque'
+      )
+      h = secret.to_secret_hash
+      assert_equal 'v1', h[:apiVersion]
+      assert_equal 'Secret', h[:kind]
+      assert_equal 'my-secret', h[:metadata][:name]
+      assert_equal 'myns', h[:metadata][:namespace]
+      assert_equal({ key: 'dmFsdWU=' }, h[:data])
+      assert_equal 'Opaque', h[:type]
+      assert_nil h[:metadata][:resourceVersion]
+    end
+
+    it 'includes resourceVersion when set' do
+      secret = Fog::Kubevirt::Compute::Secret.new(
+        name: 'my-secret',
+        resource_version: '12345'
+      )
+      h = secret.to_secret_hash
+      assert_equal '12345', h[:metadata][:resourceVersion]
+    end
+  end
 end
