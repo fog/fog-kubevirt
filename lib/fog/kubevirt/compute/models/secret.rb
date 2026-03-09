@@ -4,9 +4,9 @@ module Fog
       class Secret < Fog::Model
         identity :name
 
-        attribute :namespace,         :aliases => 'metadata_namespace'
-        attribute :resource_version,  :aliases => 'metadata_resource_version'
-        attribute :uid,               :aliases => 'metadata_uid'
+        attribute :namespace,          :aliases => 'metadata_namespace'
+        attribute :resource_version,   :aliases => 'metadata_resource_version'
+        attribute :uid,                :aliases => 'metadata_uid'
         attribute :creation_timestamp, :aliases => 'metadata_creation_timestamp'
         attribute :metadata
         # data: key => base64-encoded string value (caller must decode if needed)
@@ -15,12 +15,13 @@ module Fog
 
         # Persisted if the secret has been stored in the API (uid is set by the server on create).
         def persisted?
-          uid.to_s != ''
+          !uid.nil?
         end
 
         # Build hash for create/update API. data values must be base64-encoded.
         def to_secret_hash
-          ns = namespace || (service && service.namespace)
+          ns = namespace || service.namespace
+          raise "Data must be a hash" unless (data || {}).is_a?(Hash)
           h = {
             :apiVersion => 'v1',
             :kind       => 'Secret',
@@ -28,7 +29,7 @@ module Fog
               :name      => name,
               :namespace => ns
             }),
-            :data       => data.is_a?(Hash) ? data : {},
+            :data       => data,
             :type       => (type || 'Opaque')
           }
           h[:metadata][:resourceVersion] = resource_version if resource_version.to_s != ''
@@ -48,14 +49,15 @@ module Fog
         end
 
         def destroy
-          service.delete_secret(name, namespace || (service && service.namespace))
-          uid = nil
+          service.delete_secret(name, namespace || service.namespace)
+          self.uid = nil
           self
         end
 
         def self.parse(object)
           metadata = object[:metadata] || {}
-          data_hash = object[:data].is_a?(Hash) ? object[:data] : {}
+          data_hash = object[:data] || {}
+          raise "Data must be a hash" unless data_hash.is_a?(Hash)
 
           {
             :name               => metadata[:name],

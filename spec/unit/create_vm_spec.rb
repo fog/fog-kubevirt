@@ -129,6 +129,53 @@ describe Fog::Compute do
     end
   end
 
+  it 'creates vm with single userdata secret' do
+    VCR.use_cassette("vm_create_single_userdata") do
+      begin
+        vm_name = 'test2'
+        cpus = 1
+        memory_size = '64'
+        memory_unit = 'M'
+
+        # Assuming the secret already exists
+        userdata_secret = Fog::Kubevirt::Compute::Secret.new(name: 'test-userdata-secret')
+
+        volume = Fog::Kubevirt::Compute::Volume.new
+        volume.type = 'persistentVolumeClaim'
+        volume.info = 'mypvc3'
+        @service.vms.create(
+          vm_name: vm_name,
+          cpus: cpus,
+          memory_size: memory_size,
+          memory_unit: memory_unit,
+          volumes: [volume],
+          cloudinit: {
+            userdata: {
+              'secretRef': {
+                name: userdata_secret.name
+              }
+            }
+          }
+        )
+
+        vm = @service.vms.get(vm_name)
+
+        # test vm volumes
+        volumes = @service.volumes.all vm_name
+        assert_equal(2, volumes.count)
+
+        # verify userdata secret values
+        volume = volumes.last
+        refute_nil(volume)
+        assert_equal(volume.name, 'cloudinitvolume')
+        assert_equal(volume.type, 'cloudInitNoCloud')
+        assert_equal(volume.config[:secretRef][:name], 'test-userdata-secret')
+      ensure
+        @service.vms.delete(vm_name) if vm
+      end
+    end
+  end
+
   it 'creates vm using a datavolumetemplate' do
     VCR.use_cassette("vm_create_datavolumetemplate") do
       begin

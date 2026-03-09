@@ -51,11 +51,6 @@ describe Fog::Kubevirt::Compute::Secret do
       assert_equal false, secret.persisted?
     end
 
-    it 'returns false when uid is empty string' do
-      secret = Fog::Kubevirt::Compute::Secret.new(name: 'x', uid: '')
-      assert_equal false, secret.persisted?
-    end
-
     it 'returns true when uid is present' do
       secret = Fog::Kubevirt::Compute::Secret.new(name: 'x', uid: 'b64ca739-8d66-4c98-831b-5a18d24ca2cf')
       assert_equal true, secret.persisted?
@@ -83,6 +78,7 @@ describe Fog::Kubevirt::Compute::Secret do
     it 'includes resourceVersion when set' do
       secret = Fog::Kubevirt::Compute::Secret.new(
         name: 'my-secret',
+        namespace: 'myns',
         resource_version: '12345'
       )
       h = secret.to_secret_hash

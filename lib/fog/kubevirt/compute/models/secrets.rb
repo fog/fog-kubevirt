@@ -23,18 +23,17 @@ module Fog
           load secrets
         end
 
-        def get(name)
-          new service.get_secret(name)
+        def get(name, namespace = service.namespace)
+          new service.get_secret(name, namespace)
         end
 
-        def delete(name)
+        def delete(name, namespace = service.namespace)
           begin
-            secret = get(name)
+            secret = get(name, namespace)
+            service.delete_secret(name, namespace)
           rescue ::Fog::Kubevirt::Errors::ClientError
-            secret = nil
+            nil
           end
-
-          service.delete_secret(name, service.namespace) unless secret.nil?
         end
       end
     end
