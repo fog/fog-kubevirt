@@ -32,6 +32,8 @@ module Fog
       collection :storageclasses
       model      :template
       collection :templates
+      model      :secret
+      collection :secrets
       model      :volume
       collection :volumes
 
@@ -41,11 +43,13 @@ module Fog
       request :create_vminstance
       request :create_persistentvolume
       request :create_pvc
+      request :create_secret
       request :create_service
       request :create_storageclass
       request :delete_networkattachmentdef
       request :delete_persistentvolume
       request :delete_pvc
+      request :delete_secret
       request :delete_service
       request :delete_storageclass
       request :delete_vminstance
@@ -58,6 +62,7 @@ module Fog
       request :get_vm
       request :get_server
       request :get_service
+      request :get_secret
       request :get_storageclass
       request :get_template
       request :get_vnc_console_details
@@ -69,10 +74,12 @@ module Fog
       request :list_pvcs
       request :list_servers
       request :list_services
+      request :list_secrets
       request :list_storageclasses
       request :list_templates
       request :list_volumes
       request :update_vm
+      request :update_secret
 
       module Shared
 
