@@ -1,3 +1,7 @@
+## 1.7.0 / 2026-03-26
+
+* Add access to secrets ([#175](https://github.com/fog/fog-kubevirt/pull/175))
+
 ## 1.6.2 / 2026-02-26
 
 * Fixed `UnitConverter` not requiring unit ([#174](https://github.com/fog/fog-kubevirt/pull/174))
