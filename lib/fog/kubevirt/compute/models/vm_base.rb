@@ -24,6 +24,7 @@ module Fog
           attribute :interfaces,       :aliases => 'spec_interfaces'
           attribute :networks,         :aliases => 'spec_networks'
           attribute :machine_type,     :aliases => 'spec_machine_type'
+          attribute :bootloader,       :aliases => 'spec_bootloader'
         end
 
         def parse_object(object)
@@ -48,7 +49,8 @@ module Fog
             :status           => parse_status(object, :printableStatus),
             :interfaces       => parse_interfaces(domain[:devices][:interfaces], object[:status].nil? ? [] : object[:status][:interfaces], networks),
             :networks         => networks,
-            :machine_type     => domain.dig(:machine, :type)
+            :machine_type     => domain.dig(:machine, :type),
+            :bootloader       => domain.dig(:firmware, :bootloader)
           }
           vm[:owner_reference] = owner unless owner.nil?
           vm[:annotations] = annotations unless annotations.nil?

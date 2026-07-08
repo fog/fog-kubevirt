@@ -129,6 +129,28 @@ describe Fog::Compute do
     end
   end
 
+  it 'creates EFI vm' do
+    VCR.use_cassette("vm_create_efi") do
+      begin
+        vm_name = 'test2'
+        cpus = 1
+        memory_size = '64'
+        memory_unit = 'M'
+
+        volume = Fog::Kubevirt::Compute::Volume.new
+        volume.type = 'persistentVolumeClaim'
+        volume.info = 'mypvc3'
+        @service.vms.create(vm_name: vm_name, cpus: cpus, memory_size: memory_size, memory_unit: memory_unit, volumes: [volume], extra_domain: { firmware: { bootloader: { efi: { secureBoot: false } } } })
+
+        vm = @service.vms.get(vm_name)
+
+        assert_equal(vm.bootloader.keys.first, :efi)
+      ensure
+        @service.vms.delete(vm_name) if vm
+      end
+    end
+  end
+
   it 'creates vm with single userdata secret' do
     VCR.use_cassette("vm_create_single_userdata") do
       begin

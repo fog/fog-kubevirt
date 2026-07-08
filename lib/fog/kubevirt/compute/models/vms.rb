@@ -82,6 +82,7 @@ module Fog
           init = args.fetch(:cloudinit, {})
           networks = args.fetch(:networks, nil)
           interfaces = args.fetch(:interfaces, nil)
+          extra_domain = args.fetch(:extra_domain, nil)
           vm_volumes =  args.fetch(:volumes, nil)
           volume_templates = args.fetch(:volume_templates, nil)
 
@@ -186,6 +187,16 @@ module Fog
                :dataVolumeTemplates => volume_templates
              }
           ) unless volume_templates.nil? || volume_templates.empty?
+
+          vm = deep_merge!(vm,
+            :spec => {
+              :template => {
+                :spec => {
+                  :domain => extra_domain
+                }
+              }
+            }
+          ) unless extra_domain.nil? || extra_domain.empty?
 
           service.create_vm(vm)
         end
