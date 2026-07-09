@@ -39,6 +39,7 @@ describe Fog::Compute do
       assert(server)
       assert_equal(server[:memory], '1Gi')
       assert_equal(server[:cpu_cores], 1)
+      assert_equal(server[:bootloader], nil)
     end
   end
 end

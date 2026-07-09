@@ -44,36 +44,41 @@ module Fog
           service.delete_vm(name, service.namespace)
         end
 
-        # Creates a virtual machine using provided paramters:
-        # :vm_name [String] - name of a vm
-        # :cpus [String] - number of cpus
-        # :memory_size [String] - amount of memory
-        # :memory_unit [String] - memory unit to use, default to 'M'
-        # :image [String] - name of a container disk
-        # :pvc [String] - name of a persistent volume claim
-        # :cloudinit [Hash] - number of items needed to configure cloud-init
-        # :networks[Array] - networks to which the vm should be connected, i.e:
+        # Creates a virtual machine using provided paramters
+        #
+        # @param args [Hash] attributes containing details about vm about to be
+        #   created.
+        # @option args [String] :vm_name name of the vm
+        # @option args [String,Number,nil] :cpus (nil) number of cpus
+        # @option args [String,Number] :memory_size amount of memory
+        # @option args ["K","M","G","T"] :memory_unit ("M") memory unit to use
+        # @option args [String] :pvc name of a persistent volume claim
+        # @option args [Hash] :cloudinit ({}) items for configuring cloud-init
+        # @option args [Array<Hash>,nil] :networks (nil) networks to which the vm should be connected, i.e:
         #    [ { :name => 'default', :pod => {} } ,
         #      { :name => 'ovs-red', :multus => { :networkName => 'red'} }
         #    ]
-        #
-        # :interfaces[Array] - network interfaces for the vm, correlated to
-        #                      :networks section by network's name, i.e.:
+        # @option args [Array<Hash>,nil] :interfaces (nil) network interfaces for the vm, correlated to
+        #                                :networks section by network's name, i.e:
         #   [ { :name => 'default', :bridge => {} },
         #     { :name       => 'red',  # correlated to networks[networkName]
         #       :bridge     => {},
         #       :bootOrder  => 1,      # 1 to boot from network interface
         #       :macAddress => '12:34:56:AB:CD:EF' }
         #   ]
-        #
-        # @param [String] :image name of container disk.
-        #
-        # @param [Array] :volumes the volumes (Fog::Kubevirt::Compute::Volume) to be used by the VM
-        #
-        # @param [Array] :volume_templates the dataVolumeTemplates to be used by the VM
-        #
-        # @param [Hash] attributes containing details about vm about to be
-        #   created.
+        # @option args [Hash,nil] :extra_domain (nil) extra parameters to merge into the domain-part of the VM object, i.e:
+        #   {
+        #     :features => {
+        #       :smm => { :enabled => true }
+        #     },
+        #     :firmware => {
+        #       :bootloader => {
+        #         :efi => { :secureBoot => false }
+        #       }
+        #     }
+        #   }
+        # @option args [Array<Fog::Kubevirt::Compute::Volume>] :volumes the volumes (Fog::Kubevirt::Compute::Volume) to be used by the VM
+        # @option args [Array<Hash>,nil] :volume_templates (nil) the dataVolumeTemplates to be used by the VM
         def create(args = {})
           vm_name = args.fetch(:vm_name)
           cpus = args.fetch(:cpus, nil)
@@ -82,7 +87,8 @@ module Fog
           init = args.fetch(:cloudinit, {})
           networks = args.fetch(:networks, nil)
           interfaces = args.fetch(:interfaces, nil)
-          vm_volumes =  args.fetch(:volumes, nil)
+          extra_domain = args.fetch(:extra_domain, nil)
+          vm_volumes = args.fetch(:volumes, nil)
           volume_templates = args.fetch(:volume_templates, nil)
 
           if vm_volumes.nil? || vm_volumes.empty?
@@ -186,6 +192,16 @@ module Fog
                :dataVolumeTemplates => volume_templates
              }
           ) unless volume_templates.nil? || volume_templates.empty?
+
+          vm = deep_merge!(vm,
+            :spec => {
+              :template => {
+                :spec => {
+                  :domain => extra_domain
+                }
+              }
+            }
+          ) unless extra_domain.nil? || extra_domain.empty?
 
           service.create_vm(vm)
         end
