@@ -1,3 +1,7 @@
+## 1.8.0 / 2026-07-09
+
+* Add option to provide additional VM domain data ([#177](https://github.com/fog/fog-kubevirt/pull/177))
+
 ## 1.7.0 / 2026-03-26
 
 * Add access to secrets ([#175](https://github.com/fog/fog-kubevirt/pull/175))
