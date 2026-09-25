@@ -3,7 +3,7 @@ module Fog
     class Compute
       class Real
         def create_vm(vm)
-          vm[:apiVersion] = kubevirt_client.version
+          vm[:apiVersion] = "#{KUBEVIRT_GROUP}/#{kubevirt_client.version}"
 
           kubevirt_client.create_virtual_machine(vm)
         end
