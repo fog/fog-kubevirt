@@ -25,4 +25,13 @@ describe Fog::Kubevirt::Compute do
       end
     end
   end
+
+  it 'lists services in the configured namespace' do
+    VCR.use_cassette('networkattachmentdefinitions_crud') do
+      net_att_defs = @service.networkattachmentdefs.all
+
+      assert_equal(1, net_att_defs.count)
+      assert_equal('default', net_att_defs.first.namespace)
+    end
+  end
 end

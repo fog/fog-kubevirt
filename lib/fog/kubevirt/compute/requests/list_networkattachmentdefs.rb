@@ -3,7 +3,7 @@ module Fog
     class Compute
       class Real
         def list_networkattachmentdefs(_filters = {})
-          netdefs = kube_net_client.get_network_attachment_definitions
+          netdefs = kube_net_client.get_network_attachment_definitions(namespace: @namespace)
           entities = netdefs.map do |kubevirt_obj|
             Networkattachmentdef.parse object_to_hash(kubevirt_obj)
           end

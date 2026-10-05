@@ -111,6 +111,37 @@ http_interactions:
   recorded_at: Tue, 22 Jan 2019 16:40:28 GMT
 - request:
     method: get
+    uri: https://10.8.254.82:8443/apis/k8s.cni.cncf.io/v1/namespaces/default/network-attachment-definitions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.3p105
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 22 Jan 2019 16:40:28 GMT
+    body:
+      encoding: UTF-8
+      string: '{"apiVersion":"k8s.cni.cncf.io/v1","items":[{"apiVersion":"k8s.cni.cncf.io/v1","kind":"NetworkAttachmentDefinition","metadata":{"name":"ovs-red","namespace":"default","resourceVersion":"56968"},"spec":{"config":"{ cni_version: \"0.3.1\", type: \"ovs\", bridge: \"red\" }"}}],"kind":"NetworkAttachmentDefinitionList","metadata":{"resourceVersion":"56968"}}
+
+'
+    http_version:
+  recorded_at: Tue, 22 Jan 2019 16:40:28 GMT
+- request:
+    method: get
     uri: https://10.8.254.82:8443/apis/k8s.cni.cncf.io
     body:
       encoding: US-ASCII
