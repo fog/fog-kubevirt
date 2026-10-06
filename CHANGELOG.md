@@ -1,3 +1,8 @@
+## 1.9.0 / 2026-10-06
+
+* Scope network attachments to configured namespace ([#180](https://github.com/fog/fog-kubevirt/pull/180)
+* Use grouped API version when creating VMs ([#180](https://github.com/fog/fog-kubevirt/pull/180)
+
 ## 1.8.0 / 2026-07-09
 
 * Add option to provide additional VM domain data ([#177](https://github.com/fog/fog-kubevirt/pull/177))
