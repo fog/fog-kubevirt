@@ -23,6 +23,7 @@ module Fog
             nic.mac_address = !status_iface.nil? && status_iface.key?(:mac) ? status_iface[:mac] : iface[:macAddress]
             nic.type = 'bridge' if iface.keys.include?(:bridge)
             nic.type = 'slirp' if iface.keys.include?(:slirp)
+            nic.type = 'masquerade' if iface.keys.include?(:masquerade)
 
             net = networks.detect { |n| n.name == iface[:name] }
             if net
