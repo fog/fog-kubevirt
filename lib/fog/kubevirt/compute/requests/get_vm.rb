@@ -79,7 +79,7 @@ module Fog
                       ],
                       :interfaces=>[
                         {
-                          :bridge=>{},
+                          :masquerade=>{},
                           :name=>"default"
                         },
                         {

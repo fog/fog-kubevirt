@@ -37,9 +37,11 @@ describe Fog::Kubevirt::Compute do
 
     assert_nil(vm[:interfaces][0].network)
     assert_equal(vm[:interfaces][0].cni_provider, "pod")
+    assert_equal(vm[:interfaces][0].type, "masquerade")
 
     assert_equal(vm[:interfaces][1].network, "ptp-conf")
     assert_equal(vm[:interfaces][1].cni_provider, "multus")
+    assert_equal(vm[:interfaces][1].type, "bridge")
     Fog.unmock!
   end
 

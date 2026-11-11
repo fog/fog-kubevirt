@@ -5,7 +5,7 @@ module Fog
         identity :mac_address
         attr_accessor :name
 
-        attribute :type # values: bridge, slirp
+        attribute :type # values: bridge, slirp, masquerade
         attribute :model
         attribute :ports
         attribute :boot_order
