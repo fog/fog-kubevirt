@@ -79,6 +79,7 @@ module Fog
         #   }
         # @option args [Array<Fog::Kubevirt::Compute::Volume>] :volumes the volumes (Fog::Kubevirt::Compute::Volume) to be used by the VM
         # @option args [Array<Hash>,nil] :volume_templates (nil) the dataVolumeTemplates to be used by the VM
+        # @option args [Number,nil] :termination_grace_period (nil) number of seconds grace period allowed before killing the virtual machine.
         def create(args = {})
           vm_name = args.fetch(:vm_name)
           cpus = args.fetch(:cpus, nil)
@@ -90,6 +91,7 @@ module Fog
           extra_domain = args.fetch(:extra_domain, nil)
           vm_volumes = args.fetch(:volumes, nil)
           volume_templates = args.fetch(:volume_templates, nil)
+          termination_grace_period = args.fetch(:termination_grace_period, nil)
 
           if vm_volumes.nil? || vm_volumes.empty?
             raise ::Fog::Kubevirt::Errors::ValidationError
@@ -135,7 +137,6 @@ module Fog
                       }
                     }
                   },
-                  :terminationGracePeriodSeconds => 0,
                   :volumes => volumes
                 }
               }
@@ -202,6 +203,8 @@ module Fog
               }
             }
           ) unless extra_domain.nil? || extra_domain.empty?
+
+          vm[:spec][:template][:spec][:terminationGracePeriodSeconds] = termination_grace_period if termination_grace_period
 
           service.create_vm(vm)
         end
