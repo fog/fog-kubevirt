@@ -100,7 +100,7 @@ http_interactions:
     uri: https://10.8.254.82:8443/apis/kubevirt.io/v1/namespaces/default/virtualmachines
     body:
       encoding: UTF-8
-      string: '{"kind":"VirtualMachine","metadata":{"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"devices":{"disks":[{"name":"test2-disk-00","disk":{"bus":"virtio"}}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}},"cpu":{"cores":1}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}},"apiVersion":"kubevirt.io/v1"}'
+      string: '{"kind":"VirtualMachine","metadata":{"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"devices":{"disks":[{"name":"test2-disk-00","disk":{"bus":"virtio"}}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}},"cpu":{"cores":1}},"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}},"apiVersion":"kubevirt.io/v1"}'
     headers:
       Accept:
       - "*/*"
@@ -127,7 +127,7 @@ http_interactions:
       - '763'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
 
 '
     http_version:
@@ -191,7 +191,7 @@ http_interactions:
       - '763'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
 
 '
     http_version:
@@ -353,7 +353,7 @@ http_interactions:
       - '763'
     body:
       encoding: UTF-8
-      string: '{"apiVersion":"kubevirt.io/v1","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"terminationGracePeriodSeconds":0,"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
+      string: '{"apiVersion":"kubevirt.io/v1","kind":"VirtualMachine","metadata":{"creationTimestamp":"2019-04-11T14:12:21Z","generation":1,"labels":{"kubevirt.io/vm":"test2"},"name":"test2","namespace":"default","resourceVersion":"4640036","selfLink":"/apis/kubevirt.io/v1/namespaces/default/virtualmachines/test2","uid":"d2c225f8-5c63-11e9-8e5e-5254007d353d"},"spec":{"running":false,"template":{"metadata":{"creationTimestamp":null,"labels":{"kubevirt.io/vm":"test2"}},"spec":{"domain":{"cpu":{"cores":1},"devices":{"disks":[{"disk":{"bus":"virtio"},"name":"test2-disk-00"}]},"machine":{"type":""},"resources":{"requests":{"memory":"64M"}}},"volumes":[{"name":"test2-disk-00","persistentVolumeClaim":{"claimName":"mypvc3"}}]}}}}
 
 '
     http_version:
